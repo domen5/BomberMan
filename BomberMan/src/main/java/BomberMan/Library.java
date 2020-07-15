@@ -3,6 +3,16 @@
  */
 package BomberMan;
 
+import java.awt.BorderLayout;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+
+import javax.swing.JFrame;
+
 public class Library {
     public boolean someLibraryMethod() {
         return true;
