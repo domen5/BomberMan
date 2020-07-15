@@ -1,16 +1,25 @@
 package it.bomberman.display;
 
+import java.awt.BorderLayout;
+import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
 
-public class DisplayModel implements Runnable {
+import javax.swing.JFrame;
+
+public class DisplayModel extends Canvas implements Runnable {
+
+	private static final long serialVersionUID = 1L;
 
 	public boolean running = false;
 	public int tickCount = 0;
 	private BufferedImage image = new BufferedImage(500, 500, BufferedImage.TYPE_INT_RGB);
-	
+	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+
 	public synchronized void start() {
 		running = true;
 		new Thread(this).start();
@@ -65,10 +74,26 @@ public class DisplayModel implements Runnable {
 
 	public void tick() {
 		tickCount++;
-
+		for (int i = 0; i < pixels.length; i++) {
+			pixels[i] = i + tickCount;
+		}
 	}
 
 	public void render() {
+		BufferStrategy bs = getBufferStrategy();
+		if (bs == null) {
+			createBufferStrategy(3);
+			return;
+		}
 
+		Graphics g = bs.getDrawGraphics();
+
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 0, getWidth(), getHeight());
+
+		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+
+		g.dispose();
+		bs.show();
 	}
 }
