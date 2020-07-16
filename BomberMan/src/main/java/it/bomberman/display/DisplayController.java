@@ -1,14 +1,21 @@
 package it.bomberman.display;
 
+
+import it.bomberman.state.*;
+
 public class DisplayController {
 
 	private DisplayView view;
 	private DisplayModel model;
 	private boolean running;
-
+	private State gameState;
+	
 	public DisplayController(DisplayView view, DisplayModel model) {
 		this.model = model;
 		this.view = view;
+		gameState=new GameState(this);		
+		State.setState(gameState);
+
 	}
 
 	public void generateGame() {
@@ -19,7 +26,9 @@ public class DisplayController {
 		DisplayView view = new DisplayView();
 		DisplayModel model = new DisplayModel();
 		DisplayController d = new DisplayController(view, model);
+		
 		d.start();
+		
 		//d.generateGame();
 	}
 	
