@@ -1,6 +1,6 @@
 package it.bomberman.display;
 
-
+import it.bomberman.entity.creature.Player;
 import it.bomberman.state.*;
 
 public class DisplayController {
@@ -9,29 +9,20 @@ public class DisplayController {
 	private DisplayModel model;
 	private boolean running;
 	private State gameState;
-	
+	private Player p;
+
 	public DisplayController(DisplayView view, DisplayModel model) {
 		this.model = model;
 		this.view = view;
-		gameState=new GameState(this);		
+		gameState = new GameState(this);
 		State.setState(gameState);
-
+		p = new Player(this, 0, 0);
 	}
 
 	public void generateGame() {
-		//model.start();
+		// model.start();
 	}
 
-	public static void main(String[] args) {
-		DisplayView view = new DisplayView();
-		DisplayModel model = new DisplayModel();
-		DisplayController d = new DisplayController(view, model);
-		
-		d.start();
-		
-		//d.generateGame();
-	}
-	
 	public synchronized void start() {
 		running = true;
 		run();
@@ -72,6 +63,7 @@ public class DisplayController {
 			if (shouldRender) {
 				frames++;
 				this.view.render(this.model.getTickCount());
+				this.p.render(this.view.getGraphics());
 			}
 
 			if (System.currentTimeMillis() - lastTimer >= 1000) {

@@ -4,17 +4,21 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import it.bomberman.display.DisplayController;
+import it.bomberman.game.Game;
 import it.bomberman.gfx.*;
+import it.bomberman.launcher.BomberManLauncher;
 
 public class Player extends Creature {
-
+	
+	private Game game;
 	private Animation animDown, animUp, animLeft, animRight;
 	// AGGIUNGI Game game,
 	DisplayController c;
+
 	public Player(DisplayController c, float x, float y) {
 		super(x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
-		//this.game = game;
-		this.c=c;
+		// this.game = game;
+		this.c = c;
 		animDown = new Animation(100, Assets.player_d);
 		animUp = new Animation(100, Assets.player_u);
 		animLeft = new Animation(100, Assets.player_l);
@@ -24,15 +28,15 @@ public class Player extends Creature {
 	public void getInput() {
 		xMove = 0;
 		yMove = 0;
-//
-//		if (game.getKeyManager().up)
-//			yMove -= speed;
-//		if (game.getKeyManager().down)
-//			yMove = speed;
-//		if (game.getKeyManager().left)
-//			xMove -= speed;
-//		if (game.getKeyManager().right)
-//			xMove = speed;
+
+		if (game.getKeyManager().up)
+			yMove -= speed;
+		if (game.getKeyManager().down)
+			yMove = speed;
+		if (game.getKeyManager().left)
+			xMove -= speed;
+		if (game.getKeyManager().right)
+			xMove = speed;
 	}
 
 	@Override
@@ -43,13 +47,11 @@ public class Player extends Creature {
 		animUp.tick();
 		getInput();
 		move();
-
 	}
 
 	@Override
 	public void render(Graphics g) {
 		g.drawImage(getCurrentAnimationFrame(), (int) x, (int) y, width, height, null);
-
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
@@ -62,6 +64,5 @@ public class Player extends Creature {
 		} else {
 			return animDown.getCurrentFrame();
 		}
-
 	}
 }

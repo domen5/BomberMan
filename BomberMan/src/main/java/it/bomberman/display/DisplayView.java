@@ -17,12 +17,11 @@ public class DisplayView extends Canvas {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public final int WIDTH = 400;
-	public final int HEIGHT = 250;
+	public final int WIDTH = 600;
+	public final int HEIGHT = 300;
 	public final int SCALE = 3;
 	public final String NAME = "BOMBERMAN";
 	private JFrame frame = null;
-	
 	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 
@@ -41,27 +40,24 @@ public class DisplayView extends Canvas {
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
-	
+
 	public void render(int tickCount) {
 		BufferStrategy bs = getBufferStrategy();
 		if (bs == null) {
 			createBufferStrategy(3);
 			return;
 		}
-		
+
 		for (int i = 0; i < pixels.length; i++) {
 			pixels[i] = i + tickCount;
 		}
-		
 
 		Graphics g = bs.getDrawGraphics();
-
-		g.setColor(Color.BLACK);
+		g.setColor(Color.white);
 		g.fillRect(0, 0, getWidth(), getHeight());
-
-		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
-
+		// g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 		g.dispose();
 		bs.show();
 	}
+
 }
