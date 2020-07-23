@@ -9,11 +9,12 @@ import it.bomberman.entity.creature.Player;
 public class GameState extends State{
 
 	private Player player;
-	
+	private int ca=0;
 	public GameState(DisplayController c) { //(Game game)
 		//super(game);
 		super(c);
-		player= new Player(c, 100, 100);
+		ca++;
+		//player= new Player(c, 100, 100, ca);
 	}
 	
 	@Override

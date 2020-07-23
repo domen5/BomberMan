@@ -10,33 +10,58 @@ import it.bomberman.launcher.BomberManLauncher;
 
 public class Player extends Creature {
 	
-	private Game game;
+	
 	private Animation animDown, animUp, animLeft, animRight;
 	// AGGIUNGI Game game,
 	DisplayController c;
-
-	public Player(DisplayController c, float x, float y) {
+	private int playerNumb;
+	public Player(DisplayController c, float x, float y, int n) {
 		super(x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		// this.game = game;
 		this.c = c;
-		animDown = new Animation(100, Assets.player_d);
-		animUp = new Animation(100, Assets.player_u);
-		animLeft = new Animation(100, Assets.player_l);
-		animRight = new Animation(100, Assets.player_r);
+		this.playerNumb=n;
+		
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		//Creare una classe esterna che gestisce i player per animazioni!!
+		
+		if(playerNumb==1) {
+			animDown = new Animation(100, Assets.player_d);
+			animUp = new Animation(100, Assets.player_u);
+			animLeft = new Animation(100, Assets.player_l);
+			animRight = new Animation(100, Assets.player_r);
+			}
+		if(playerNumb==2) {
+			animDown = new Animation(100, Assets.player_d2);
+			animUp = new Animation(100, Assets.player_u2);
+			animLeft = new Animation(100, Assets.player_l2);
+			animRight = new Animation(100, Assets.player_r2);
+			}
+			
 	}
 
 	public void getInput() {
 		xMove = 0;
 		yMove = 0;
-
-		if (game.getKeyManager().up)
-			yMove -= speed;
-		if (game.getKeyManager().down)
-			yMove = speed;
-		if (game.getKeyManager().left)
-			xMove -= speed;
-		if (game.getKeyManager().right)
-			xMove = speed;
+		if(this.playerNumb==1) {
+			if (c.getKeyManager().up)
+				yMove -= speed;
+			if (c.getKeyManager().down)
+				yMove = speed;
+			if (c.getKeyManager().left)
+				xMove -= speed;
+			if (c.getKeyManager().right)
+				xMove = speed;
+			}
+		if(this.playerNumb==2) {
+			if (c.getKeyManager().up2)
+				yMove -= speed;
+			if (c.getKeyManager().down2)
+				yMove = speed;
+			if (c.getKeyManager().left2)
+				xMove -= speed;
+			if (c.getKeyManager().right2)
+				xMove = speed;
+			}
 	}
 
 	@Override

@@ -23,8 +23,7 @@ public class DisplayView extends Canvas {
 	public final String NAME = "BOMBERMAN";
 	private JFrame frame = null;
 	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
-	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
-
+	
 	public DisplayView() {
 
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
@@ -47,11 +46,6 @@ public class DisplayView extends Canvas {
 			createBufferStrategy(3);
 			return;
 		}
-
-		for (int i = 0; i < pixels.length; i++) {
-			pixels[i] = i + tickCount;
-		}
-
 		Graphics g = bs.getDrawGraphics();
 		g.setColor(Color.white);
 		g.fillRect(0, 0, getWidth(), getHeight());
@@ -60,4 +54,7 @@ public class DisplayView extends Canvas {
 		bs.show();
 	}
 
+	public JFrame getFrame() {
+		return frame;
+	}
 }

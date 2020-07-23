@@ -44,7 +44,7 @@ public abstract class Entity {
 	public void setHeight(int height) {
 		this.height = height;
 	}
-
+	
 	public abstract void tick();
 
 	public abstract void render(Graphics g);

@@ -16,7 +16,7 @@ public class DisplayModel {
 	private int tickCount = 0;
 
 	public DisplayModel() {
-
+		
 	}
 	public void tick() {
 		tickCount++;

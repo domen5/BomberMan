@@ -24,6 +24,7 @@ public abstract class Creature extends Entity {
 	}
 
 	// GETTER SETTER
+		
 	public int getHealth() {
 		return health;
 	}
