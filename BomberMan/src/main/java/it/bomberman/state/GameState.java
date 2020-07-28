@@ -3,7 +3,6 @@ package it.bomberman.state;
 import java.awt.Graphics;
 
 import it.bomberman.display.DisplayController;
-import it.bomberman.entity.*;
 import it.bomberman.entity.creature.Player;
 
 public class GameState extends State{

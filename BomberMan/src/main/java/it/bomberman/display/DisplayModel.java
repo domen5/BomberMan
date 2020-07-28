@@ -11,13 +11,21 @@ import java.awt.image.DataBufferInt;
 
 import javax.swing.JFrame;
 
+import org.dyn4j.dynamics.Body;
+import org.dyn4j.dynamics.World;
+
 public class DisplayModel {
 
 	private int tickCount = 0;
 
 	public DisplayModel() {
+
+	}
+	
+	public void initializeWorld() {
 		
 	}
+	
 	public void tick() {
 		tickCount++;
 		/*

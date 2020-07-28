@@ -1,6 +1,11 @@
 package it.bomberman.display;
 
+import java.awt.Graphics2D;
+
+import org.dyn4j.dynamics.World;
+
 import it.bomberman.entity.creature.Player;
+import it.bomberman.entity.creature.Player2;
 import it.bomberman.hud.HudController;
 import it.bomberman.hud.HudModel;
 import it.bomberman.hud.HudView;
@@ -15,10 +20,10 @@ public class DisplayController {
 	private State gameState;
 	private Player p;
 	private Player p1;
+	private Player2 p2;
 	private KeyManager keyManager;
 	private HudController hudCon;
-	
-	
+	private World world;
 	
 	public KeyManager getKeyManager() {
 		return keyManager;
@@ -33,17 +38,19 @@ public class DisplayController {
 		//PLAYER
 		p = new Player(this, 0, 0,1);
 		p1=new Player(this, 0,100,2);
+		p2 = new Player2(this, 0, 200, 3);
+		
 		//LISTENER KEY
 		this.view.getFrame().addKeyListener(keyManager);
 		
-		
-
 		HudModel hudMod = new HudModel();
 		HudView hudView = new HudView(new Player(this, 0, 0, 1));
 		//HUD
 		hudCon= new HudController(hudMod, hudView);
 		
-		
+		this.world = new World();
+		this.world.setGravity(World.ZERO_GRAVITY);
+		this.world.addBody(p2);
 	}
 
 	public synchronized void start() {
@@ -64,10 +71,12 @@ public class DisplayController {
 
 		long lastTimer = System.currentTimeMillis();
 		double delta = 0;
-
+		double elapsedTime = 0;
+		
 		while (running) {
 			long now = System.nanoTime();
 			delta += (now - lastTime) / nsPerTick;
+			elapsedTime = (now - lastTime) / nsPerTick;
 			lastTime = now;
 			boolean shouldRender = false;
 			while (delta >= 1) {
@@ -76,6 +85,7 @@ public class DisplayController {
 				this.keyManager.tick();
 				this.p.tick();
 				this.p1.tick();
+				this.p2.update(elapsedTime);
 				delta -= 1;
 				shouldRender = true;
 			}
@@ -91,6 +101,7 @@ public class DisplayController {
 				this.view.render(this.model.getTickCount());
 				this.p.render(this.view.getGraphics());
 				this.p1.render(this.view.getGraphics());
+				this.p2.render((Graphics2D) this.view.getGraphics());
 				this.hudCon.render(this.view.getGraphics());
 
 			}
