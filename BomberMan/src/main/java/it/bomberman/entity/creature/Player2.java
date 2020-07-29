@@ -1,11 +1,16 @@
 package it.bomberman.entity.creature;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
+import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import org.dyn4j.dynamics.BodyFixture;
+import org.dyn4j.geometry.Geometry;
+import org.dyn4j.geometry.MassType;
 import org.dyn4j.geometry.Vector2;
 
 import it.bomberman.display.DisplayController;
@@ -48,6 +53,12 @@ public class Player2 extends Creature2 {
 			animLeft = new Animation(100, Assets.player_l2);
 			animRight = new Animation(100, Assets.player_r2);
 		}
+		
+		this.addFixture(Geometry.createRectangle(0.5, 1.5), 1, 0.2, 0.2);
+		BodyFixture bf2 = this.addFixture(Geometry.createEquilateralTriangle(0.5), 1, 0.2, 0.2);
+		bf2.getShape().translate(0, 0.9);
+		this.translate(0.0, 2.0);
+		this.setMass(MassType.NORMAL);
 	}
 
 	@Override
@@ -79,9 +90,79 @@ public class Player2 extends Creature2 {
 		}
 
 	}
+	
+	/*
+	 * Esempio: Thrust dal pacco dyn4j-samples
+	 * 
+	 * protected void update(Graphics2D g, double elapsedTime) {
+		super.update(g, elapsedTime);
+		
+		final double scale = this.scale;
+		final double force = 1000 * elapsedTime;
+		
+        final Vector2 r = new Vector2(ship.getTransform().getRotationAngle() + Math.PI * 0.5);
+        final Vector2 c = ship.getWorldCenter();
+		
+		// apply thrust
+        if (this.forwardThrustOn.get()) {
+        	Vector2 f = r.product(force);
+        	Vector2 p = c.sum(r.product(-0.9));
+        	
+        	ship.applyForce(f);
+        	
+        	g.setColor(Color.ORANGE);
+        	g.draw(new Line2D.Double(p.x * scale, p.y * scale, (p.x - f.x) * scale, (p.y - f.y) * scale));
+        } 
+        if (this.reverseThrustOn.get()) {
+        	Vector2 f = r.product(-force);
+        	Vector2 p = c.sum(r.product(0.9));
+        	
+        	ship.applyForce(f);
+        	
+        	g.setColor(Color.ORANGE);
+        	g.draw(new Line2D.Double(p.x * scale, p.y * scale, (p.x - f.x) * scale, (p.y - f.y) * scale));
+        }
+        if (this.leftThrustOn.get()) {
+        	Vector2 f1 = r.product(force * 0.1).right();
+        	Vector2 f2 = r.product(force * 0.1).left();
+        	Vector2 p1 = c.sum(r.product(0.9));
+        	Vector2 p2 = c.sum(r.product(-0.9));
+        	
+        	// apply a force to the top going left
+        	ship.applyForce(f1, p1);
+        	// apply a force to the bottom going right
+        	ship.applyForce(f2, p2);
+        	
+        	g.setColor(Color.RED);
+        	g.draw(new Line2D.Double(p1.x * scale, p1.y * scale, (p1.x - f1.x) * scale, (p1.y - f1.y) * scale));
+        	g.draw(new Line2D.Double(p2.x * scale, p2.y * scale, (p2.x - f2.x) * scale, (p2.y - f2.y) * scale));
+        }
+        if (this.rightThrustOn.get()) {
+        	Vector2 f1 = r.product(force * 0.1).left();
+        	Vector2 f2 = r.product(force * 0.1).right();
+        	Vector2 p1 = c.sum(r.product(0.9));
+        	Vector2 p2 = c.sum(r.product(-0.9));
+        	
+        	// apply a force to the top going left
+        	ship.applyForce(f1, p1);
+        	// apply a force to the bottom going right
+        	ship.applyForce(f2, p2);
+        	
+        	g.setColor(Color.RED);
+        	g.draw(new Line2D.Double(p1.x * scale, p1.y * scale, (p1.x - f1.x) * scale, (p1.y - f1.y) * scale));
+        	g.draw(new Line2D.Double(p2.x * scale, p2.y * scale, (p2.x - f2.x) * scale, (p2.y - f2.y) * scale));
+        }
+	}
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 
 	public void getInput() {
-		if (this.playerNumb == 1) {
+		if (this.playerNumb == 1 || this.playerNumb == 3) {
 			this.upOn.set(c.getKeyManager().up);
 			this.downOn.set(c.getKeyManager().down);
 			this.rightOn.set(c.getKeyManager().left);
