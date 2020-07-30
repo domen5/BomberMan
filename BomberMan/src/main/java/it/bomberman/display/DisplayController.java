@@ -33,18 +33,15 @@ public class DisplayController {
 	public DisplayController(DisplayView displayView, DisplayModel displayModel) {
 		this.displayModel = displayModel;
 		this.displayView = displayView;
-		gameState = new GameState(this);
-		State.setState(gameState);
+//		gameState = new GameState(this);
+//		State.setState(gameState);
 		keyManager= new KeyManager();
 		//PLAYER
 		p = new Player(this, 0, 0,1);
-
 		p1=new Player(this, 300,0,2);
 		//LISTENER KEY
-		this.displayView.getFrame().addKeyListener(keyManager);
-		p1=new Player(this, 0,100,2);
-		p2 = new Player2(this, 0, 200, 3);
 		
+		this.displayView.getFrame().addKeyListener(keyManager);
 		HudModel hudMod = new HudModel();
 		HudView hudView = new HudView();
 		//HUD
@@ -90,7 +87,7 @@ public class DisplayController {
 				this.keyManager.tick();
 				this.p.tick();
 				this.p1.tick();
-				this.p2.update(elapsedTime);
+				//this.p2.update(elapsedTime);
 				delta -= 1;
 				shouldRender = true;
 			}

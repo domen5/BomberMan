@@ -20,7 +20,9 @@ public abstract class State {
 	
 	//protected Game game;
 	protected DisplayController c;
-	public State(DisplayController c ) { //(Game game)
+	
+	public State(DisplayController c ) {
+		//(Game game)
 		this.c=c;
 	}
 	

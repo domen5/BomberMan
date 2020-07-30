@@ -8,9 +8,9 @@ public class Assets {
 	public static BufferedImage  wall, upgrade;
 
 	//buffer p1
-	public static BufferedImage [] player_d, player_u, player_r, player_l;
+	public static BufferedImage [] player_d, player_u, player_r, player_l, player_bomb;
 	//buffer p2
-	public static BufferedImage [] player_d2, player_u2, player_r2, player_l2;
+	public static BufferedImage [] player_d2, player_u2, player_r2, player_l2, player_bomb2;
 
 	//buffer bomb
 	public static BufferedImage [] bomb;
@@ -23,7 +23,9 @@ public class Assets {
 		player_d=new BufferedImage[2];
 		player_r=new BufferedImage[3];
 		player_l=new BufferedImage[3];
-
+		player_bomb= new BufferedImage[2];
+		player_bomb2= new BufferedImage[2];
+		
 		//player_d[0]= sheet.crop(0, 0, width, height);
 		player_d[0]= sheet.crop(width, 0, width, height);
 		player_d[1]= sheet.crop(width*2, 0, width, height);
@@ -40,6 +42,11 @@ public class Assets {
 		player_l[0]= sheet.crop(width*10, 0, width, height);
 		player_l[2]= sheet.crop(width*11, 0, width, height);
 
+		
+		player_bomb[1]= sheet.crop(width*12, 0, width, height);
+		player_bomb[0]= sheet.crop(width*13, 0, width, height);
+
+		
 		//Player 2
 
 		player_u2=new BufferedImage[2];
@@ -62,6 +69,11 @@ public class Assets {
 		player_l2[0]= sheet.crop(width*10, height, width, height);
 		player_l2[2]= sheet.crop(width*11, height, width, height);
 
+		
+		player_bomb2[1]= sheet.crop(width*12, height, width, height);
+		player_bomb2[0]= sheet.crop(width*13, height, width, height);
+
+		
 		//wall=sheet.crop(x, y, width, height);
 		//bomb=sheet.crop(x, y, width, height);
 		

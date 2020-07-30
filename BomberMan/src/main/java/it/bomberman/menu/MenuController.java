@@ -7,9 +7,5 @@ public class MenuController {
 	public MenuController(MenuModel menuModel, MenuView menuview) {
 		this.menuModel=menuModel;
 		this.menuview=menuview;
-		
-	}
-	
-	
-	
+	}	
 }

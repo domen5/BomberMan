@@ -12,7 +12,7 @@ import it.bomberman.launcher.BomberManLauncher;
 public class Player extends Creature {
 	
 	
-	private Animation animDown, animUp, animLeft, animRight;
+	private Animation animDown, animUp, animLeft, animRight, animBomb;
 	// AGGIUNGI Game game,
 	DisplayController c;
 	private int playerNumb;
@@ -30,12 +30,14 @@ public class Player extends Creature {
 			animUp = new Animation(100, Assets.player_u);
 			animLeft = new Animation(100, Assets.player_l);
 			animRight = new Animation(100, Assets.player_r);
+			animBomb= new Animation(200, Assets.player_bomb);
 			}
 		if(playerNumb==2) {
 			animDown = new Animation(150, Assets.player_d2);
 			animUp = new Animation(150, Assets.player_u2);
 			animLeft = new Animation(150, Assets.player_l2);
 			animRight = new Animation(150, Assets.player_r2);
+			animBomb= new Animation(200, Assets.player_bomb2);
 			}
 			
 	}
@@ -51,8 +53,9 @@ public class Player extends Creature {
 			if (c.getKeyManager().left)
 				xMove -= speed;
 			if (c.getKeyManager().right)
-				xMove = speed;
-			}
+				xMove = speed;	
+		}
+				
 		if(this.playerNumb==2) {
 			if (c.getKeyManager().up2)
 				yMove -= speed;
@@ -71,18 +74,23 @@ public class Player extends Creature {
 		animLeft.tick();
 		animRight.tick();
 		animUp.tick();
+		animBomb.tick();
 		getInput();
 		move();
 	}
 
 	@Override
 	public void render(Graphics g) {
-		
 		g.drawImage(getCurrentAnimationFrame(), (int) x, (int) y, width, height, null);
-
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
+		
+		if (c.getKeyManager().drop)
+			return animBomb.getCurrentFrame();
+		if (c.getKeyManager().drop2)
+			return animBomb.getCurrentFrame();
+		
 		if (xMove < 0) {
 			return animLeft.getCurrentFrame();
 		} else if (xMove > 0) {
