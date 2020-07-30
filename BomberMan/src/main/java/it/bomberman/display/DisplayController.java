@@ -1,6 +1,11 @@
 package it.bomberman.display;
 
+import java.awt.Graphics2D;
+
+import org.dyn4j.dynamics.World;
+
 import it.bomberman.entity.creature.Player;
+import it.bomberman.entity.creature.Player2;
 import it.bomberman.hud.HudController;
 import it.bomberman.hud.HudModel;
 import it.bomberman.hud.HudView;
@@ -16,8 +21,14 @@ public class DisplayController {
 	private State gameState;
 	private Player p;
 	private Player p1;
+	private Player2 p2;
 	private KeyManager keyManager;
+<<<<<<< HEAD
 	private HudController hudController;
+=======
+	private HudController hudCon;
+	private World world;
+>>>>>>> ce4d1e9799360540479b58cca75277d610d2da3e
 	
 
 	public KeyManager getKeyManager() {
@@ -32,13 +43,30 @@ public class DisplayController {
 		keyManager= new KeyManager();
 		//PLAYER
 		p = new Player(this, 0, 0,1);
+<<<<<<< HEAD
 		p1=new Player(this, 300,0,2);
 		//LISTENER KEY
 		this.displayView.getFrame().addKeyListener(keyManager);
+=======
+		p1=new Player(this, 0,100,2);
+		p2 = new Player2(this, 0, 200, 3);
+		
+		//LISTENER KEY
+		this.view.getFrame().addKeyListener(keyManager);
+		
+>>>>>>> ce4d1e9799360540479b58cca75277d610d2da3e
 		HudModel hudMod = new HudModel();
 		HudView hudView = new HudView();
 		//HUD
+<<<<<<< HEAD
 		hudController= new HudController(hudMod, hudView);
+=======
+		hudCon= new HudController(hudMod, hudView);
+		
+		this.world = new World();
+		this.world.setGravity(World.ZERO_GRAVITY);
+		this.world.addBody(p2);
+>>>>>>> ce4d1e9799360540479b58cca75277d610d2da3e
 	}
 
 	public synchronized void start() {
@@ -59,10 +87,12 @@ public class DisplayController {
 
 		long lastTimer = System.currentTimeMillis();
 		double delta = 0;
-
+		double elapsedTime = 0;
+		
 		while (running) {
 			long now = System.nanoTime();
 			delta += (now - lastTime) / nsPerTick;
+			elapsedTime = (now - lastTime) / nsPerTick;
 			lastTime = now;
 			boolean shouldRender = false;
 			while (delta >= 1) {
@@ -71,6 +101,7 @@ public class DisplayController {
 				this.keyManager.tick();
 				this.p.tick();
 				this.p1.tick();
+				this.p2.update(elapsedTime);
 				delta -= 1;
 				shouldRender = true;
 			}
@@ -82,10 +113,19 @@ public class DisplayController {
 
 			if (shouldRender) {
 				frames++;
+<<<<<<< HEAD
 				this.displayView.render(this.displayModel.getTickCount());
 				this.p.render(this.displayView.getGraphics());
 				this.p1.render(this.displayView.getGraphics());
 				this.hudController.render(this.displayView.getGraphics());
+=======
+				this.view.render(this.model.getTickCount());
+				this.p.render(this.view.getGraphics());
+				this.p1.render(this.view.getGraphics());
+				this.p2.render((Graphics2D) this.view.getGraphics());
+				this.hudCon.render(this.view.getGraphics());
+
+>>>>>>> ce4d1e9799360540479b58cca75277d610d2da3e
 			}
 
 			if (System.currentTimeMillis() - lastTimer >= 1000) {

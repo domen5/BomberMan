@@ -15,6 +15,7 @@ repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -23,6 +24,9 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:28.0-jre'
+    
+    // https://mvnrepository.com/artifact/org.dyn4j/dyn4j
+	implementation 'org.dyn4j:dyn4j:3.4.0'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
