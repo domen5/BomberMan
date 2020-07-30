@@ -4,7 +4,12 @@ public class MenuController {
 
 	private MenuModel menuModel;
 	private MenuView menuview;
-	public MenuController() {
+	public MenuController(MenuModel menuModel, MenuView menuview) {
+		this.menuModel=menuModel;
+		this.menuview=menuview;
 		
 	}
+	
+	
+	
 }

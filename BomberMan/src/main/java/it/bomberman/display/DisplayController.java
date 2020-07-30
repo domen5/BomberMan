@@ -5,45 +5,40 @@ import it.bomberman.hud.HudController;
 import it.bomberman.hud.HudModel;
 import it.bomberman.hud.HudView;
 import it.bomberman.input.KeyManager;
+import it.bomberman.menu.MenuView;
 import it.bomberman.state.*;
 
 public class DisplayController {
 
-	private DisplayView view;
-	private DisplayModel model;
+	private DisplayView displayView;
+	private DisplayModel displayModel;
 	private boolean running;
 	private State gameState;
 	private Player p;
 	private Player p1;
 	private KeyManager keyManager;
-	private HudController hudCon;
+	private HudController hudController;
 	
-	
-	
+
 	public KeyManager getKeyManager() {
 		return keyManager;
 	}
 
-	public DisplayController(DisplayView view, DisplayModel model) {
-		this.model = model;
-		this.view = view;
+	public DisplayController(DisplayView displayView, DisplayModel displayModel) {
+		this.displayModel = displayModel;
+		this.displayView = displayView;
 		gameState = new GameState(this);
 		State.setState(gameState);
 		keyManager= new KeyManager();
 		//PLAYER
 		p = new Player(this, 0, 0,1);
-		p1=new Player(this, 0,100,2);
+		p1=new Player(this, 300,0,2);
 		//LISTENER KEY
-		this.view.getFrame().addKeyListener(keyManager);
-		
-		
-
+		this.displayView.getFrame().addKeyListener(keyManager);
 		HudModel hudMod = new HudModel();
-		HudView hudView = new HudView(new Player(this, 0, 0, 1));
+		HudView hudView = new HudView();
 		//HUD
-		hudCon= new HudController(hudMod, hudView);
-		
-		
+		hudController= new HudController(hudMod, hudView);
 	}
 
 	public synchronized void start() {
@@ -57,7 +52,7 @@ public class DisplayController {
 
 	public void run() {
 		long lastTime = System.nanoTime();
-		double nsPerTick = 1000000000D / 16D;
+		double nsPerTick = 1000000000D / 60D;
 
 		int frames = 0;
 		int ticks = 0;
@@ -72,14 +67,13 @@ public class DisplayController {
 			boolean shouldRender = false;
 			while (delta >= 1) {
 				ticks++;
-				this.model.tick();
+				this.displayModel.tick();
 				this.keyManager.tick();
 				this.p.tick();
 				this.p1.tick();
 				delta -= 1;
 				shouldRender = true;
 			}
-
 			try {
 				Thread.sleep(2);
 			} catch (InterruptedException e) {
@@ -88,11 +82,10 @@ public class DisplayController {
 
 			if (shouldRender) {
 				frames++;
-				this.view.render(this.model.getTickCount());
-				this.p.render(this.view.getGraphics());
-				this.p1.render(this.view.getGraphics());
-				this.hudCon.render(this.view.getGraphics());
-
+				this.displayView.render(this.displayModel.getTickCount());
+				this.p.render(this.displayView.getGraphics());
+				this.p1.render(this.displayView.getGraphics());
+				this.hudController.render(this.displayView.getGraphics());
 			}
 
 			if (System.currentTimeMillis() - lastTimer >= 1000) {

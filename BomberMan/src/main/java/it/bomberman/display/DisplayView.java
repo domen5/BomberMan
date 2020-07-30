@@ -7,9 +7,8 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferInt;
-
 import javax.swing.JFrame;
+import javax.swing.JComponent;
 
 public class DisplayView extends Canvas {
 
@@ -41,15 +40,15 @@ public class DisplayView extends Canvas {
 	}
 
 	public void render(int tickCount) {
+
 		BufferStrategy bs = getBufferStrategy();
 		if (bs == null) {
 			createBufferStrategy(3);
 			return;
 		}
 		Graphics g = bs.getDrawGraphics();
-		g.setColor(Color.white);
+		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, getWidth(), getHeight());
-		// g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 		g.dispose();
 		bs.show();
 	}

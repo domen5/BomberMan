@@ -1,6 +1,7 @@
 package it.bomberman.entity.creature;
 
 import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import it.bomberman.display.DisplayController;
@@ -31,10 +32,10 @@ public class Player extends Creature {
 			animRight = new Animation(100, Assets.player_r);
 			}
 		if(playerNumb==2) {
-			animDown = new Animation(100, Assets.player_d2);
-			animUp = new Animation(100, Assets.player_u2);
-			animLeft = new Animation(100, Assets.player_l2);
-			animRight = new Animation(100, Assets.player_r2);
+			animDown = new Animation(150, Assets.player_d2);
+			animUp = new Animation(150, Assets.player_u2);
+			animLeft = new Animation(150, Assets.player_l2);
+			animRight = new Animation(150, Assets.player_r2);
 			}
 			
 	}
@@ -76,7 +77,9 @@ public class Player extends Creature {
 
 	@Override
 	public void render(Graphics g) {
+		
 		g.drawImage(getCurrentAnimationFrame(), (int) x, (int) y, width, height, null);
+
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {

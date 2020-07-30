@@ -40,7 +40,6 @@ public class Assets {
 		player_l[0]= sheet.crop(width*10, 0, width, height);
 		player_l[2]= sheet.crop(width*11, 0, width, height);
 
-
 		//Player 2
 
 		player_u2=new BufferedImage[2];
