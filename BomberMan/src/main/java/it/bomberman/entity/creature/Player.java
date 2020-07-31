@@ -91,6 +91,7 @@ public class Player extends Creature {
 		if (c.getKeyManager().drop2)
 			return animBomb.getCurrentFrame();
 		
+		
 		if (xMove < 0) {
 			return animLeft.getCurrentFrame();
 		} else if (xMove > 0) {

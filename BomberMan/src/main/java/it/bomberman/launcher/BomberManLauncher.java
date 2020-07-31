@@ -10,17 +10,23 @@ import it.bomberman.gfx.Assets;
 import it.bomberman.hud.HudController;
 import it.bomberman.hud.HudModel;
 import it.bomberman.hud.HudView;
+import it.bomberman.menu.MenuController;
+import it.bomberman.menu.MenuModel;
+import it.bomberman.menu.MenuView;
 
 public class BomberManLauncher {
 
 
 	public static void main(String[] args) {
 		Assets.init();
+		MenuModel menuModel =new MenuModel();
+		MenuView menuView =new MenuView ();
+		MenuController menuController =new MenuController(menuModel, menuView);
+
 		DisplayView view = new DisplayView();
 		DisplayModel model = new DisplayModel();
-		DisplayController d = new DisplayController(view, model);
+		DisplayController display = new DisplayController(view, model);
 		// d.generateGame();
-		d.start();
-		
+		display.start();
 	}
 }

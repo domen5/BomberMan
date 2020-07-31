@@ -8,4 +8,8 @@ public class MenuController {
 		this.menuModel=menuModel;
 		this.menuview=menuview;
 	}	
+	public void start() {
+		
+	}
+
 }

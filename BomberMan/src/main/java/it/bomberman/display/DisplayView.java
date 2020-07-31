@@ -22,10 +22,8 @@ public class DisplayView extends Canvas {
 	public final int SCALE = 3;
 	public final String NAME = "BOMBERMAN";
 	private JFrame frame = null;
-	private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	
 	public DisplayView() {
-
 		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));

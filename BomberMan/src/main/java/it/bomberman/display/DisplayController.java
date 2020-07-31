@@ -1,8 +1,5 @@
 package it.bomberman.display;
 
-import java.awt.Graphics2D;
-
-
 import it.bomberman.entity.creature.Player;
 import it.bomberman.entity.creature.Player2;
 import it.bomberman.hud.HudController;
@@ -17,14 +14,15 @@ public class DisplayController {
 	private DisplayView displayView;
 	private DisplayModel displayModel;
 	private boolean running;
-	private State gameState;
 	private Player p;
 	private Player p1;
 	private Player2 p2;
 	private KeyManager keyManager;
-
 	private HudController hudController;
 	private HudController hudCon;
+	private GameState gameState;
+
+	MenuView menu= new MenuView();
 
 	public KeyManager getKeyManager() {
 		return keyManager;
@@ -33,26 +31,22 @@ public class DisplayController {
 	public DisplayController(DisplayView displayView, DisplayModel displayModel) {
 		this.displayModel = displayModel;
 		this.displayView = displayView;
-//		gameState = new GameState(this);
-//		State.setState(gameState);
+		InitGame();
+	}
+
+	public void InitGame() {
 		keyManager= new KeyManager();
 		//PLAYER
 		p = new Player(this, 0, 0,1);
 		p1=new Player(this, 300,0,2);
 		//LISTENER KEY
-		
 		this.displayView.getFrame().addKeyListener(keyManager);
 		HudModel hudMod = new HudModel();
 		HudView hudView = new HudView();
 		//HUD
-
 		hudController= new HudController(hudMod, hudView);
 		hudCon= new HudController(hudMod, hudView);
-		
-//		this.world = new World();
-//		this.world.setGravity(World.ZERO_GRAVITY);
-//		this.world.addBody(p2);
-//	
+		gameState= GameState.MENU;
 	}
 
 	public synchronized void start() {
@@ -74,7 +68,7 @@ public class DisplayController {
 		long lastTimer = System.currentTimeMillis();
 		double delta = 0;
 		double elapsedTime = 0;
-		
+
 		while (running) {
 			long now = System.nanoTime();
 			delta += (now - lastTime) / nsPerTick;
@@ -83,12 +77,12 @@ public class DisplayController {
 			boolean shouldRender = false;
 			while (delta >= 1) {
 				ticks++;
-				this.displayModel.tick();
+				if(gameState==GameState.GAME)
+				{this.displayModel.tick();
 				this.keyManager.tick();
 				this.p.tick();
 				this.p1.tick();
-				//this.p2.update(elapsedTime);
-				delta -= 1;
+				}delta -= 1;
 				shouldRender = true;
 			}
 			try {
@@ -99,11 +93,19 @@ public class DisplayController {
 
 			if (shouldRender) {
 				frames++;
-
-				this.displayView.render(this.displayModel.getTickCount());
-				this.p.render(this.displayView.getGraphics());
-				this.p1.render(this.displayView.getGraphics());
-				this.hudController.render(this.displayView.getGraphics());
+				//COSA DISEGNO?
+				switch (gameState) {
+				case GAME:
+					this.displayView.render(this.displayModel.getTickCount());
+					this.p.render(this.displayView.getGraphics());
+					this.p1.render(this.displayView.getGraphics());
+					this.hudController.render(this.displayView.getGraphics());		
+					break;
+				case EXIT:
+					stop();
+					System.exit(0);
+					break;
+				}
 			}
 
 			if (System.currentTimeMillis() - lastTimer >= 1000) {
