@@ -20,7 +20,7 @@ public class DisplayController {
 	private KeyManager keyManager;
 	private HudController hudController;
 	private HudController hudCon;
-	private GameState gameState;
+	private GameStateManager gameState;
 
 	MenuView menu= new MenuView();
 
@@ -46,7 +46,7 @@ public class DisplayController {
 		//HUD
 		hudController= new HudController(hudMod, hudView);
 		hudCon= new HudController(hudMod, hudView);
-		gameState= GameState.MENU;
+
 	}
 
 	public synchronized void start() {
@@ -77,12 +77,12 @@ public class DisplayController {
 			boolean shouldRender = false;
 			while (delta >= 1) {
 				ticks++;
-				if(gameState==GameState.GAME)
-				{this.displayModel.tick();
+
+				this.displayModel.tick();
 				this.keyManager.tick();
 				this.p.tick();
 				this.p1.tick();
-				}delta -= 1;
+				delta -= 1;
 				shouldRender = true;
 			}
 			try {
@@ -94,26 +94,19 @@ public class DisplayController {
 			if (shouldRender) {
 				frames++;
 				//COSA DISEGNO?
-				switch (gameState) {
-				case GAME:
-					this.displayView.render(this.displayModel.getTickCount());
-					this.p.render(this.displayView.getGraphics());
-					this.p1.render(this.displayView.getGraphics());
-					this.hudController.render(this.displayView.getGraphics());		
-					break;
-				case EXIT:
-					stop();
-					System.exit(0);
-					break;
-				}
-			}
+				this.displayView.render(this.displayModel.getTickCount());
+				this.p.render(this.displayView.getGraphics());
+				this.p1.render(this.displayView.getGraphics());
+				this.hudController.render(this.displayView.getGraphics());		
 
-			if (System.currentTimeMillis() - lastTimer >= 1000) {
-				lastTimer += 1000;
-				System.out.println(ticks + " ticks, " + frames + " frames");
-				frames = 0;
-				ticks = 0;
 			}
+		}
+
+		if (System.currentTimeMillis() - lastTimer >= 1000) {
+			lastTimer += 1000;
+			System.out.println(ticks + " ticks, " + frames + " frames");
+			frames = 0;
+			ticks = 0;
 		}
 	}
 }

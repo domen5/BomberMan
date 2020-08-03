@@ -9,7 +9,6 @@ public class MenuController {
 		this.menuview=menuview;
 	}	
 	public void start() {
-		
 	}
 
 }

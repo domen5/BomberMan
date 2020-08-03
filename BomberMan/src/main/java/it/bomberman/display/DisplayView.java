@@ -11,23 +11,22 @@ import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 import javax.swing.JComponent;
 
+
+import it.bomberman.gfx.DefaultValues;
+
 public class DisplayView extends Canvas {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public final int WIDTH = 600;
-	public final int HEIGHT = 300;
-	public final int SCALE = 3;
-	public final String NAME = "BOMBERMAN";
 	private JFrame frame = null;
 	
 	public DisplayView() {
-		setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		frame = new JFrame(NAME);
+		setMinimumSize(new Dimension(DefaultValues.WIDTH * DefaultValues.SCALE, DefaultValues.HEIGHT * DefaultValues.SCALE));
+		setMaximumSize(new Dimension(DefaultValues.WIDTH * DefaultValues.SCALE, DefaultValues.HEIGHT * DefaultValues.SCALE));
+		setPreferredSize(new Dimension(DefaultValues.WIDTH * DefaultValues.SCALE, DefaultValues.HEIGHT * DefaultValues.SCALE));
+		frame = new JFrame(DefaultValues.NAME);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(new BorderLayout());
 		frame.add(this, BorderLayout.CENTER);
