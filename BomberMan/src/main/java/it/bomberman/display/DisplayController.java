@@ -1,7 +1,7 @@
 package it.bomberman.display;
 
 import it.bomberman.entity.creature.Player;
-import it.bomberman.entity.creature.Player2;
+//import it.bomberman.entity.creature.Player2;
 import it.bomberman.hud.HudController;
 import it.bomberman.hud.HudModel;
 import it.bomberman.hud.HudView;
@@ -16,7 +16,7 @@ public class DisplayController {
 	private boolean running;
 	private Player p;
 	private Player p1;
-	private Player2 p2;
+	//private Player2 p2;
 	private KeyManager keyManager;
 	private HudController hudController;
 	private HudController hudCon;
