@@ -1,13 +1,10 @@
 package it.bomberman.entity.creature;
 
 import java.awt.Graphics;
-import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 import it.bomberman.display.DisplayController;
-import it.bomberman.game.Game;
 import it.bomberman.gfx.*;
-import it.bomberman.launcher.BomberManLauncher;
 
 public class Player extends Creature {
 	
@@ -90,8 +87,7 @@ public class Player extends Creature {
 			return animBomb.getCurrentFrame();
 		if (c.getKeyManager().drop2)
 			return animBomb.getCurrentFrame();
-		
-		
+				
 		if (xMove < 0) {
 			return animLeft.getCurrentFrame();
 		} else if (xMove > 0) {

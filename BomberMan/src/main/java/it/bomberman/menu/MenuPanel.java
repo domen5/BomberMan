@@ -1,13 +1,14 @@
 package it.bomberman.menu;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.awt.event.*;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import it.bomberman.state.GameStateManager;
-
 
 public class MenuPanel extends JPanel 
 implements Runnable, KeyListener{
@@ -28,16 +29,27 @@ implements Runnable, KeyListener{
 	private long targetTime = 1000 / FPS;
 
 	// image
-	private BufferedImage image;
+	//private BufferedImage image;
 	private Graphics2D g;
 
+    JLabel imageLabel;
 	// game state manager
 	private GameStateManager gsm;
-
-	public MenuPanel() {
+	private JFrame j;
+	public MenuPanel(JFrame j) {
 		super();
-		setPreferredSize(
-				new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+		this.j=j;
+		imageLabel= new JLabel();
+		try {
+			this.setLayout(new BorderLayout());
+			ImageIcon ii = new ImageIcon(this.getClass().getResource("/textures/bg.gif"));
+			imageLabel.setIcon(ii);
+			this.add(imageLabel, java.awt.BorderLayout.CENTER);
+
+		} catch (Exception exception) {
+			exception.printStackTrace();
+		}
+		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		setFocusable(true);
 		requestFocus();
 	}
@@ -51,31 +63,29 @@ implements Runnable, KeyListener{
 		}
 	}
 
-	private void init() {
-
-		image = new BufferedImage(
-				WIDTH, HEIGHT,
-				BufferedImage.TYPE_INT_RGB
-				);
-		g = (Graphics2D) image.getGraphics();
-
+	private void init(JFrame j) {
+		g = (Graphics2D) this.j.getGraphics();
 		running = true;
-
 		gsm = new GameStateManager();
-
+		//GSM= MENUSTATE
 	}
-
+	private void update() {
+		gsm.update();
+	}
+	private void draw() {
+		gsm.draw(g);
+	}
+		
 	public void run() {
-		init();
+		init(j);
 		long start;
 		long elapsed;
 		long wait;
 		// game loop
 		while(running) {
-			start = System.nanoTime();
 			update();
 			draw();
-			drawToScreen();
+			start = System.nanoTime();
 			elapsed = System.nanoTime() - start;
 			wait = targetTime - elapsed / 1000000;
 			if(wait < 0) wait = 5;
@@ -88,20 +98,6 @@ implements Runnable, KeyListener{
 		}
 	}
 
-	private void update() {
-		gsm.update();
-	}
-	private void draw() {
-		gsm.draw(g);
-	}
-	private void drawToScreen() {
-		Graphics g2 = getGraphics();
-		g2.drawImage(image, 0, 0,
-				WIDTH * SCALE, HEIGHT * SCALE,
-				null);
-		g2.dispose();
-	}
-
 	public void keyTyped(KeyEvent key) {}
 	public void keyPressed(KeyEvent key) {
 		gsm.keyPressed(key.getKeyCode());
@@ -109,5 +105,4 @@ implements Runnable, KeyListener{
 	public void keyReleased(KeyEvent key) {
 		gsm.keyReleased(key.getKeyCode());
 	}
-
 }

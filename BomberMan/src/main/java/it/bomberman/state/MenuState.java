@@ -1,66 +1,51 @@
 package it.bomberman.state;
 
 import it.bomberman.gfx.DefaultValues;
-import it.bomberman.gfx.Background;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class MenuState extends GameState {
-	
-	private Background bg;
-	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int currentChoice = 0;
 	private String[] options = {
-		"Start",
-		"Settings",
-		"Quit"
+			"Start",
+			"Settings",
+			"Quit"
 	};
-	
+
 	private Color titleColor;
 	private Font titleFont;
-	
 	private Font font;
-	
+
 	public MenuState(GameStateManager gsm) {
-		
 		this.gsm = gsm;
-		
+
 		try {
-			
-			bg = new Background("/Backgrounds/menubg.gif", 1);
-			bg.setVector(-0.1, 0);
-			
 			titleColor = new Color(128, 0, 0);
 			titleFont = new Font(
 					"Century Gothic",
 					Font.PLAIN,
-					28);
-			
-			font = new Font("Arial", Font.PLAIN, 12);
-			
+					60);
+			font = new Font("Arial", Font.PLAIN, 30);	
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
-	
+
 	public void init() {}
-	
-	public void update() {
-		bg.update();
-	}
-	
+
 	public void draw(Graphics2D g) {
-		
-		// draw bg
-		bg.draw(g);
-		
+
 		// draw title
 		g.setColor(titleColor);
 		g.setFont(titleFont);
-		g.drawString(DefaultValues.NAME, 80, 70);
-		
+		g.drawString(DefaultValues.NAME, 700, 200);
+
 		// draw menu options
 		g.setFont(font);
 		for(int i = 0; i < options.length; i++) {
@@ -70,14 +55,15 @@ public class MenuState extends GameState {
 			else {
 				g.setColor(Color.RED);
 			}
-			g.drawString(options[i], 145, 140 + i * 15);
-		}
-		
+			g.drawString(options[i], 700, 300 + i * 35);
+		}	
 	}
-	
+
 	private void select() {
 		if(currentChoice == 0) {
 			// start
+
+
 		}
 		if(currentChoice == 1) {
 			// settings
@@ -86,7 +72,7 @@ public class MenuState extends GameState {
 			System.exit(0);
 		}
 	}
-	
+
 	public void keyPressed(int k) {
 		if(k == KeyEvent.VK_ENTER){
 			select();
@@ -105,15 +91,9 @@ public class MenuState extends GameState {
 		}
 	}
 	public void keyReleased(int k) {}
-	
+
+	@Override
+	public void update() {
+
+	}
 }
-
-
-
-
-
-
-
-
-
-

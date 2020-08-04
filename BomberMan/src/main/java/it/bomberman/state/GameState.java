@@ -1,7 +1,13 @@
 package it.bomberman.state;
 
-public abstract class GameState {
+import javax.swing.JFrame;
+
+public abstract class GameState extends JFrame{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected GameStateManager gsm;
 	
 	public abstract void init();

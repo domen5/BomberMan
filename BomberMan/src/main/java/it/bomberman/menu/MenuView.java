@@ -9,13 +9,12 @@ public class MenuView extends JFrame{
 	private static final long serialVersionUID = 1L;
 
 	public MenuView() {
-
-		JFrame window = new JFrame("BomberMan Menu");
-		window.setContentPane(new MenuPanel());
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setResizable(false);
-		window.pack();
-		window.setVisible(true);
+		this.setName("BomberMan Menu");
+		this.setContentPane(new MenuPanel(this));
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setResizable(false);
+		this.pack();
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
 	}
-
 }
