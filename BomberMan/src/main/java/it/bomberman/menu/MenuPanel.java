@@ -27,7 +27,7 @@ implements Runnable, KeyListener{
 	private boolean running;
 	private int FPS = 60;
 	private long targetTime = 1000 / FPS;
-
+	private ImageIcon ii;
 	// image
 	//private BufferedImage image;
 	private Graphics2D g;
@@ -42,7 +42,7 @@ implements Runnable, KeyListener{
 		imageLabel= new JLabel();
 		try {
 			this.setLayout(new BorderLayout());
-			ImageIcon ii = new ImageIcon(this.getClass().getResource("/textures/bg2.gif"));
+			ii = new ImageIcon(this.getClass().getResource("/textures/bg2.gif"));
 			ii.setImage(ii.getImage().getScaledInstance(WIDTH * SCALE, HEIGHT * SCALE, Image.SCALE_DEFAULT));
 			imageLabel.setIcon(ii);
 			this.add(imageLabel, java.awt.BorderLayout.CENTER);
@@ -75,8 +75,10 @@ implements Runnable, KeyListener{
 	}
 	private void draw() {
 		gsm.draw(g);
+		Graphics g2 = getGraphics();	
+		g2.dispose();
 	}
-		
+	
 	public void run() {
 		init(j);
 		long start;

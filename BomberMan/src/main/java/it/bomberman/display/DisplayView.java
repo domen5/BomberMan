@@ -5,13 +5,8 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
-import javax.swing.JComponent;
-
-
 import it.bomberman.gfx.DefaultValues;
 
 public class DisplayView extends Canvas {
