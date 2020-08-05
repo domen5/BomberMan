@@ -25,7 +25,7 @@ public class MenuState extends GameState {
 		this.gsm = gsm;
 
 		try {
-			titleColor = new Color(128, 0, 0);
+			titleColor = new Color(250, 250, 250);
 			titleFont = new Font(
 					"Century Gothic",
 					Font.PLAIN,
@@ -50,10 +50,10 @@ public class MenuState extends GameState {
 		g.setFont(font);
 		for(int i = 0; i < options.length; i++) {
 			if(i == currentChoice) {
-				g.setColor(Color.BLACK);
+				g.setColor(Color.CYAN);
 			}
 			else {
-				g.setColor(Color.RED);
+				g.setColor(Color.WHITE);
 			}
 			g.drawString(options[i], 700, 300 + i * 35);
 		}	

@@ -42,7 +42,8 @@ implements Runnable, KeyListener{
 		imageLabel= new JLabel();
 		try {
 			this.setLayout(new BorderLayout());
-			ImageIcon ii = new ImageIcon(this.getClass().getResource("/textures/bg.gif"));
+			ImageIcon ii = new ImageIcon(this.getClass().getResource("/textures/bg2.gif"));
+			ii.setImage(ii.getImage().getScaledInstance(WIDTH * SCALE, HEIGHT * SCALE, Image.SCALE_DEFAULT));
 			imageLabel.setIcon(ii);
 			this.add(imageLabel, java.awt.BorderLayout.CENTER);
 
