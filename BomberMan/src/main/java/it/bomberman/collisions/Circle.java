@@ -1,7 +1,7 @@
 package it.bomberman.collisions;
 
-import java.util.Optional;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 //import javax.naming.OperationNotSupportedException;
 
 public class Circle extends Shape {
@@ -12,9 +12,9 @@ public class Circle extends Shape {
 	}
 
 	@Override
-	public Optional<Set<Vector2>> getVertices() {
+	public List<Vector2> getVertices() {
 		//throw new OperationNotSupportedException(); //forse più appropriato?
-		return Optional.empty();
+		return new ArrayList();
 	}
 
 	@Override

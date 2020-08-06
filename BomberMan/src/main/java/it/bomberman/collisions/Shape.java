@@ -1,13 +1,19 @@
 package it.bomberman.collisions;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
 public abstract class Shape {
 
 	// dovrebbe essere il centro o un angolo?
-	protected Vector2 position;
+	protected Vector2 position; //per ora si opta per l'angolo in alto a sinistra
+	// (0,0)------->x
+	// |
+	// |
+	// v
+	// y
 	
 	//abstract?
 	//protected Set<Vector2> vertices;
@@ -31,8 +37,8 @@ public abstract class Shape {
 
 	}
 
-	// abstarct?
-	public abstract Optional<Set<Vector2>> getVertices();
+	// abstarct? e' una peculiarita di determinate Shape...
+	public abstract List<Vector2> getVertices();
 		//return Optional.fromNullable(this.vertices);
 	
 	
