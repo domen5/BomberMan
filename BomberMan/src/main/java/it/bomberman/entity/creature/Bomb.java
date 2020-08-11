@@ -2,7 +2,7 @@ package it.bomberman.entity.creature;
 
 import java.awt.Graphics;
 
-import org.dyn4j.geometry.Vector2;
+//import org.dyn4j.geometry.Vector2;
 
 public class Bomb extends Entity {
 
