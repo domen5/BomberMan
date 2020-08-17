@@ -29,8 +29,24 @@ public class Vector2 {
 		this.y = y;
 	}
 
-	public double length() {
-		return (double) Math.sqrt(Math.abs(Math.pow(this.x, 2) + Math.pow(this.y, 2)));
+	public double distance(Vector2 other) {
+		int xOffset = this.x - other.getX();
+		int yOffset = this.y - other.getY();
+		return Math.sqrt(Math.abs(xOffset * xOffset + yOffset * yOffset));
+	}
+	
+	public double distanceFromSegment(Vector2 p1, Vector2 p2) {
+		/*
+		var A = this.x - p1.getX();
+		var B = this.y - p1.getY();
+		var C = p2.getX() - p1.getX();
+		var D = p2.getX() - p1.getX();
+		
+		var dot = A*C + B*D;
+		var lenSq = C*C +D*D;
+		*/
+		
+		return 0.0;
 	}
 
 }

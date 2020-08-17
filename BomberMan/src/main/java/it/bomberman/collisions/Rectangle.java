@@ -62,13 +62,33 @@ public class Rectangle extends Shape {
 		return true;
 	}
 	
-	
+	// getTopLeft dovrebber cambiare se i punti del triangolo fossero dati in ordine sparso
 	public Vector2 getTopLeft() {
 		return getVertices().get(0);
 	}
 	
 	public Vector2 getBottomRight() {
 		return getVertices().get(2);
+	}
+	
+	public boolean pointInsideRectangle(Vector2 point){
+		/*
+		 * 0 <=  AP·AB <=  AB·AB and 0 <=  AP·AD <=  AD·AD
+		double ap =  this.vertices.get(0).distance(point);
+		double ab = this.vertices.get(0).distance(this.vertices.get(1));
+		double ad = this.vertices.get(0).distance(this.vertices.get(3));
+		*/
+		//if(0 <= AP*AB)
+		
+		if(getTopLeft().getX() <= point.getX()
+				&& getTopLeft().getY() <= point .getY()
+				&& getBottomRight().getX() >= point.getX()
+				&& getBottomRight().getY() >= point.getY()) {
+			return true;
+		}
+		
+		return false;
+		
 	}
 
 }

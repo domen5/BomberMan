@@ -5,10 +5,11 @@ import java.util.List;
 //import javax.naming.OperationNotSupportedException;
 
 public class Circle extends Shape {
-
-	public Circle(int x, int y) {
+	private int r;
+	
+	public Circle(int x, int y, int r) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
+		this.r = r;
 	}
 
 	@Override
@@ -19,8 +20,23 @@ public class Circle extends Shape {
 
 	@Override
 	public <S extends Shape> boolean intersects(S shape) {
-		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	public boolean intersects(Circle circle) {
+		double distance = this.position.distance(circle.getPosition());
+		double radius = (double) r;
+		
+		if(distance <= radius) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean intersects(Rectangle rectangle) {
+		return false;
+	}
+	
+	
 
 }
