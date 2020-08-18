@@ -30,9 +30,8 @@ public class CollisionTestN1 {
 	@org.junit.Test
 	public void circleOnCirlcleIntersectionTest() {
 		Vector2 origin = new Vector2(10, 10);
-		int r1 = 5, r2 = 1, r3 = 6, r4 = 5;
-
-		int offset3 = 7, offset4 = 5;
+		final int r1 = 5, r2 = 1, r3 = 6, r4 = 5;
+		final int offset3 = 7, offset4 = 5;
 
 		Circle c1 = new Circle(origin.getX(), origin.getY(), r1);
 		Circle c2 = new Circle(origin.getX(), origin.getY(), r2);
@@ -48,5 +47,25 @@ public class CollisionTestN1 {
 		//assertTrue(c1.intersects(c4));
 		;
 	}
+	
+	@org.junit.Test
+	public void circleOnRectangleTest() {
+		Vector2 origin = new Vector2(0, 0);
+		final int width = 5, height = 10, offsetR2 = 10;
+		final int c1Offset = 6, c2Offset = 3, c1R = 5, c2R = 1;
+		
+		
+		Rectangle r1 = new Rectangle(origin.getX(), origin.getY(), width, height);
+		Rectangle r2 = new Rectangle(origin.getX() + offsetR2, origin.getY() + offsetR2, width, height);
+		Circle c1 = new Circle(origin.getX() + c1Offset, origin.getY() + c1Offset, c1R);
+		Circle c2 = new Circle(origin.getX() + c2Offset, origin.getY() + c2Offset, c2R);
+		
+		assertTrue(c1.intersects(r1));
+		assertTrue(c2.intersects(r1));
+		assertFalse(c1.intersects(r2));
+		assertFalse(c2.intersects(r2));		
+	}
+	
+	
 
 }
