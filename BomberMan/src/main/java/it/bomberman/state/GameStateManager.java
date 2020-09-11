@@ -1,51 +1,55 @@
 package it.bomberman.state;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import it.bomberman.menu.MenuPanel;
+
 public class GameStateManager {
-	
+
 	private ArrayList<GameState> gameStates;
 	private int currentState;
-	
+
 	public static final int MENUSTATE = 0;
-	public static final int GAME = 1;
+	public static final int ARENA = 1;
 	public static final int SETTINGS = 2;
-	
-	public GameStateManager() {
-		
+	public JFrame j;
+
+	public GameStateManager(JFrame j) {
+
 		gameStates = new ArrayList<GameState>();
 		currentState = MENUSTATE;
-		gameStates.add(new MenuState(this));
+		gameStates.add(new MenuPanel(this));
+		gameStates.add(new ArenaState(this));
+		this.j = j;
 	}
-	
+
 	public void setState(int state) {
+		JPanel p= this.gameStates.get(currentState);
 		currentState = state;
-		gameStates.get(currentState).init();
+		if (j.getContentPane().equals(this.gameStates.get(currentState))) {
+			j.getContentPane().remove(p);
+		}
+		j.setContentPane(p);
 	}
-	
+
 	public void update() {
 		gameStates.get(currentState).update();
 	}
-	
+
 	public void draw(java.awt.Graphics2D g) {
 		gameStates.get(currentState).draw(g);
 	}
-	
-	public void keyPressed(int k) {
-		gameStates.get(currentState).keyPressed(k);
-	}
-	
-	public void keyReleased(int k) {
-		gameStates.get(currentState).keyReleased(k);
-	}
-	
+
+//	public void keyPressed(KeyEvent k) {
+//		gameStates.get(currentState).keyPressed(k);
+//	}
+//	
+//	public void keyReleased(KeyEvent k) {
+//		gameStates.get(currentState).keyReleased(k);
+//	}
+
 }
-
-
-
-
-
-
-
-
-

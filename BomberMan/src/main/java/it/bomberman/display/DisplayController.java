@@ -20,7 +20,7 @@ public class DisplayController {
 	private KeyManager keyManager;
 	private HudController hudController;
 	private HudController hudCon;
-	private GameStateManager gameState;
+	private GameStateManager gsm;
 
 	MenuView menu= new MenuView();
 
@@ -46,7 +46,6 @@ public class DisplayController {
 		//HUD
 		hudController= new HudController(hudMod, hudView);
 		hudCon= new HudController(hudMod, hudView);
-
 	}
 
 	public synchronized void start() {
@@ -98,10 +97,8 @@ public class DisplayController {
 				this.p.render(this.displayView.getGraphics());
 				this.p1.render(this.displayView.getGraphics());
 				this.hudController.render(this.displayView.getGraphics());		
-
 			}
 		}
-
 		if (System.currentTimeMillis() - lastTimer >= 1000) {
 			lastTimer += 1000;
 			System.out.println(ticks + " ticks, " + frames + " frames");
