@@ -28,19 +28,23 @@ public class GameStateManager {
 	}
 
 	public void setState(int state) {
-		JPanel p= this.gameStates.get(currentState);
-		currentState = state;
-		if (j.getContentPane().equals(this.gameStates.get(currentState))) {
-			j.getContentPane().remove(p);
-		}
-		j.setContentPane(p);
+		JPanel oldPanel= this.gameStates.get(currentState);
+		this.j.getContentPane().removeAll();
+		
+//		if (j.getContentPane().equals(oldPanel)) {
+//			j.getContentPane().remove(oldPanel);
+//		}
+		this.currentState = state;
+		JPanel newPanel = this.gameStates.get(state);
+		j.setContentPane(newPanel);
+		this.j.validate();
 	}
 
 	public void update() {
 		gameStates.get(currentState).update();
 	}
 
-	public void draw(java.awt.Graphics2D g) {
+	public void draw(java.awt.Graphics g) {
 		gameStates.get(currentState).draw(g);
 	}
 

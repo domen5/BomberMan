@@ -12,7 +12,7 @@ import it.bomberman.gfx.DefaultValues;
 import it.bomberman.state.GameState;
 import it.bomberman.state.GameStateManager;
 
-public class MenuPanel extends GameState implements Runnable, KeyListener {
+public class MenuPanel extends GameState implements KeyListener {
 
 	/**
 	 * 
@@ -31,7 +31,7 @@ public class MenuPanel extends GameState implements Runnable, KeyListener {
 	private ImageIcon ii;
 	// image
 	// private BufferedImage image;
-	private Graphics2D g;
+	//private Graphics2D g;
 
 	JLabel imageLabel;
 	// game state manager
@@ -43,12 +43,17 @@ public class MenuPanel extends GameState implements Runnable, KeyListener {
 	private Color titleColor;
 	private Font titleFont;
 	private Font font;
-	private int menuX;
-	boolean cambios = false;
+	private volatile int menuX;
+	private volatile boolean cambios = false;
 
 	public MenuPanel(GameStateManager gsm) {
 		super();
 		init(gsm);
+	}
+
+
+
+	private void init(GameStateManager gsm) {
 		imageLabel = new JLabel();
 		// Prende la gif e aggiunge
 		try {
@@ -72,86 +77,13 @@ public class MenuPanel extends GameState implements Runnable, KeyListener {
 		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		setFocusable(true);
 		requestFocus();
-	}
-
-	public void addNotify() {
-		super.addNotify();
-		if (thread == null) {
-			thread = new Thread(this);
-			addKeyListener(this);
-			thread.start();
-		}
-	}
-
-	private void init(GameStateManager gsm) {
-		running = true;
+		//running = true;
 		// Spostare nel controller/model Menu
 		this.gsm = gsm;
 		// GSM= MENUSTATE
 	}
 
 	public void update() {
-		// gsm.update();
-	}
-
-	public void run() {
-		long start;
-		long elapsed;
-		long wait;
-		// game loop
-		while (running) {
-			update();
-			if (this.gsm.equals(0)) {
-				running = false;
-				System.exit(0);
-			}
-			/****************
-			 * 
-			 * Bisogna capire come prendere la roba per il verso giusto :) Intendo la parte
-			 * grafica
-			 * 
-			 */
-			Graphics2D g = (Graphics2D) this.getGraphics();
-			draw(g);
-			start = System.nanoTime();
-			elapsed = System.nanoTime() - start;
-			wait = targetTime - elapsed / 1000000;
-			if (wait < 0)
-				wait = 5;
-			try {
-				Thread.sleep(wait);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
-	public void keyTyped(KeyEvent key) {
-	}
-
-	private void select() {
-		if (currentChoice == 0) {
-			// start
-			this.gsm.setState(GameStateManager.ARENA);
-			this.gsm.update();
-			running = false;
-			
-		}
-		if (currentChoice == 1) {
-			// settings
-		}
-		if (currentChoice == 2) {
-			System.exit(0);
-		}
-	}
-
-	@Override
-	public void draw(Graphics2D g2) {
-		// gsm.draw(g);
-		g2.drawImage(ii.getImage(), WIDTH * SCALE, HEIGHT * SCALE, null);
-
-		g2.setColor(titleColor);
-		g2.setFont(titleFont);
 		if (cambios)
 			menuX--;
 		else
@@ -160,7 +92,85 @@ public class MenuPanel extends GameState implements Runnable, KeyListener {
 			cambios = true;
 		if (menuX == 0)
 			cambios = false;
+		// serve o non serve?
+		
+		repaint();
+	}
+
+//	public void run() {
+//		long start;
+//		long elapsed;
+//		long wait;
+//		// game loop
+//		while (running) {
+//			update();
+//			if (this.gsm.equals(0)) {
+//				running = false;
+//				System.exit(0);
+//			}
+//			/****************
+//			 * 
+//			 * Bisogna capire come prendere la roba per il verso giusto :) Intendo la parte
+//			 * grafica
+//			 * 
+//			 */
+//			Graphics2D g = (Graphics2D) this.getGraphics();
+//			draw(g);
+//			start = System.nanoTime();
+//			elapsed = System.nanoTime() - start;
+//			wait = targetTime - elapsed / 1000000;
+//			if (wait < 0)
+//				wait = 5;
+//			try {
+//				Thread.sleep(wait);
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
+//		}
+//	}
+
+	private void select() {
+		if (currentChoice == 0) {
+			// start
+			this.gsm.setState(GameStateManager.ARENA);
+			//this.gsm.update();
+			running = false;
+		}
+		if (currentChoice == 1) {
+			// settings
+		}
+		if (currentChoice == 2) {
+			System.exit(0);
+		}
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		// TODO Auto-generated method stub
+		super.paint(g);
+		draw(g);
+	}
+
+	@Override
+	public void draw(Graphics g2) {
+		// gsm.draw(g);
+		g2.drawImage(ii.getImage(), WIDTH * SCALE, HEIGHT * SCALE, null);
+
+		g2.setColor(titleColor);
+		g2.setFont(titleFont);
+		
+		// perchè quello che succede nel metodo update non ha effetto qui?
+		if (cambios)
+			menuX-=20;
+		else
+			menuX+=20;
+		if (menuX >= 70)
+			cambios = true;
+		if (menuX <= 0)
+			cambios = false;
+		
 		g2.drawString(DefaultValues.NAME, 650 + menuX, 200);
+		Toolkit.getDefaultToolkit().sync();
 
 		// draw menu options
 		g2.setFont(font);
@@ -172,8 +182,26 @@ public class MenuPanel extends GameState implements Runnable, KeyListener {
 			}
 			g2.drawString(options[i], 700, 300 + i * 35);
 		}
-		g2.dispose();
-
+		Toolkit.getDefaultToolkit().sync();
+		//g2.dispose();
+	}
+	
+	
+//	@Override
+//	public void paintComponents(Graphics g) {
+//		// TODO Auto-generated method stub
+//		super.paintComponents(g);
+//		
+//		draw(g);
+//	}
+	
+	public void addNotify() {
+		super.addNotify();
+//		if (thread == null) {
+//			thread = new Thread(this);
+			addKeyListener(this);
+//			thread.start();
+//		}
 	}
 
 	@Override
@@ -198,7 +226,14 @@ public class MenuPanel extends GameState implements Runnable, KeyListener {
 	}
 
 	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
+		
 	}
 }

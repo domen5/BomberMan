@@ -14,8 +14,8 @@ public class Circle extends Shape {
 
 	@Override
 	public List<Vector2> getVertices() {
-		// throw new OperationNotSupportedException(); //forse più appropriato?
-		return new ArrayList();
+		// throw new OperationNotSupportedException(); //forse piï¿½ appropriato?
+		return new ArrayList<Vector2>();
 	}
 
 	@Override

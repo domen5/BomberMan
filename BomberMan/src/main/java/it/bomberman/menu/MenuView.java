@@ -2,6 +2,7 @@ package it.bomberman.menu;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JFrame;
 
@@ -28,18 +29,21 @@ public class MenuView extends JFrame {
 		this.pack();
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
-		this.gsm = gsm;
-
+		//this.gsm = gsm;
 	}
-
 	
-
-	public void draw(Graphics2D g) {
-		// draw title
-
+	@Override
+	public void paint(Graphics g) {
+		super.paint(g);
+		draw();
+	}
+	
+	public void draw() {
+		//this.gsm.draw(getGraphics());
 	}
 
 	public void update() {
-
+		this.gsm.update();
+		//repaint();
 	}
 }

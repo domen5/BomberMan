@@ -15,6 +15,6 @@ public abstract class GameState extends JPanel implements KeyListener {
 
 	public abstract void update();
 
-	public abstract void draw(java.awt.Graphics2D g);
+	public abstract void draw(java.awt.Graphics g);
 
 }
