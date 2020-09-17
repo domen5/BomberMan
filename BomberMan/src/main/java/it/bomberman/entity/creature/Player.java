@@ -15,7 +15,7 @@ public class Player extends Creature {
 	// AGGIUNGI Game game,
 	private KeyManager keyManager;
 	private int playerNumb;
-	public Player(float x, float y, int n,  KeyManager keyManager) {
+	public Player(int x, int y, int n,  KeyManager keyManager) {
 		super(x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		// this.game = game;
 		//this.c = c;

@@ -15,7 +15,7 @@ public class Explosion extends Entity{
 	 */
 	
 	
-	public Explosion(float x, float y, int width, int height) {
+	public Explosion(int x, int y, int width, int height) {
 		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 	}

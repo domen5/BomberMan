@@ -11,11 +11,11 @@ public class Bomb extends Entity {
 	public final long timerLength;
 	public boolean exploded;
 
-	public Bomb(float x, float y, int width, int height) {
+	public Bomb(int x, int y, int width, int height) {
 		this(x, y, width, height, DEFAULT_TIMER_LENGTH);
 	}
 
-	public Bomb(float x, float y, int width, int height, long timerLength) {
+	public Bomb(int x, int y, int width, int height, long timerLength) {
 		super(x, y, width, height);
 		this.timerLength = timerLength;
 		this.startTime = System.nanoTime();
@@ -27,7 +27,7 @@ public class Bomb extends Entity {
 		
 		if(exploded)
 			return; //provvisorio
-		//se la bomba fosse esplosa non dovrebbe essere più aggiornata
+		//se la bomba fosse esplosa non dovrebbe essere piï¿½ aggiornata
 		
 		if (this.startTime - System.nanoTime() > this.timerLength) {
 			this.explode();
