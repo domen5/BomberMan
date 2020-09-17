@@ -23,10 +23,9 @@ public class ArenaState extends GameState {
 
 	public ArenaState(GameStateManager gsm) {
 		this.gsm = gsm;
-		init();
 	}
 
-	private void init() {
+	public void init() {
 		 p = new Player(0, 0,1);
 		p1=new Player(300,0,2);
 		
@@ -34,7 +33,6 @@ public class ArenaState extends GameState {
 		setPreferredSize(new Dimension(WIDTH * 3, HEIGHT * 3));
 		setFocusable(true);
 		requestFocus();
-
 	}
 
 	@Override

@@ -12,6 +12,8 @@ public abstract class GameState extends JPanel implements KeyListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	protected GameStateManager gsm;
+	
+	public abstract void init();
 
 	public abstract void update();
 

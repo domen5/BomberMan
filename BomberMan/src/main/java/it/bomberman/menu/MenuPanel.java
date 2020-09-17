@@ -48,12 +48,12 @@ public class MenuPanel extends GameState implements KeyListener {
 
 	public MenuPanel(GameStateManager gsm) {
 		super();
-		init(gsm);
+		this.gsm = gsm;
 	}
 
 
 
-	private void init(GameStateManager gsm) {
+	public void init() {
 		imageLabel = new JLabel();
 		// Prende la gif e aggiunge
 		try {
@@ -77,10 +77,6 @@ public class MenuPanel extends GameState implements KeyListener {
 		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		setFocusable(true);
 		requestFocus();
-		//running = true;
-		// Spostare nel controller/model Menu
-		this.gsm = gsm;
-		// GSM= MENUSTATE
 	}
 
 	public void update() {
@@ -160,14 +156,14 @@ public class MenuPanel extends GameState implements KeyListener {
 		g2.setFont(titleFont);
 		
 		// perchè quello che succede nel metodo update non ha effetto qui?
-		if (cambios)
-			menuX-=20;
-		else
-			menuX+=20;
-		if (menuX >= 70)
-			cambios = true;
-		if (menuX <= 0)
-			cambios = false;
+//		if (cambios)
+//			menuX-=20;
+//		else
+//			menuX+=20;
+//		if (menuX >= 70)
+//			cambios = true;
+//		if (menuX <= 0)
+//			cambios = false;
 		
 		g2.drawString(DefaultValues.NAME, 650 + menuX, 200);
 		Toolkit.getDefaultToolkit().sync();
@@ -199,7 +195,7 @@ public class MenuPanel extends GameState implements KeyListener {
 		super.addNotify();
 //		if (thread == null) {
 //			thread = new Thread(this);
-			addKeyListener(this);
+		addKeyListener(this);
 //			thread.start();
 //		}
 	}

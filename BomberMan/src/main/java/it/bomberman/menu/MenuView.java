@@ -23,11 +23,14 @@ public class MenuView extends JFrame {
 	public MenuView() {
 		gsm= new GameStateManager(this);
 		this.setName("BomberMan Menu");
-		this.setContentPane(new MenuPanel(gsm));
+		//this.setContentPane(new MenuPanel(gsm));
+		this.gsm.setState(GameStateManager.MENUSTATE);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.pack();
 		this.setLocationRelativeTo(null);
+		
+
 		this.setVisible(true);
 		//this.gsm = gsm;
 	}
