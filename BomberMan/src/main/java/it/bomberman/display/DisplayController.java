@@ -37,8 +37,8 @@ public class DisplayController {
 	public void InitGame() {
 		keyManager= new KeyManager();
 		//PLAYER
-		p = new Player( 0, 0,1);
-		p1=new Player(300,0,2);
+//		p = new Player( 0, 0,1);
+//		p1=new Player(300,0,2);
 		//LISTENER KEY
 		this.displayView.getFrame().addKeyListener(keyManager);
 		HudModel hudMod = new HudModel();

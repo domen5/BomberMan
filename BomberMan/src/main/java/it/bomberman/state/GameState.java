@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
-public abstract class GameState extends JPanel implements KeyListener {
+public abstract class GameState extends JPanel  {
 
 	/**
 	 * 

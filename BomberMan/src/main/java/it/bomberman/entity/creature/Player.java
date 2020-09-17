@@ -6,20 +6,21 @@ import java.awt.image.BufferedImage;
 
 import it.bomberman.display.DisplayController;
 import it.bomberman.gfx.*;
+import it.bomberman.input.KeyManager;
 
 public class Player extends Creature {
 	
 	
 	private Animation animDown, animUp, animLeft, animRight, animBomb;
 	// AGGIUNGI Game game,
-	DisplayController c;
+	private KeyManager keyManager;
 	private int playerNumb;
-	public Player(float x, float y, int n) {
+	public Player(float x, float y, int n,  KeyManager keyManager) {
 		super(x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		// this.game = game;
 		//this.c = c;
 		this.playerNumb=n;
-		
+		this.keyManager=keyManager;
 		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		//Creare una classe esterna che gestisce i player per animazioni!!
 		
@@ -41,55 +42,31 @@ public class Player extends Creature {
 	}
 
 	public void getInput() {
-//		xMove = 0;
-//		yMove = 0;
-//		if(this.playerNumb==1) {
-//			if (c.getKeyManager().up)
-//				yMove -= speed;
-//			if (c.getKeyManager().down)
-//				yMove = speed;
-//			if (c.getKeyManager().left)
-//				xMove -= speed;
-//			if (c.getKeyManager().right)
-//				xMove = speed;	
-//		}
-//				
-//		if(this.playerNumb==2) {
-//			if (c.getKeyManager().up2)
-//				yMove -= speed;
-//			if (c.getKeyManager().down2)
-//				yMove = speed;
-//			if (c.getKeyManager().left2)
-//				xMove -= speed;
-//			if (c.getKeyManager().right2)
-//				xMove = speed;
-//			}
-	}
-	
-	public void keyPressed(KeyEvent k) {
+		xMove = 0;
+		yMove = 0;
 		if(this.playerNumb==1) {
-			if (k.getKeyCode() == KeyEvent.VK_W)
+			if (this.keyManager.up)
 				yMove -= speed;
-			if (k.getKeyCode() == KeyEvent.VK_S)
+			if (this.keyManager.down)
 				yMove = speed;
-			if (k.getKeyCode() == KeyEvent.VK_A)
+			if (this.keyManager.left)
 				xMove -= speed;
-			if (k.getKeyCode() == KeyEvent.VK_D)
+			if (this.keyManager.right)
 				xMove = speed;	
 		}
-		
+				
 		if(this.playerNumb==2) {
-			if (k.getKeyCode() == KeyEvent.VK_UP)
+			if (this.keyManager.up2)
 				yMove -= speed;
-			if (k.getKeyCode() == KeyEvent.VK_DOWN)
+			if (this.keyManager.down2)
 				yMove = speed;
-			if (k.getKeyCode() == KeyEvent.VK_LEFT)
+			if (this.keyManager.left2)
 				xMove -= speed;
-			if (k.getKeyCode() == KeyEvent.VK_RIGHT)
+			if (this.keyManager.right2)
 				xMove = speed;
-		}
+			}		
 	}
-
+	
 	@Override
 	public void tick() {
 		animDown.tick();
@@ -108,10 +85,10 @@ public class Player extends Creature {
 
 	private BufferedImage getCurrentAnimationFrame() {
 		super.move();
-//		if (c.getKeyManager().drop)
-//			return animBomb.getCurrentFrame();
-//		if (c.getKeyManager().drop2)
-//			return animBomb.getCurrentFrame();
+		if (this.keyManager.drop && playerNumb==1)
+			return animBomb.getCurrentFrame();
+		if (this.keyManager.drop2 && playerNumb==2)
+			return animBomb.getCurrentFrame();
 				
 		if (xMove < 0) {
 			return animLeft.getCurrentFrame();
