@@ -1,5 +1,6 @@
 package it.bomberman.collisions;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 //import javax.naming.OperationNotSupportedException;
@@ -66,6 +67,24 @@ public class Circle extends Shape {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public <S extends Shape> S cloneAtPosition(int x, int y) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void render(Graphics g) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void move(int x, int y) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

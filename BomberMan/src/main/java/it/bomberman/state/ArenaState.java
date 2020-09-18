@@ -8,7 +8,11 @@ import java.awt.Graphics2D;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 
+import it.bomberman.collisions.CollisionManager;
 import it.bomberman.entity.creature.Player;
+import it.bomberman.entity.creature.Wall;
+import it.bomberman.entity.creature.WallFactory;
+import it.bomberman.entity.creature.WallFactoryImpl;
 import it.bomberman.gfx.DefaultValues;
 import it.bomberman.input.KeyManager;
 
@@ -21,13 +25,23 @@ public class ArenaState extends GameState {
 	private static final long serialVersionUID = 1L;
 	private Player p1;
 	private Player p2;
+	private WallFactory wallF;
+	private Wall wallie;
 	private KeyManager keyManager;
+	private CollisionManager collisionMan;
+//	private
 
 	public ArenaState(GameStateManager gsm) {
 		this.gsm = gsm;
 		this.keyManager = new KeyManager();
-		p1 = new Player(0, 0, 1, this.keyManager);
-		p2 = new Player(300, 0, 2, this.keyManager);
+		this.collisionMan = new CollisionManager();
+		this.wallF = new WallFactoryImpl();
+		p1 = new Player(0, 0, 1, this.keyManager, this.collisionMan);
+		p2 = new Player(300, 0, 2, this.keyManager, this.collisionMan);
+		wallie = wallF.SimpleWall(500, 500);
+		this.collisionMan.add(p1);
+		this.collisionMan.add(p2);
+		this.collisionMan.add(wallie);
 	}
 
 	public void init() {
@@ -65,9 +79,10 @@ public class ArenaState extends GameState {
 		g2.fillRect(0, 0, 1800, 900);
 		Toolkit.getDefaultToolkit().sync();
 
+		wallie.render(g2);	
 		p1.render(g2);
 		p2.render(g2);
-	
+		
 	}
 
 	@Override

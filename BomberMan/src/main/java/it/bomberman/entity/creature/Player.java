@@ -4,23 +4,36 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 
+import it.bomberman.collisions.Body;
+import it.bomberman.collisions.CollisionManager;
+import it.bomberman.collisions.ICollidable;
+import it.bomberman.collisions.Rectangle;
+import it.bomberman.collisions.Shape;
+import it.bomberman.collisions.Vector2;
 import it.bomberman.display.DisplayController;
 import it.bomberman.gfx.*;
 import it.bomberman.input.KeyManager;
 
-public class Player extends Creature {
+public class Player extends Creature implements ICollidable {
 	
 	
 	private Animation animDown, animUp, animLeft, animRight, animBomb;
 	// AGGIUNGI Game game,
 	private KeyManager keyManager;
 	private int playerNumb;
-	public Player(int x, int y, int n,  KeyManager keyManager) {
+	private Body body;
+	private CollisionManager collisionMan;
+	private final int cropOffset = 82;
+	
+	public Player(int x, int y, int n,  KeyManager keyManager, CollisionManager collisionMan) {
 		super(x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
 		// this.game = game;
 		//this.c = c;
 		this.playerNumb=n;
 		this.keyManager=keyManager;
+		this.body = new Body();
+		this.body.add(new Rectangle(this.x+cropOffset, this.y+cropOffset, 60,135));
+		this.collisionMan = collisionMan;
 		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		//Creare una classe esterna che gestisce i player per animazioni!!
 		
@@ -74,13 +87,27 @@ public class Player extends Creature {
 		animRight.tick();
 		animUp.tick();
 		animBomb.tick();
+		
 		getInput();
+		int oldX = this.x;
+		int oldY = this.y;
 		move();
+		this.body.move(this.x+cropOffset, this.y+cropOffset);
+		if(this.collisionMan.verifyCollision(this)) {
+			this.x = oldX;
+			this.y = oldY;
+			this.xMove = 0;
+			this.yMove = 0;			
+			this.body.move(oldX+cropOffset, oldY+cropOffset);
+		}		
 	}
 
 	@Override
 	public void render(Graphics g) {
 		g.drawImage(getCurrentAnimationFrame(), (int) x, (int) y, width, height, null);
+		
+		//debug only
+		//this.body.render(g);
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
@@ -99,5 +126,53 @@ public class Player extends Creature {
 		} else {
 			return animDown.getCurrentFrame();
 		}
+	}
+
+	@Override
+	public Vector2 getPosition() {
+		return new Vector2(this.x, this.y);
+	}
+
+	@Override
+	public Body getBody() {
+		// versione non modificabile per preservare l'incapsulamento
+		return this.body;
+	}
+
+	@Override
+	public boolean shouldCollide(ICollidable collidable) {
+		boolean out = false;
+		if(collidable instanceof Explosion) {
+			out = true;
+		}
+		if(collidable instanceof Wall)
+			out = true;
+		return out;
+	}
+	
+	@Override
+	public void collision(ICollidable collidable) {
+		// Do nothing
+	}
+	
+	@Override
+	public void collision(Player player) {
+		// Do nothing
+	}
+
+	@Override
+	public void collision(Bomb bomb) {
+		// Do nothing
+	}
+	
+	public void collision(Explosion exp) {
+		// Muori
+		// Notifica eventuali listener del fatto che sei morto
+	}
+
+	@Override
+	public void collision(Wall wall) {
+		// TODO Auto-generated method stub
+		
 	}
 }

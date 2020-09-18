@@ -1,5 +1,7 @@
 package it.bomberman.collisions;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -10,7 +12,7 @@ public class Rectangle extends Shape {
 	// quale struttura dati utilizzare?
 	// sono sicuro che saranno sempre 4 punti.
 	// è imortante l'ordine dei punti
-	protected final List<Vector2> vertices;
+	protected List<Vector2> vertices;
 	protected int width; // final ?
 	protected int height; // final ?
 
@@ -37,9 +39,9 @@ public class Rectangle extends Shape {
 
 	public void init(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4) {
 		initPoints(p1, p2, p3, p4);
-		//giusto?
-		this.width = this.getBottomRight().getY() -this.getBottomRight().getY();
-		this.height = this.getBottomRight().getX() -this.getBottomRight().getX();
+		// giusto?
+		this.width = this.getBottomRight().getY() - this.getBottomRight().getY();
+		this.height = this.getBottomRight().getX() - this.getBottomRight().getX();
 	}
 
 	private void initPoints(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4) {
@@ -59,6 +61,9 @@ public class Rectangle extends Shape {
 	@Override
 	public <S extends Shape> boolean intersects(S shape) {
 		// TODO Auto-generated method stub
+		if(shape instanceof Rectangle) {
+			return this.intersects((Rectangle)shape);
+		}
 		return false;
 	}
 
@@ -75,7 +80,6 @@ public class Rectangle extends Shape {
 				|| this.getTopLeft().getY() > other.getBottomRight().getY()) {
 			return false;
 		}
-
 		return true;
 	}
 
@@ -114,6 +118,25 @@ public class Rectangle extends Shape {
 
 	public int getHeight() {
 		return height;
+	}
+
+	@Override
+	public <S extends Shape> S cloneAtPosition(int x, int y) {
+		return (S) new Rectangle(x, y, this.height, this.width);
+	}
+
+	@Override
+	public void render(Graphics g) {
+		g.drawRect(this.position.getX(),this.position.getY(),this.width,this.height);  
+		g.setColor(Color.RED);  
+	    g.fillRect(this.position.getX(),this.position.getY(),this.width,this.height);  
+	}
+	
+	public void move(int x, int y) {
+		this.setPosition(new Vector2(x, y));
+		this.vertices = new ArrayList<>(4);
+		initPoints(new Vector2(x, y), new Vector2(x + width, y), new Vector2(x + width, y + height),
+				new Vector2(x, y + height));
 	}
 
 }

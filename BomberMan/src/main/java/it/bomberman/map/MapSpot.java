@@ -1,5 +1,6 @@
 package it.bomberman.map;
 
+import java.awt.Graphics;
 import java.util.List;
 
 import it.bomberman.collisions.*;
@@ -27,6 +28,17 @@ public class MapSpot extends Shape {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
+
+	@Override
+	public <S extends Shape> S cloneAtPosition(int x, int y) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void render(Graphics g) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

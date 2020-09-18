@@ -20,7 +20,7 @@ public abstract class Creature extends Entity {
 
 	public void move() {
 		x += xMove;
-		y += yMove;
+		y += yMove;		
 	}
 
 	// GETTER SETTER
