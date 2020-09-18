@@ -18,21 +18,21 @@ public class CollisionManager {
 		/**
 		 * Verifica se l'oggetto collide con qualcosa
 		 */
-		int count = 0;
-		for(ICollidable c : this.collidables) {
-			if(col.shouldCollide(c)) {
-				boolean b = col.getBody().checkCollision(c.getBody());
-				if(b) {
-					count++;
-				}
-			}
-		}
-		return count > 0;
+//		int count = 0;
+//		for(ICollidable c : this.collidables) {
+//			if(col.shouldCollide(c)) {
+//				boolean b = col.getBody().checkCollision(c.getBody());
+//				if(b) {
+//					count++;
+//				}
+//			}
+//		}
+//		return count > 0;
 		
-//		return this.collidables.stream()
-//				.filter(c -> c.shouldCollide(col))
-//				.filter(c -> c.getBody().checkCollision(col.getBody()))
-//				.count() > 0;
+		return this.collidables.stream()
+				.filter(c -> c.shouldCollide(col))
+				.filter(c -> c.getBody().checkCollision(col.getBody()))
+				.count() > 0;
 	}
 
 	public void checkAndResolveCollisions(ICollidable col) {

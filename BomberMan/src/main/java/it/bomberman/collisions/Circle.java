@@ -13,17 +13,23 @@ public class Circle extends Shape {
 		this.r = r;
 	}
 
+//	@Override
+//	public List<Vector2> getVertices() {
+//		// throw new OperationNotSupportedException(); //forse più appropriato?
+//		return new ArrayList<Vector2>();
+//	}-
+	
 	@Override
-	public List<Vector2> getVertices() {
-		// throw new OperationNotSupportedException(); //forse piï¿½ appropriato?
-		return new ArrayList<Vector2>();
-	}
-
-	@Override
-	public <S extends Shape> boolean intersects(S shape) {
+	public boolean intersects(Shape shape) {
+		if(shape instanceof Rectangle) {
+			return this.intersects((Rectangle) shape);
+		}
+		if(shape instanceof Circle) {
+			return this.intersects((Circle) shape);
+		}
 		return false;
 	}
-
+	
 	public boolean intersects(Circle circle) {
 		double distance = this.position.distance(circle.getPosition());
 		double radius = (double) r;
@@ -70,21 +76,15 @@ public class Circle extends Shape {
 	}
 
 	@Override
-	public <S extends Shape> S cloneAtPosition(int x, int y) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void render(Graphics g) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void move(int x, int y) {
 		// TODO Auto-generated method stub
-		
 	}
+
+
 
 }

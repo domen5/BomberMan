@@ -3,6 +3,7 @@ package it.bomberman.collisions;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -27,7 +28,6 @@ public class Rectangle extends Shape {
 	private Rectangle(int x, int y, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4) {
 		super(x, y);
 		this.vertices = new ArrayList<Vector2>(4);
-
 	}
 
 	private final void init(int x, int y, int width, int height) {
@@ -51,18 +51,17 @@ public class Rectangle extends Shape {
 		this.vertices.add(p4);
 	}
 
-	@Override
 	public List<Vector2> getVertices() {
-		// sbagliato perche' vertices sara' sempre definito,
-		// e' piuttosto il contenuto che potra essere vuoto
-		return this.vertices;
+		return Collections.unmodifiableList(this.vertices);
 	}
 
 	@Override
-	public <S extends Shape> boolean intersects(S shape) {
-		// TODO Auto-generated method stub
+	public boolean intersects(Shape shape) {
 		if(shape instanceof Rectangle) {
 			return this.intersects((Rectangle)shape);
+		}
+		if(shape instanceof Circle) {
+			return shape.intersects(this);
 		}
 		return false;
 	}
@@ -72,12 +71,12 @@ public class Rectangle extends Shape {
 	}
 
 	public boolean intersects(Rectangle other) {
-		if (this.getBottomRight().getX() < other.getTopLeft().getX()
-				|| this.getTopLeft().getX() > other.getBottomRight().getX()) {
+		if (this.getBottomRight().getX() <= other.getTopLeft().getX()
+				|| this.getTopLeft().getX() >= other.getBottomRight().getX()) {
 			return false;
 		}
-		if (this.getBottomRight().getY() < other.getTopLeft().getY()
-				|| this.getTopLeft().getY() > other.getBottomRight().getY()) {
+		if (this.getBottomRight().getY() <= other.getTopLeft().getY()
+				|| this.getTopLeft().getY() >= other.getBottomRight().getY()) {
 			return false;
 		}
 		return true;
@@ -95,6 +94,12 @@ public class Rectangle extends Shape {
 	}
 
 	public boolean pointInsideRectangle(Vector2 point) {
+		if (getTopLeft().getX() < point.getX() && getTopLeft().getY() < point.getY()
+				&& getBottomRight().getX() > point.getX() && getBottomRight().getY() > point.getY()) {
+			return true;
+		}
+		return false;
+		
 		/*
 		 * 0 <= AP·AB <= AB·AB and 0 <= AP·AD <= AD·AD double ap =
 		 * this.vertices.get(0).distance(point); double ab =
@@ -102,14 +107,6 @@ public class Rectangle extends Shape {
 		 * this.vertices.get(0).distance(this.vertices.get(3));
 		 */
 		// if(0 <= AP*AB)
-
-		if (getTopLeft().getX() <= point.getX() && getTopLeft().getY() <= point.getY()
-				&& getBottomRight().getX() >= point.getX() && getBottomRight().getY() >= point.getY()) {
-			return true;
-		}
-
-		return false;
-
 	}
 
 	public int getWidth() {
@@ -121,12 +118,8 @@ public class Rectangle extends Shape {
 	}
 
 	@Override
-	public <S extends Shape> S cloneAtPosition(int x, int y) {
-		return (S) new Rectangle(x, y, this.height, this.width);
-	}
-
-	@Override
 	public void render(Graphics g) {
+		// DEBUG ONLY
 		g.drawRect(this.position.getX(),this.position.getY(),this.width,this.height);  
 		g.setColor(Color.RED);  
 	    g.fillRect(this.position.getX(),this.position.getY(),this.width,this.height);  
@@ -138,5 +131,4 @@ public class Rectangle extends Shape {
 		initPoints(new Vector2(x, y), new Vector2(x + width, y), new Vector2(x + width, y + height),
 				new Vector2(x, y + height));
 	}
-
 }
