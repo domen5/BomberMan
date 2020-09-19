@@ -15,6 +15,7 @@ public class Assets {
 	//buffer bomb
 	public static BufferedImage [] bomb;
 	
+	
 	public static void init() {
 		//64x64
 
@@ -81,6 +82,9 @@ public class Assets {
 		for(int i=0; i<bomb.length; i++)
 			bomb[i]=sheet.crop(width*i+1, height*3, width, height);
 		//upgrade=sheet.crop(x, y, width, height);
+		
+		
+		
 	}
 
 	

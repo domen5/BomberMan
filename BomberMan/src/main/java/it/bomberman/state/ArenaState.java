@@ -4,16 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
-
 import it.bomberman.collisions.CollisionManager;
 import it.bomberman.entity.creature.Player;
 import it.bomberman.entity.creature.Wall;
 import it.bomberman.entity.creature.WallFactory;
 import it.bomberman.entity.creature.WallFactoryImpl;
-import it.bomberman.gfx.DefaultValues;
+import it.bomberman.hud.Hud;
 import it.bomberman.input.KeyManager;
 
 public class ArenaState extends GameState {
@@ -29,6 +26,7 @@ public class ArenaState extends GameState {
 	private Wall wallie;
 	private KeyManager keyManager;
 	private CollisionManager collisionMan;
+	private final Hud hud;
 //	private
 
 	public ArenaState(GameStateManager gsm) {
@@ -38,6 +36,7 @@ public class ArenaState extends GameState {
 		this.wallF = new WallFactoryImpl();
 		p1 = new Player(0, 0, 1, this.keyManager, this.collisionMan);
 		p2 = new Player(300, 0, 2, this.keyManager, this.collisionMan);
+		this.hud= new Hud(this.p1, this.p2);
 		wallie = wallF.SimpleWall(500, 500);
 		this.collisionMan.add(p1);
 		this.collisionMan.add(p2);
@@ -60,29 +59,30 @@ public class ArenaState extends GameState {
 		this.keyManager.tick();
 		this.p1.tick();
 		this.p2.tick();
+		this.hud.update();
 		repaint();
 	}
 
 	@Override
-	public void draw(Graphics g2) {
+	public void draw(Graphics g) {
 		// System.out.println(i);
 //		this.i++;
 
 //		if (this.i <= 30) {
 //			g2.setColor(Color.WHITE);
 //		} else if (this.i <= 60) {
-		g2.setColor(Color.BLACK);
+		g.setColor(Color.BLACK);
 //		}
 //		else {
 //			i = 0;
 //		}
-		g2.fillRect(0, 0, 1800, 900);
+		g.fillRect(0, 0, 1800, 900);
 		Toolkit.getDefaultToolkit().sync();
 
-		wallie.render(g2);	
-		p1.render(g2);
-		p2.render(g2);
-		
+		wallie.render(g);	
+		p1.render(g);
+		p2.render(g);
+		this.hud.render(g);
 	}
 
 	@Override

@@ -32,7 +32,7 @@ public abstract class Creature extends Entity {
 		this.health = health;
 	}
 
-	public float getSpeed() {
+	public int getSpeed() {
 		return speed;
 	}
 

@@ -1,16 +1,12 @@
 package it.bomberman.entity.creature;
 
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-
 import it.bomberman.collisions.Body;
 import it.bomberman.collisions.CollisionManager;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
-import it.bomberman.collisions.Shape;
 import it.bomberman.collisions.Vector2;
-import it.bomberman.display.DisplayController;
 import it.bomberman.gfx.*;
 import it.bomberman.input.KeyManager;
 
@@ -37,10 +33,10 @@ public class Player extends Creature implements ICollidable {
 		// Creare una classe esterna che gestisce i player per animazioni!!
 
 		if (playerNumb == 1) {
-			animDown = new Animation(100, Assets.player_d);
-			animUp = new Animation(100, Assets.player_u);
-			animLeft = new Animation(100, Assets.player_l);
-			animRight = new Animation(100, Assets.player_r);
+			animDown = new Animation(150, Assets.player_d);
+			animUp = new Animation(150, Assets.player_u);
+			animLeft = new Animation(150, Assets.player_l);
+			animRight = new Animation(150, Assets.player_r);
 			animBomb = new Animation(200, Assets.player_bomb);
 		}
 		if (playerNumb == 2) {
@@ -117,7 +113,7 @@ public class Player extends Creature implements ICollidable {
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(getCurrentAnimationFrame(), (int) x, (int) y, width, height, null);
+		g.drawImage(getCurrentAnimationFrame(), x, y, width, height, null);
 
 		// debug only
 		// this.body.render(g);

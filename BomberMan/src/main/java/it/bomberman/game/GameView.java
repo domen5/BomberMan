@@ -2,9 +2,12 @@ package it.bomberman.game;
 
 import javax.swing.JFrame;
 
-import it.bomberman.menu.MenuPanel;
-
 public class GameView extends JFrame{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public GameView() {
 		this.setName("BomberMan Game");
