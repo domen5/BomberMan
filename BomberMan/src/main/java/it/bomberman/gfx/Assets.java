@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 	//Immagini dello sheet
-	private static final int width=64, height=64;
+	private static final int width=64, height=64, widthHud=21, heightHud=22;
 	public static BufferedImage  wall, upgrade;
 
 	//buffer p1
@@ -15,6 +15,7 @@ public class Assets {
 	//buffer bomb
 	public static BufferedImage [] bomb;
 	
+	public static BufferedImage [] hud;
 	
 	public static void init() {
 		//64x64
@@ -83,7 +84,9 @@ public class Assets {
 			bomb[i]=sheet.crop(width*i+1, height*3, width, height);
 		//upgrade=sheet.crop(x, y, width, height);
 		
-		
+		hud=new BufferedImage[2];
+		hud[0]=sheet.crop(widthHud, heightHud, heightHud, heightHud);
+		hud[1]=sheet.crop(width+widthHud-3, height+heightHud, heightHud, heightHud);
 		
 	}
 
