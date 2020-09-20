@@ -8,8 +8,8 @@ import java.util.Set;
 
 public abstract class Shape {
 
-	// dovrebbe essere il centro o un angolo?
-	protected Vector2 position; // per ora si opta per l'angolo in alto a sinistra
+	// indica l'angolo in alto a sinistra
+	protected Vector2 position; 
 	// (0,0)------->x
 	// |
 	// |
@@ -22,10 +22,6 @@ public abstract class Shape {
 
 	public Vector2 getPosition() {
 		return this.position;
-	}
-
-	public void setPosition(Vector2 position) {
-		this.position = position;
 	}
 
 	public void setPosition(int x, int y) {
@@ -48,7 +44,5 @@ public abstract class Shape {
 	 */
 	public abstract void render(Graphics g);
 
-	public abstract void move(int x, int y);	
-	
-
+	public abstract void move(int x, int y);
 }

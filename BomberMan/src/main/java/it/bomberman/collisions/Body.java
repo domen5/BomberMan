@@ -68,7 +68,6 @@ public class Body {
 	}
 	
 	public void move(int x, int y) {
-		
 		for(Shape s : this.boundingShapes) {
 			s.move(x, y);			
 		}

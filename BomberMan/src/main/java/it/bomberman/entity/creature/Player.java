@@ -29,6 +29,7 @@ public class Player extends Creature implements ICollidable {
 		this.body = new Body();
 		this.body.add(new Rectangle(this.x + cropOffset, this.y + cropOffset, 60, 135));
 		this.collisionMan = collisionMan;
+		this.collisionMan.register(this);;
 		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		// Creare una classe esterna che gestisce i player per animazioni!!
 
@@ -73,6 +74,13 @@ public class Player extends Creature implements ICollidable {
 			if (this.keyManager.right2)
 				xMove = speed;
 		}
+		if (this.keyManager.drop && playerNumb == 1) {
+			new Bomb(this.x + cropOffset, this.y+cropOffset, this.collisionMan);
+		}
+		
+		if (this.keyManager.drop && playerNumb == 2) {
+			
+		}
 	}
 
 	@Override
@@ -116,7 +124,7 @@ public class Player extends Creature implements ICollidable {
 		g.drawImage(getCurrentAnimationFrame(), x, y, width, height, null);
 
 		// debug only
-		// this.body.render(g);
+		 this.body.render(g);
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
@@ -164,12 +172,10 @@ public class Player extends Creature implements ICollidable {
 		// Do nothing
 	}
 
-	@Override
 	public void collision(Player player) {
 		// Do nothing
 	}
 
-	@Override
 	public void collision(Bomb bomb) {
 		// Do nothing
 	}
@@ -179,9 +185,13 @@ public class Player extends Creature implements ICollidable {
 		// Notifica eventuali listener del fatto che sei morto
 	}
 
-	@Override
 	public void collision(Wall wall) {
-		// TODO Auto-generated method stub
-
+		// Do Nothing
+		// Die if deathWall
+	}
+	
+	@Override
+	public void dispose() {
+		//this.collisionMan.remove(this);
 	}
 }

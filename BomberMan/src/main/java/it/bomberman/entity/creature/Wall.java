@@ -6,8 +6,11 @@ public abstract class Wall extends Entity implements ICollidable {
 
 	public Wall(int x, int y, int width, int height) {
 		super(x, y, width, height);
-		// TODO Auto-generated constructor stub
 	}
-	
+
+	public Wall(int x, int y) {
+		super(x, y, DEFAULT_WALL_WIDTH, DEFAULT_WALL_WIDTH);
+	}
+
 	public static final int DEFAULT_WALL_WIDTH = 100;
 }

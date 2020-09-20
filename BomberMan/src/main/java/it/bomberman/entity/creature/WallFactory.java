@@ -1,7 +1,7 @@
 package it.bomberman.entity.creature;
 
 public interface WallFactory {
-	public Wall MapLimitWall(int x, int y, int width, int height);
-	public Wall SimpleWall(int x, int y);
-	public Wall DeathWall(int x, int y);
+	public Wall mapLimitWall(int x, int y);
+	public Wall simpleWall(int x, int y);
+	public Wall deathWall(int x, int y);
 }

@@ -48,5 +48,24 @@ public class Vector2 {
 		
 		return 0.0;
 	}
+	
+	public static Vector2 unmodifiableVector2(Vector2 v) {
+		return new Vecto2Decorator(v.getX(), v.getY());
+	}
+	private static final class Vecto2Decorator extends Vector2{
+		public Vecto2Decorator(int x, int y) {
+			super(x, y);
+		}
+		
+		@Override
+		public void setX(int x) {
+			throw new UnsupportedOperationException();
+		}
+		
+		public void setY(int y) {
+			throw new UnsupportedOperationException();
+		}
+		
+	}
 
 }

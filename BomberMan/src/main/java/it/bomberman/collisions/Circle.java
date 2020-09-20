@@ -12,12 +12,6 @@ public class Circle extends Shape {
 		super(x, y);
 		this.r = r;
 	}
-
-//	@Override
-//	public List<Vector2> getVertices() {
-//		// throw new OperationNotSupportedException(); //forse più appropriato?
-//		return new ArrayList<Vector2>();
-//	}-
 	
 	@Override
 	public boolean intersects(Shape shape) {
@@ -77,12 +71,13 @@ public class Circle extends Shape {
 
 	@Override
 	public void render(Graphics g) {
-		// TODO Auto-generated method stub
+		// DEBUG ONLY
 	}
 
 	@Override
 	public void move(int x, int y) {
-		// TODO Auto-generated method stub
+		this.position.setX(x);
+		this.position.setY(y);
 	}
 
 

@@ -41,8 +41,4 @@ public class CollisionManager {
 				.filter(c -> c.getBody().checkCollision(col.getBody()))
 				.forEach(c -> c.collision(col));
 	}
-	
-	public void add(ICollidable col) {
-		this.collidables.add(col);
-	}
 }

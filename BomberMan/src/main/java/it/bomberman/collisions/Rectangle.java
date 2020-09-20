@@ -13,7 +13,7 @@ public class Rectangle extends Shape {
 	// quale struttura dati utilizzare?
 	// sono sicuro che saranno sempre 4 punti.
 	// è imortante l'ordine dei punti
-	protected List<Vector2> vertices;
+	protected final List<Vector2> vertices;
 	protected int width; // final ?
 	protected int height; // final ?
 
@@ -37,7 +37,7 @@ public class Rectangle extends Shape {
 		this.height = height;
 	}
 
-	public void init(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4) {
+	private void init(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4) {
 		initPoints(p1, p2, p3, p4);
 		// giusto?
 		this.width = this.getBottomRight().getY() - this.getBottomRight().getY();
@@ -71,12 +71,12 @@ public class Rectangle extends Shape {
 	}
 
 	public boolean intersects(Rectangle other) {
-		if (this.getBottomRight().getX() <= other.getTopLeft().getX()
-				|| this.getTopLeft().getX() >= other.getBottomRight().getX()) {
+		if (this.getBottomRight().getX() < other.getTopLeft().getX()
+				|| this.getTopLeft().getX() > other.getBottomRight().getX()) {
 			return false;
 		}
-		if (this.getBottomRight().getY() <= other.getTopLeft().getY()
-				|| this.getTopLeft().getY() >= other.getBottomRight().getY()) {
+		if (this.getBottomRight().getY() < other.getTopLeft().getY()
+				|| this.getTopLeft().getY() > other.getBottomRight().getY()) {
 			return false;
 		}
 		return true;
@@ -126,9 +126,14 @@ public class Rectangle extends Shape {
 	}
 	
 	public void move(int x, int y) {
-		this.setPosition(new Vector2(x, y));
-		this.vertices = new ArrayList<>(4);
-		initPoints(new Vector2(x, y), new Vector2(x + width, y), new Vector2(x + width, y + height),
-				new Vector2(x, y + height));
+		this.setPosition(x,y);
+		this.vertices.get(0).setX(x);
+		this.vertices.get(0).setY(y);
+		this.vertices.get(1).setX(x + this.width);
+		this.vertices.get(1).setY(y);
+		this.vertices.get(2).setX(x + this.width);
+		this.vertices.get(2).setY(y + this.height);
+		this.vertices.get(3).setX(x);
+		this.vertices.get(3).setY(y + this.height);
 	}
 }
