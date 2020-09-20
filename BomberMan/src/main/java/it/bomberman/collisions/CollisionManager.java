@@ -13,6 +13,10 @@ public class CollisionManager {
 	public void register(ICollidable coll) {
 		this.collidables.add(coll);
 	}
+	
+	public void remove(ICollidable coll) {
+		this.collidables.remove(coll);
+	}
 
 	public boolean verifyCollision(ICollidable col) {
 		/**

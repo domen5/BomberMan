@@ -1,7 +1,12 @@
 package it.bomberman.entity.creature;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import it.bomberman.collisions.Body;
 import it.bomberman.collisions.CollisionManager;
 import it.bomberman.collisions.ICollidable;
@@ -14,22 +19,24 @@ public class Player extends Creature implements ICollidable {
 
 	private Animation animDown, animUp, animLeft, animRight, animBomb;
 	// AGGIUNGI Game game,
+	private EntityController controller;
 	private KeyManager keyManager;
 	private int playerNumb;
 	private Body body;
-	private CollisionManager collisionMan;
+	// private CollisionManager collisionMan;
 	private final int cropOffset = 82;
+	private int bombs = 1;
 
-	public Player(int x, int y, int n, KeyManager keyManager, CollisionManager collisionMan) {
+	public Player(int x, int y, int n, KeyManager keyManager, EntityController controller) {
 		super(x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
-		// this.game = game;
-		// this.c = c;
+		this.controller = controller;
 		this.playerNumb = n;
 		this.keyManager = keyManager;
 		this.body = new Body();
 		this.body.add(new Rectangle(this.x + cropOffset, this.y + cropOffset, 60, 135));
-		this.collisionMan = collisionMan;
-		this.collisionMan.register(this);;
+//		this.collisionMan = collisionMan;
+//		this.collisionMan.register(this);;
+//		this.bombs = new ArrayList<Bomb>();
 		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		// Creare una classe esterna che gestisce i player per animazioni!!
 
@@ -75,11 +82,11 @@ public class Player extends Creature implements ICollidable {
 				xMove = speed;
 		}
 		if (this.keyManager.drop && playerNumb == 1) {
-			new Bomb(this.x + cropOffset, this.y+cropOffset, this.collisionMan);
+			dropBomb();
 		}
-		
-		if (this.keyManager.drop && playerNumb == 2) {
-			
+
+		if (this.keyManager.drop2 && playerNumb == 2) {
+			dropBomb();
 		}
 	}
 
@@ -96,27 +103,13 @@ public class Player extends Creature implements ICollidable {
 		int oldY = this.y;
 		move();
 		this.body.move(this.x + cropOffset, this.y + cropOffset);
-		if (this.collisionMan.verifyCollision(this)) {
-			int xBounce = 0;
-			int yBounce = 0;
-//			if (xMove > 0) {
-//				xBounce = -8;
-//			} else if (xMove < 0) {
-//				xBounce = 8;
-//			}
-//			if (yMove > 0) {
-//				yBounce = -8;
-//			} else if (yMove < 0) {
-//				yBounce = 8;
-//			}
-			this.x = oldX + xBounce;
-			this.y = oldY + yBounce;
+		if (this.controller.verifyCollision(this)) {
+			this.x = oldX;
+			this.y = oldY;
 			this.xMove = 0;
 			this.yMove = 0;
 			this.body.move(this.x + cropOffset, this.y + cropOffset);
 		}
-//		this.xMove = 0;
-//		this.yMove = 0;
 	}
 
 	@Override
@@ -124,7 +117,7 @@ public class Player extends Creature implements ICollidable {
 		g.drawImage(getCurrentAnimationFrame(), x, y, width, height, null);
 
 		// debug only
-		 this.body.render(g);
+		this.body.render(g, Color.RED);
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
@@ -172,14 +165,6 @@ public class Player extends Creature implements ICollidable {
 		// Do nothing
 	}
 
-	public void collision(Player player) {
-		// Do nothing
-	}
-
-	public void collision(Bomb bomb) {
-		// Do nothing
-	}
-
 	public void collision(Explosion exp) {
 		// Muori
 		// Notifica eventuali listener del fatto che sei morto
@@ -189,9 +174,17 @@ public class Player extends Creature implements ICollidable {
 		// Do Nothing
 		// Die if deathWall
 	}
-	
+
+	public void dropBomb() {
+		if (bombs > 0) {
+			this.bombs--;
+			Bomb nBomb = new Bomb(this.x + cropOffset, this.y + cropOffset, this.controller);
+			this.controller.register(nBomb);
+		}
+	}
+
 	@Override
 	public void dispose() {
-		//this.collisionMan.remove(this);
+		this.controller.notifyDisposal(this);
 	}
 }

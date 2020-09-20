@@ -1,5 +1,6 @@
 package it.bomberman.entity.creature;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import it.bomberman.collisions.Body;
@@ -28,34 +29,39 @@ public class Explosion extends Entity implements ICollidable{
 	private final int explExtension;
 	private final long startTime;
 	private final long timerLength;
+	private final EntityController controller;
 	
 	public Explosion(int x, int y, int width, int height) {
-		this(x,y,width, height, DEFAULT_EXPLOSION_EXTENSION); 
+		this(x,y,width, height, DEFAULT_EXPLOSION_EXTENSION, null); 
 	}
 	
-	public Explosion(int x, int y, int width, int height, int explExtension) {
+	public Explosion(int x, int y, int width, int height, int explExtension, EntityController controller) {
 		super(x, y, width, height);
+		
 		this.explExtension = explExtension;
 		this.timerLength = DEFAULT_TIMER_LENGTH;
-		this.startTime = System.nanoTime();
+		
+		this.controller = controller;
+		
 		this.body = new Body();
-		this.body.add(new Rectangle(x - UNIT*explExtension, y, 1 + 2*explExtension*UNIT, UNIT));
-		this.body.add(new Rectangle(x, y- UNIT*explExtension, UNIT, 1 + 2*explExtension*UNIT));
+		this.body.add(new Rectangle(x - UNIT*explExtension, y, (1 + 2*explExtension)*UNIT, UNIT));
+		this.body.add(new Rectangle(x, y- UNIT*explExtension, UNIT, (1 + 2*explExtension)*UNIT));
+		
+		this.startTime = System.nanoTime();
 	}
 	
 	
 
 	@Override
 	public void tick() {
-		// TODO Auto-generated method stub
-		if (this.startTime - System.nanoTime() > this.timerLength) {
+		if (System.nanoTime() - this.startTime > this.timerLength) {
 			this.end();
 		}
 	}
 
 	@Override
 	public void render(Graphics g) {
-		this.body.render(g);
+		this.body.render(g, Color.YELLOW);
 	}
 
 	@Override
@@ -97,24 +103,18 @@ public class Explosion extends Entity implements ICollidable{
 		
 	}
 
-	public void collision(Explosion explosion) {
-		// TODO Auto-generated method stub
-		
-	}
-
 	@Override
 	public Body getBody() {
 		return this.body;
 	}
 	
 	public void end() {
-		
+		this.controller.notifyDisposal(this);
 	}
 
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-		
+		this.controller.notifyDisposal(this);		
 	}
 
 }

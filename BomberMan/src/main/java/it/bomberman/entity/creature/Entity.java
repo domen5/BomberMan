@@ -2,7 +2,9 @@ package it.bomberman.entity.creature;
 
 import java.awt.Graphics;
 
-public abstract class Entity {
+import it.bomberman.collisions.ICollidable;
+
+public abstract class Entity implements ICollidable, IRenderable{
 	protected int  x, y;
 	protected int width, height;
 

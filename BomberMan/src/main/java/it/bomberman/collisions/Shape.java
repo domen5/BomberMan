@@ -1,5 +1,6 @@
 package it.bomberman.collisions;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.HashSet;
 import java.util.List;
@@ -42,7 +43,7 @@ public abstract class Shape {
 	 * DEBUG ONLY
 	 * @param g
 	 */
-	public abstract void render(Graphics g);
+	public abstract void render(Graphics g, Color color);
 
 	public abstract void move(int x, int y);
 }

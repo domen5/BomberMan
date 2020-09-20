@@ -73,10 +73,10 @@ public class Body {
 		}
 	}
 	
-	public void render(Graphics g) {
+	public void render(Graphics g, Color color) {
 		// debug only
 		for(Shape s : this.boundingShapes) {
-			s.render(g);
+			s.render(g, color);
 		}
 	}
 }

@@ -1,0 +1,9 @@
+package it.bomberman.entity.creature;
+
+import it.bomberman.collisions.ICollidable;
+
+public interface EntityController {
+	public void register(Entity entity);
+	public void notifyDisposal(Entity entity);
+	public boolean verifyCollision(ICollidable coll);
+}

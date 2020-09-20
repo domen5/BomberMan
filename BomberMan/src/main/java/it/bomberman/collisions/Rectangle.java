@@ -118,10 +118,10 @@ public class Rectangle extends Shape {
 	}
 
 	@Override
-	public void render(Graphics g) {
+	public void render(Graphics g, Color color) {
 		// DEBUG ONLY
 		g.drawRect(this.position.getX(),this.position.getY(),this.width,this.height);  
-		g.setColor(Color.RED);  
+		g.setColor(color);  
 	    g.fillRect(this.position.getX(),this.position.getY(),this.width,this.height);  
 	}
 	

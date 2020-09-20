@@ -50,13 +50,12 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void render(Graphics g) {
-				this.inner.render(g);
+				this.inner.getBody().render(g, Color.DARK_GRAY);
 				
 			}
 
 			@Override
 			public void dispose() {
-				// TODO Auto-generated method stub
 				
 			}
 			
@@ -106,7 +105,7 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void render(Graphics g) {
-				this.body.boundingShapes.stream().forEach(e -> e.render(g));
+				this.body.render(g, Color.GRAY);
 			}
 
 			@Override
