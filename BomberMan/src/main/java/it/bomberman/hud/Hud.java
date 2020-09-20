@@ -26,7 +26,7 @@ public class Hud {
 		}
 
 	}
-
+	
 	public void update() {
 		this.p1.getHealth();
 		this.p2.getHealth();

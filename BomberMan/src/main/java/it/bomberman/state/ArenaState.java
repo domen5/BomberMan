@@ -12,6 +12,7 @@ import it.bomberman.entity.creature.WallFactory;
 import it.bomberman.entity.creature.WallFactoryImpl;
 import it.bomberman.hud.Hud;
 import it.bomberman.input.KeyManager;
+import it.bomberman.map.TileMap;
 
 public class ArenaState extends GameState {
 
@@ -27,6 +28,8 @@ public class ArenaState extends GameState {
 	private KeyManager keyManager;
 	private CollisionManager collisionMan;
 	private final Hud hud;
+	private TileMap tileMap;
+	
 //	private
 
 	public ArenaState(GameStateManager gsm) {
@@ -44,7 +47,7 @@ public class ArenaState extends GameState {
 	}
 
 	public void init() {
-
+		
 		this.setLayout(new BorderLayout());
 		setPreferredSize(new Dimension(WIDTH * 3, HEIGHT * 3));
 		setFocusable(true);
