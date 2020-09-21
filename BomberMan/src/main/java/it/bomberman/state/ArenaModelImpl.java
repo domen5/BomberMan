@@ -39,7 +39,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		initMapLimitWalls();
 		register(p1);
 		register(p2);
-		this.register(wallF.simpleWall(500, 500));
+		register(wallF.simpleWall(500, 500, this));
 		
 	}
 
@@ -69,7 +69,11 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 
 	@Override
 	public List<Entity> getDrawables() {
-		return Collections.unmodifiableList(this.entities);
+		//non thread safe?
+		this.lock.lock();
+		List<Entity> l = Collections.unmodifiableList(this.entities);
+		this.lock.unlock();
+		return l;
 	}
 
 	private void initMapLimitWalls() {
@@ -77,10 +81,10 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		int xLimit = 18;
 		int yLimit = 8;
 		int unit = Wall.DEFAULT_WALL_WIDTH;
-		IntStream.range(0, xLimit).forEach(i -> walls.add(wallF.mapLimitWall(unit*i, 80)));
-		IntStream.range(0, xLimit).forEach(i -> walls.add(wallF.mapLimitWall(unit*i, 80+unit*(yLimit-1))));
-		IntStream.range(1, yLimit).forEach(i -> walls.add(wallF.mapLimitWall(0, 80+i*unit)));
-		IntStream.range(1, yLimit).forEach(i -> walls.add(wallF.mapLimitWall((xLimit-1)*unit, 80+i*unit)));
+		IntStream.range(0, xLimit).forEach(i -> walls.add(wallF.mapLimitWall(unit*i, 80, this)));
+		IntStream.range(0, xLimit).forEach(i -> walls.add(wallF.mapLimitWall(unit*i, 80+unit*(yLimit-1), this)));
+		IntStream.range(1, yLimit).forEach(i -> walls.add(wallF.mapLimitWall(0, 80+i*unit, this)));
+		IntStream.range(1, yLimit).forEach(i -> walls.add(wallF.mapLimitWall((xLimit-1)*unit, 80+i*unit, this)));
 		walls.forEach(this::register);
 	}
 
@@ -109,6 +113,11 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	@Override
 	public Player getP2() {
 		return this.p2;
+	}
+
+	@Override
+	public void checkAndResolveCollisions(ICollidable coll) {
+		this.collisionMan.checkAndResolveCollisions(coll);
 	}
 
 }

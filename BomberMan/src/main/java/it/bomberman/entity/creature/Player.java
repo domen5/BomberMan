@@ -187,4 +187,8 @@ public class Player extends Creature implements ICollidable {
 	public void dispose() {
 		this.controller.notifyDisposal(this);
 	}
+	
+	public void die() {
+		this.dispose();
+	}
 }

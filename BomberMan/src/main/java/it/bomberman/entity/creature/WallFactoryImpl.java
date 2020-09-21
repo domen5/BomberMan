@@ -14,9 +14,10 @@ import it.bomberman.collisions.Vector2;
 public class WallFactoryImpl implements WallFactory {
 
 	@Override
-	public Wall mapLimitWall(int x, int y) {
+	public Wall mapLimitWall(int x, int y, EntityController controller) {
 		class mapLimitWall extends Wall{
-			Wall inner = simpleWall(x, y);
+			Wall inner = simpleWall(x, y, controller);
+			private EntityController contr = controller;
 
 			public mapLimitWall(int x, int y) {
 				super(x, y);
@@ -56,7 +57,7 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void dispose() {
-				
+				this.contr.notifyDisposal(this);
 			}
 			
 		}
@@ -64,9 +65,10 @@ public class WallFactoryImpl implements WallFactory {
 	}
 
 	@Override
-	public Wall simpleWall(int x, int y) {
+	public Wall simpleWall(int x, int y, EntityController controller) {
 		return new Wall(x, y) {
 			private Body body = new Body(new Rectangle(x, y, width, height));
+			private EntityController contr = controller;
 			
 			@Override
 			public Vector2 getPosition() {
@@ -95,6 +97,7 @@ public class WallFactoryImpl implements WallFactory {
 			public void collision(Explosion explosion) {
 				// this.dispose();
 				// ovvero: Rimozione da vari Observer, Listerner
+				this.dispose();
 			}
 
 			@Override
@@ -116,15 +119,14 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void dispose() {
-				// TODO Auto-generated method stub
-				
+				this.contr.notifyDisposal(this);
 			}
 		};
 	}
 
 	// non finito
 	@Override
-	public Wall deathWall(int x, int y) {
+	public Wall deathWall(int x, int y, EntityController contr) {
 		return null;
 //		return new Wall(x, y) {
 //			Wall simpleWall = simpleWall(x, y);
