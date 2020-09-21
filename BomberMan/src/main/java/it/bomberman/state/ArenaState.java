@@ -5,14 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
-import it.bomberman.collisions.CollisionManager;
-import it.bomberman.entity.creature.Player;
-import it.bomberman.entity.creature.Wall;
-import it.bomberman.entity.creature.WallFactory;
-import it.bomberman.entity.creature.WallFactoryImpl;
 import it.bomberman.hud.Hud;
 import it.bomberman.input.KeyManager;
-import it.bomberman.map.TileMap;
 
 public class ArenaState extends GameState {
 
@@ -24,7 +18,6 @@ public class ArenaState extends GameState {
 	private KeyManager keyManager;
 
 	private final Hud hud;
-	private TileMap tileMap;
 	private ArenaModel arenaModel;
 
 	public ArenaState(GameStateManager gsm) {

@@ -85,8 +85,8 @@ public class Assets {
 		//upgrade=sheet.crop(x, y, width, height);
 		
 		hud=new BufferedImage[2];
-		hud[0]=sheet.crop(widthHud, heightHud, heightHud, heightHud);
-		hud[1]=sheet.crop(width+widthHud-3, height+heightHud, heightHud, heightHud);
+		hud[0]=sheet.crop(2, 7, heightHud, heightHud);
+		hud[1]=sheet.crop(width+2, height+7, heightHud, heightHud);
 		
 	}
 
