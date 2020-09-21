@@ -2,6 +2,7 @@ package it.bomberman.entity.creature;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 import java.util.Optional;
 
 import it.bomberman.collisions.Body;
@@ -9,6 +10,8 @@ import it.bomberman.collisions.CollisionManager;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Vector2;
+import it.bomberman.gfx.Animation;
+import it.bomberman.gfx.Assets;
 
 //import org.dyn4j.geometry.Vector2;
 
@@ -24,8 +27,10 @@ public class Bomb extends Entity implements ICollidable {
 	private int exlposionExtention;
 	private boolean exploded = false;
 	private boolean animationOver = false;
+	private final int SCALE = 2;
 	private Body body;
 	private Optional<Explosion> ex;
+	private Animation animation;
 
 	public Bomb(int x, int y, EntityController controller) {
 		this(x, y, DEFAULT_WIDTH, DEFAULT_WIDTH, controller);
@@ -45,6 +50,7 @@ public class Bomb extends Entity implements ICollidable {
 		this.timerLength = timerLength;
 		this.exlposionExtention = DEFAULT_EXPLOSION_EXTENTION;
 		this.startTime = System.nanoTime();
+		this.animation = new Animation(600, Assets.bomb);
 	}
 
 	@Override
@@ -53,14 +59,15 @@ public class Bomb extends Entity implements ICollidable {
 		if (now - this.startTime> this.timerLength) {
 			this.explode();
 		}
+		this.animation.tick();
 		// this.ex.ifPresent(Explosion::tick);
 	}
 
 	@Override
 	public void render(Graphics g) {
-		// TODO Auto-generated method stub
-		// this.ex.ifPresent(e -> e.render(g));
+		
 		this.body.render(g, Color.BLUE);
+		g.drawImage(getCurrentAnimationFrame(), this.x, this.y, this.width*SCALE, this.height*SCALE, null);
 	}
 
 	public void explode() {
@@ -79,8 +86,8 @@ public class Bomb extends Entity implements ICollidable {
 
 	@Override
 	public Body getBody() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.body;
+		
 	}
 
 	@Override
@@ -102,6 +109,10 @@ public class Bomb extends Entity implements ICollidable {
 	@Override
 	public void dispose() {
 		this.controller.notifyDisposal(this);
+	}
+	
+	public BufferedImage getCurrentAnimationFrame() {
+		return this.animation.getCurrentFrame();
 	}
 
 }

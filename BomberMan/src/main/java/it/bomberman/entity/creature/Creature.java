@@ -2,8 +2,8 @@ package it.bomberman.entity.creature;
 
 public abstract class Creature extends Entity {
 	
-	public static final int DEFAULT_CREATURE_WIDTH = 228;
-	public static final int DEFAULT_CREATURE_HEIGHT =228;
+	public static final int DEFAULT_CREATURE_WIDTH = 128;
+	public static final int DEFAULT_CREATURE_HEIGHT = 128;
 	public static final int DEFAULT_HEALTH = 2;
 	public static final int DEFAULT_SPEED = 12;
 	protected int health;

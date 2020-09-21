@@ -71,12 +71,12 @@ public class Rectangle extends Shape {
 	}
 
 	public boolean intersects(Rectangle other) {
-		if (this.getBottomRight().getX() < other.getTopLeft().getX()
-				|| this.getTopLeft().getX() > other.getBottomRight().getX()) {
+		if (this.getBottomRight().getX() <= other.getTopLeft().getX()
+				|| this.getTopLeft().getX() >= other.getBottomRight().getX()) {
 			return false;
 		}
-		if (this.getBottomRight().getY() < other.getTopLeft().getY()
-				|| this.getTopLeft().getY() > other.getBottomRight().getY()) {
+		if (this.getBottomRight().getY() <= other.getTopLeft().getY()
+				|| this.getTopLeft().getY() >= other.getBottomRight().getY()) {
 			return false;
 		}
 		return true;

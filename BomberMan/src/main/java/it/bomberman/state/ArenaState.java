@@ -70,7 +70,7 @@ public class ArenaState extends GameState {
 		draw(g);
 	}
 
-
+	@Override
 	public void addNotify() {
 		super.addNotify();
 		addKeyListener(this.keyManager);

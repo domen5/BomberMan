@@ -28,8 +28,8 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	private List<Entity> entities;
 
 	public ArenaModelImpl(KeyManager keyManager) {
-		p1 = new Player(110, 90, 1, keyManager, this);
-		p2 = new Player(410, 90, 2, keyManager, this);
+		p1 = new Player(110, 200, 1, keyManager, this);
+		p2 = new Player(410, 200, 2, keyManager, this);
 
 		this.entities = new ArrayList<Entity>();
 		this.registerLater =  new ArrayList<Entity>();

@@ -83,7 +83,7 @@ public class Explosion extends Entity implements ICollidable {
 	}
 
 	public void collision(Player player) {
-		player.die();
+		player.collision(this);
 	}
 
 	public void collision(Bomb bomb) {
@@ -102,7 +102,7 @@ public class Explosion extends Entity implements ICollidable {
 	}
 
 	public void collision(Wall wall) {
-		wall.dispose();
+		wall.collision(this);
 	}
 
 	@Override

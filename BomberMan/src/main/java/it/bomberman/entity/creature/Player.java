@@ -24,7 +24,9 @@ public class Player extends Creature implements ICollidable {
 	private int playerNumb;
 	private Body body;
 	// private CollisionManager collisionMan;
-	private final int cropOffset = 82;
+	private final int cropOffsetX = 17;
+	private final int cropOffsetY = 28;
+			
 	private int bombs = 1;
 
 	public Player(int x, int y, int n, KeyManager keyManager, EntityController controller) {
@@ -33,7 +35,7 @@ public class Player extends Creature implements ICollidable {
 		this.playerNumb = n;
 		this.keyManager = keyManager;
 		this.body = new Body();
-		this.body.add(new Rectangle(this.x + cropOffset, this.y + cropOffset, 60, 135));
+		this.body.add(new Rectangle(this.x + cropOffsetX, this.y + cropOffsetY, 40, 91));
 //		this.collisionMan = collisionMan;
 //		this.collisionMan.register(this);;
 //		this.bombs = new ArrayList<Bomb>();
@@ -102,13 +104,13 @@ public class Player extends Creature implements ICollidable {
 		int oldX = this.x;
 		int oldY = this.y;
 		move();
-		this.body.move(this.x + cropOffset, this.y + cropOffset);
+		this.body.move(this.x + cropOffsetX, this.y + cropOffsetY);
 		if (this.controller.verifyCollision(this)) {
 			this.x = oldX;
 			this.y = oldY;
 			this.xMove = 0;
 			this.yMove = 0;
-			this.body.move(this.x + cropOffset, this.y + cropOffset);
+			this.body.move(this.x + cropOffsetX, this.y + cropOffsetY);
 		}
 	}
 
@@ -168,6 +170,7 @@ public class Player extends Creature implements ICollidable {
 	public void collision(Explosion exp) {
 		// Muori
 		// Notifica eventuali listener del fatto che sei morto
+		die();
 	}
 
 	public void collision(Wall wall) {
@@ -178,7 +181,7 @@ public class Player extends Creature implements ICollidable {
 	public void dropBomb() {
 		if (bombs > 0) {
 			this.bombs--;
-			Bomb nBomb = new Bomb(this.x + cropOffset, this.y + cropOffset, this.controller);
+			Bomb nBomb = new Bomb(this.x + cropOffsetX, this.y + cropOffsetY, this.controller);
 			this.controller.register(nBomb);
 		}
 	}
