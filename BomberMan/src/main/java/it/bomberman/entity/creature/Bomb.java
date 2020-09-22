@@ -67,7 +67,7 @@ public class Bomb extends Entity implements ICollidable {
 	public void render(Graphics g) {
 		
 		//this.body.render(g, Color.BLUE);
-		g.drawImage(getCurrentAnimationFrame(), this.x, this.y, this.width*SCALE, this.height*SCALE, null);
+		g.drawImage(getCurrentAnimationFrame(), this.x-22, this.y, this.width*SCALE, this.height*SCALE, null);
 	}
 
 	public void explode() {

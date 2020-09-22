@@ -10,12 +10,13 @@ import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Shape;
 import it.bomberman.collisions.Vector2;
+import it.bomberman.gfx.Assets;
 
 public class WallFactoryImpl implements WallFactory {
 
 	@Override
 	public Wall mapLimitWall(int x, int y, EntityController controller) {
-		class mapLimitWall extends Wall{
+		class mapLimitWall extends Wall {
 			Wall inner = simpleWall(x, y, controller);
 			private EntityController contr = controller;
 
@@ -52,14 +53,14 @@ public class WallFactoryImpl implements WallFactory {
 			@Override
 			public void render(Graphics g) {
 				this.inner.getBody().render(g, Color.DARK_GRAY);
-				
+
 			}
 
 			@Override
 			public void dispose() {
 				this.contr.notifyDisposal(this);
 			}
-			
+
 		}
 		return new mapLimitWall(x, y);
 	}
@@ -108,7 +109,8 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void render(Graphics g) {
-				this.body.render(g, Color.GRAY);
+				//this.body.render(g, Color.GRAY);
+				g.drawImage(Assets.simpleWall, x, y,this.DEFAULT_WALL_WIDTH, this.DEFAULT_WALL_WIDTH, null);
 			}
 
 			@Override

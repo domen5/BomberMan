@@ -8,6 +8,7 @@ import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Shape;
 import it.bomberman.collisions.Vector2;
+import it.bomberman.gfx.Assets;
 
 public class Explosion extends Entity implements ICollidable {
 
@@ -60,7 +61,15 @@ public class Explosion extends Entity implements ICollidable {
 
 	@Override
 	public void render(Graphics g) {
-		this.body.render(g, Color.YELLOW);
+		//this.body.render(g, Color.YELLOW);
+		g.drawImage(Assets.explosion[0], this.x, this.y, this.width, this.height, null);
+		//UP|DOWN
+		g.drawImage(Assets.explosion[1], this.x-45, this.y+16, this.width, this.height, null);
+		g.drawImage(Assets.explosion[1], this.x+58, this.y+16, this.width, this.height, null);
+		//LEFT|RIGHT
+		g.drawImage(Assets.explosion[2], this.x+12, this.y+60, this.width, this.height, null);
+		g.drawImage(Assets.explosion[2], this.x+12, this.y-45, this.width, this.height, null);
+		
 	}
 
 	@Override
