@@ -14,6 +14,7 @@ import it.bomberman.collisions.CollisionManager;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Vector2;
+import it.bomberman.entity.creature.PowerUp.PowerUpType;
 import it.bomberman.gfx.*;
 import it.bomberman.input.KeyManager;
 
@@ -29,6 +30,7 @@ public class Player extends Creature implements ICollidable {
 	private final int cropOffsetY = 28;
 
 	private int nBombs = 3;
+	private int bombExtension = 1;
 	private long lastBombDroppedTime = 0;
 	private long bombDroppedCoolDown = DEFAULT_DROP_COOL_DOWN;
 	public Set<Bomb> bombs;
@@ -158,9 +160,9 @@ public class Player extends Creature implements ICollidable {
 	@Override
 	public boolean shouldCollide(ICollidable collidable) {
 		boolean out = false;
-		if (collidable instanceof Explosion) {
-			out = true;
-		}
+//		if (collidable instanceof Explosion) {
+//			out = true;
+//		}
 		if (collidable instanceof Wall)
 			out = true;
 		return out;
@@ -168,7 +170,12 @@ public class Player extends Creature implements ICollidable {
 
 	@Override
 	public void collision(ICollidable collidable) {
-		// Do nothing
+		if(collidable instanceof Explosion){
+			this.collision((Explosion) collidable);
+		}
+		if(collidable instanceof PowerUp) {
+			collision((PowerUp) collidable);
+		}
 	}
 
 	public void collision(Explosion exp) {
@@ -180,6 +187,19 @@ public class Player extends Creature implements ICollidable {
 	public void collision(Wall wall) {
 		// Do Nothing
 		// Die if deathWall
+		
+		// Qui andrebbe implementata la dinamica di rollback 
+		
+	}
+	
+	public void collision(PowerUp up) {
+		if(up.getType() == PowerUpType.BOMB_NUM) {
+			this.nBombs++;
+		}
+		
+		if(up.getType() == PowerUpType.LIFE) {
+			
+		}
 	}
 
 	public void dropBomb() {

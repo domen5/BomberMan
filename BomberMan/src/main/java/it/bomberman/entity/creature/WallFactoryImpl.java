@@ -10,6 +10,7 @@ import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Shape;
 import it.bomberman.collisions.Vector2;
+import it.bomberman.entity.creature.PowerUp.PowerUpType;
 import it.bomberman.gfx.Assets;
 
 public class WallFactoryImpl implements WallFactory {
@@ -70,7 +71,7 @@ public class WallFactoryImpl implements WallFactory {
 		return new Wall(x, y) {
 			private Body body = new Body(new Rectangle(x, y, width, height));
 			private EntityController contr = controller;
-			
+
 			@Override
 			public Vector2 getPosition() {
 				return Vector2.unmodifiableVector2(new Vector2(this.x, this.y));
@@ -89,7 +90,7 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void collision(ICollidable collidable) {
-				if(collidable instanceof Explosion){
+				if (collidable instanceof Explosion) {
 					this.collision((Explosion) collidable);
 				}
 
@@ -109,8 +110,8 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void render(Graphics g) {
-				//this.body.render(g, Color.GRAY);
-				g.drawImage(Assets.simpleWall, x, y,this.DEFAULT_WALL_WIDTH, this.DEFAULT_WALL_WIDTH, null);
+				// this.body.render(g, Color.GRAY);
+				g.drawImage(Assets.simpleWall, x, y, this.DEFAULT_WALL_WIDTH, this.DEFAULT_WALL_WIDTH, null);
 			}
 
 			@Override
@@ -121,6 +122,17 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void dispose() {
+				//random
+				final PowerUpType type = PowerUpType.BOMB_NUM;
+				final int value = 1;
+				
+				PowerUp up = PowerUp.PowerUpBuilder.newBuilder()
+						.setX(this.x)
+						.setY(this.y)
+						.setType(type)
+						.setValue(value)
+						.setController(this.contr).build();
+				this.contr.register(up);
 				this.contr.notifyDisposal(this);
 			}
 		};

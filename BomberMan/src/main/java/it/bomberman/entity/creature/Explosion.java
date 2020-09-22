@@ -101,13 +101,14 @@ public class Explosion extends Entity implements ICollidable {
 	}
 
 	public void collision(ICollidable collidable) {
-		if (collidable instanceof Wall) {
-			collision((Wall) collidable);
-		} else if (collidable instanceof Player) {
-			collision((Player) collidable);
-		} else if (collidable instanceof Bomb) {
-			collision((Bomb) collidable);
-		}
+		collidable.collision(this);
+//		if (collidable instanceof Wall) {
+//			collision((Wall) collidable);
+//		} else if (collidable instanceof Player) {
+//			collision((Player) collidable);
+//		} else if (collidable instanceof Bomb) {
+//			collision((Bomb) collidable);
+//		}
 	}
 
 	public void collision(Wall wall) {

@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 import it.bomberman.collisions.ICollidable;
 
-public abstract class Entity implements ICollidable, IRenderable{
+public abstract class Entity implements ICollidable{
 	protected int  x, y;
 	protected int width, height;
 

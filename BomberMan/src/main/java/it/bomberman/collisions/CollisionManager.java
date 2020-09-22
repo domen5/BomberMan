@@ -23,8 +23,8 @@ public class CollisionManager {
 		 * Verifica se l'oggetto collide con qualcosa
 		 */
 		return this.collidables.stream()
-				.filter(c -> c.shouldCollide(col))
-				.filter(c -> c.getBody().checkCollision(col.getBody()))
+				.filter(col::shouldCollide)
+				.filter(c -> col.getBody().checkCollision(c.getBody()))
 				.count() > 0;
 	}
 
