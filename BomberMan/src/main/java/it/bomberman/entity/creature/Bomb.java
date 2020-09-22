@@ -66,7 +66,7 @@ public class Bomb extends Entity implements ICollidable {
 	@Override
 	public void render(Graphics g) {
 		
-		this.body.render(g, Color.BLUE);
+		//this.body.render(g, Color.BLUE);
 		g.drawImage(getCurrentAnimationFrame(), this.x, this.y, this.width*SCALE, this.height*SCALE, null);
 	}
 
@@ -86,8 +86,7 @@ public class Bomb extends Entity implements ICollidable {
 
 	@Override
 	public Body getBody() {
-		return this.body;
-		
+		return this.body;	
 	}
 
 	@Override
@@ -111,7 +110,11 @@ public class Bomb extends Entity implements ICollidable {
 		this.controller.notifyDisposal(this);
 	}
 	
-	public BufferedImage getCurrentAnimationFrame() {
+	public boolean hasFinished() {
+		return this.exploded;
+	}
+	
+	private BufferedImage getCurrentAnimationFrame() {
 		return this.animation.getCurrentFrame();
 	}
 

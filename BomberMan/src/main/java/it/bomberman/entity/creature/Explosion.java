@@ -102,6 +102,8 @@ public class Explosion extends Entity implements ICollidable {
 	}
 
 	public void collision(Wall wall) {
+		// Explosion serve solo a innescare collisioni in altre Entity
+		// per questo le consguenze delle collisioni sono gestite in Wall
 		wall.collision(this);
 	}
 
@@ -118,5 +120,4 @@ public class Explosion extends Entity implements ICollidable {
 	public void dispose() {
 		this.controller.notifyDisposal(this);
 	}
-
 }

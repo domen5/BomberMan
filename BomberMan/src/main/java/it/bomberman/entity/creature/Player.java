@@ -5,7 +5,9 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import it.bomberman.collisions.Body;
 import it.bomberman.collisions.CollisionManager;
@@ -16,18 +18,20 @@ import it.bomberman.gfx.*;
 import it.bomberman.input.KeyManager;
 
 public class Player extends Creature implements ICollidable {
-
+	
+	public static final long DEFAULT_DROP_COOL_DOWN = (long) 5e8; // 1/2 s
 	private Animation animDown, animUp, animLeft, animRight, animBomb;
-	// AGGIUNGI Game game,
 	private EntityController controller;
 	private KeyManager keyManager;
 	private int playerNumb;
 	private Body body;
-	// private CollisionManager collisionMan;
 	private final int cropOffsetX = 17;
 	private final int cropOffsetY = 28;
 			
-	private int bombs = 1;
+	private int nBombs = 3;
+	private long lastBombDroppedTime = 0;
+	private long bombDroppedCoolDown = DEFAULT_DROP_COOL_DOWN;
+	public Set<Bomb> bombs;
 
 	public Player(int x, int y, int n, KeyManager keyManager, EntityController controller) {
 		super(x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
@@ -36,9 +40,7 @@ public class Player extends Creature implements ICollidable {
 		this.keyManager = keyManager;
 		this.body = new Body();
 		this.body.add(new Rectangle(this.x + cropOffsetX, this.y + cropOffsetY, 40, 91));
-//		this.collisionMan = collisionMan;
-//		this.collisionMan.register(this);;
-//		this.bombs = new ArrayList<Bomb>();
+		this.bombs = new HashSet<Bomb>();
 		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		// Creare una classe esterna che gestisce i player per animazioni!!
 
@@ -56,7 +58,6 @@ public class Player extends Creature implements ICollidable {
 			animRight = new Animation(150, Assets.player_r2);
 			animBomb = new Animation(200, Assets.player_bomb2);
 		}
-
 	}
 
 	public void getInput() {
@@ -94,6 +95,8 @@ public class Player extends Creature implements ICollidable {
 
 	@Override
 	public void tick() {
+		// rimuove il riferimento ad ogni bomba già esplosa
+		this.bombs.removeIf(Bomb::hasFinished);
 		animDown.tick();
 		animLeft.tick();
 		animRight.tick();
@@ -119,7 +122,7 @@ public class Player extends Creature implements ICollidable {
 		g.drawImage(getCurrentAnimationFrame(), x, y, width, height, null);
 
 		// debug only
-		this.body.render(g, Color.RED);
+		//this.body.render(g, Color.RED);
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
@@ -179,10 +182,15 @@ public class Player extends Creature implements ICollidable {
 	}
 
 	public void dropBomb() {
-		if (bombs > 0) {
-			this.bombs--;
-			Bomb nBomb = new Bomb(this.x + cropOffsetX, this.y + cropOffsetY, this.controller);
-			this.controller.register(nBomb);
+		if(this.lastBombDroppedTime == 0) {
+			this.lastBombDroppedTime = System.nanoTime();
+		}
+		
+		if(canDropBomb()) {
+			Bomb b = new Bomb(this.x + cropOffsetX, this.y + cropOffsetY, this.controller);
+			this.bombs.add(b);
+			this.controller.register(b);
+			this.lastBombDroppedTime = System.nanoTime();
 		}
 	}
 
@@ -193,5 +201,12 @@ public class Player extends Creature implements ICollidable {
 	
 	public void die() {
 		this.dispose();
+	}
+	
+	private boolean canDropBomb() {
+		// se non ci sono bombe sul campo
+		// oppure
+		// ci sono meno bombe del massi & è passato abbastanza tempo dall'ultima bomba
+		return (this.bombs.size() == 0) ||  ((this.bombs.size() < this.nBombs) && (System.nanoTime() - this.lastBombDroppedTime > this.bombDroppedCoolDown));
 	}
 }
