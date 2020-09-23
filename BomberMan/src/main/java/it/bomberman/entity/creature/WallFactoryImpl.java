@@ -2,6 +2,7 @@ package it.bomberman.entity.creature;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Random;
 
 import com.google.errorprone.annotations.DoNotCall;
 
@@ -14,67 +15,36 @@ import it.bomberman.entity.creature.PowerUp.PowerUpType;
 import it.bomberman.gfx.Assets;
 
 public class WallFactoryImpl implements WallFactory {
+	public static final int DEFAULT_WALL_WIDTH = 100;
 
 	@Override
 	public Wall mapLimitWall(int x, int y, EntityController controller) {
-		class mapLimitWall extends Wall {
-			Wall inner = simpleWall(x, y, controller);
-			private EntityController contr = controller;
+		class MapLimitWall extends HardWall{
 
-			public mapLimitWall(int x, int y) {
-				super(x, y);
-				// TODO Auto-generated constructor stub
+			public MapLimitWall(int x, int y, EntityController controller) {
+				super(x, y, controller);
 			}
-
-			@Override
-			public Vector2 getPosition() {
-				return inner.getPosition();
-			}
-
-			@Override
-			public Body getBody() {
-				return inner.getBody();
-			}
-
-			@Override
-			public boolean shouldCollide(ICollidable collidable) {
-				return collidable instanceof Player;
-			}
-
-			@Override
-			public void collision(ICollidable collidable) {
-				// DO NOTHING
-			}
-
-			@Override
-			public void tick() {
-				// DO NOTHING
-			}
-
+			
 			@Override
 			public void render(Graphics g) {
-				this.inner.getBody().render(g, Color.DARK_GRAY);
-
+				//non va disegnato
+				//super.render(g);
 			}
-
-			@Override
-			public void dispose() {
-				this.contr.notifyDisposal(this);
-			}
-
 		}
-		return new mapLimitWall(x, y);
+		return new MapLimitWall(x, y, controller);
 	}
 
 	@Override
 	public Wall simpleWall(int x, int y, EntityController controller) {
-		return new Wall(x, y) {
-			private Body body = new Body(new Rectangle(x, y, width, height));
+		return new Wall() {
+
+			private int width = DEFAULT_WALL_WIDTH;
+			private Body body = new Body(new Rectangle(x, y, width, width));
 			private EntityController contr = controller;
 
 			@Override
 			public Vector2 getPosition() {
-				return Vector2.unmodifiableVector2(new Vector2(this.x, this.y));
+				return Vector2.unmodifiableVector2(new Vector2(x, y));
 			}
 
 			@Override
@@ -110,8 +80,14 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void render(Graphics g) {
-				// this.body.render(g, Color.GRAY);
-				g.drawImage(Assets.simpleWall, x, y, this.DEFAULT_WALL_WIDTH, this.DEFAULT_WALL_WIDTH, null);
+				// le immagini sono da scalare in quanto il crop delle sprite non è perfetto
+				// ma contiene un bordo trasparente in canale alfa.
+				// Deve essere corretto in t.bomberman.gfx. Assets
+				double scale = 1.18;
+				int w = (int) (this.width * scale);
+				int h = (int) (this.width * scale);
+//				 this.body.render(g, Color.GRAY);
+				g.drawImage(Assets.simpleWall, x, y, w, h, null);
 			}
 
 			@Override
@@ -122,15 +98,12 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void dispose() {
-				//random
-				final PowerUpType type = PowerUpType.BOMB_NUM;
-				final int value = 1;
-				
-				PowerUp up = PowerUp.PowerUpBuilder.newBuilder()
-						.setX(this.x)
-						.setY(this.y)
-						.setType(type)
-						.setValue(value)
+				// random
+				Random random = new Random();
+				final PowerUpType type = PowerUpType.values()[random.nextInt(PowerUpType.values().length)];
+				final int value = 1 + random.nextInt(1);
+
+				PowerUp up = PowerUp.PowerUpBuilder.newBuilder().setX(x).setY(y).setType(type).setValue(value)
 						.setController(this.contr).build();
 				this.contr.register(up);
 				this.contr.notifyDisposal(this);
@@ -184,6 +157,58 @@ public class WallFactoryImpl implements WallFactory {
 //			}
 //
 //		};
+	}
+
+	@Override
+	public Wall hardWall(int x, int y, EntityController controller) {
+		
+		return new HardWall(x, y, controller);
+	}
+	
+	class HardWall implements Wall {
+		Wall inner;
+		private EntityController controller;
+
+		public HardWall(int x, int y, EntityController controller) {
+			this.inner = simpleWall(x, y, controller);
+			this.controller = controller;
+		}
+
+		@Override
+		public Vector2 getPosition() {
+			return inner.getPosition();
+		}
+
+		@Override
+		public Body getBody() {
+			return inner.getBody();
+		}
+
+		@Override
+		public boolean shouldCollide(ICollidable collidable) {
+			return collidable instanceof Player;
+		}
+
+		@Override
+		public void collision(ICollidable collidable) {
+			// DO NOTHING
+		}
+
+		@Override
+		public void tick() {
+			// DO NOTHING
+		}
+
+		@Override
+		public void render(Graphics g) {
+			this.inner.getBody().render(g, Color.DARK_GRAY);
+
+		}
+
+		@Override
+		public void dispose() {
+			controller.notifyDisposal(this);
+		}
 	}
 
 }

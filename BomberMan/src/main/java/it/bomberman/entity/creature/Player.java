@@ -18,30 +18,37 @@ import it.bomberman.entity.creature.PowerUp.PowerUpType;
 import it.bomberman.gfx.*;
 import it.bomberman.input.KeyManager;
 
-public class Player extends Creature implements ICollidable {
+public class Player extends AbstractEntity{
 
 	public static final long DEFAULT_DROP_COOL_DOWN = (long) 5e8; // 1/2 s
+	public static final int DEFAULT_PLAYER_WIDTH = 128;
+	public static final int DEFAULT_PLAYER_HEIGHT = 128;
 	private Animation animDown, animUp, animLeft, animRight, animBomb;
-	private EntityController controller;
 	private KeyManager keyManager;
 	private int playerNumb;
 	private Body body;
 	private final int cropOffsetX = 17;
 	private final int cropOffsetY = 28;
+	private int xMove;
+	private int yMove;
 
+	private int health = 2;
+	private int speed = 12;
 	private int nBombs = 3;
 	private int bombExtension = 1;
 	private long lastBombDroppedTime = 0;
 	private long bombDroppedCoolDown = DEFAULT_DROP_COOL_DOWN;
 	public Set<Bomb> bombs;
-
+	
+	protected Player(int x, int y, int width, int height, EntityController controller) {
+		super(x, y, width,height, controller);
+	}
+	
 	public Player(int x, int y, int n, KeyManager keyManager, EntityController controller) {
-		super(x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
-		this.controller = controller;
+		this(x, y, DEFAULT_PLAYER_WIDTH, DEFAULT_PLAYER_HEIGHT, controller);
 		this.playerNumb = n;
 		this.keyManager = keyManager;
-		this.body = new Body();
-		this.body.add(new Rectangle(this.x + cropOffsetX, this.y + cropOffsetY, 40, 91));
+
 		this.bombs = new HashSet<Bomb>();
 		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		// Creare una classe esterna che gestisce i player per animazioni!!
@@ -60,6 +67,12 @@ public class Player extends Creature implements ICollidable {
 			animRight = new Animation(150, Assets.player_r2);
 			animBomb = new Animation(200, Assets.player_bomb2);
 		}
+	}
+	
+	@Override
+	protected void initBody() {
+		this.body = new Body();
+		this.body.add(new Rectangle(this.x + cropOffsetX, this.y + cropOffsetY, 40, 91));
 	}
 
 	public void getInput() {
@@ -108,7 +121,8 @@ public class Player extends Creature implements ICollidable {
 		getInput();
 		int oldX = this.x;
 		int oldY = this.y;
-		move();
+		this.x+= xMove;
+		this.y += yMove;
 		this.body.move(this.x + cropOffsetX, this.y + cropOffsetY);
 		if (this.controller.verifyCollision(this)) {
 			this.x = oldX;
@@ -208,7 +222,7 @@ public class Player extends Creature implements ICollidable {
 		}
 
 		if (canDropBomb()) {
-			Bomb b = new Bomb(this.x + cropOffsetX, this.y + cropOffsetY, this.controller);
+			Bomb b = new Bomb(this.x + cropOffsetX, this.y + cropOffsetY, this.bombExtension, this.controller);
 			this.bombs.add(b);
 			this.controller.register(b);
 			this.lastBombDroppedTime = System.nanoTime();
@@ -230,5 +244,13 @@ public class Player extends Creature implements ICollidable {
 		// ci sono meno bombe del massi & � passato abbastanza tempo dall'ultima bomba
 		return (this.bombs.size() == 0) || ((this.bombs.size() < this.nBombs)
 				&& (System.nanoTime() - this.lastBombDroppedTime > this.bombDroppedCoolDown));
+	}
+	
+	public int getHealth() {
+		return this.health;
+	}
+	
+	public int getSpeed() {
+		return this.speed;
 	}
 }

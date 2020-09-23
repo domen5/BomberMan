@@ -11,10 +11,10 @@ import java.util.Map;
 import java.util.Set;
 
 public class Body {
-	public Set<Shape> boundingShapes;
+	public List<Shape> boundingShapes;
 
 	public Body() {
-		this.boundingShapes = new HashSet<Shape>();
+		this.boundingShapes = new ArrayList<Shape>();
 	}
 	
 	public Body(Shape s) {
@@ -36,7 +36,7 @@ public class Body {
 		return this.checkCollision(other.getBoundingShapes());
 	}
 
-	public boolean checkCollision(Set<Shape> otherBoundingShapes) {
+	public boolean checkCollision(List<Shape> otherBoundingShapes) {
 		if (this.boundingShapes.isEmpty() || otherBoundingShapes.isEmpty()) {
 			return false;
 			// oppure throw new Exception?
@@ -61,10 +61,10 @@ public class Body {
 		return out;
 	}
 
-	public Set<Shape> getBoundingShapes() {
+	public List<Shape> getBoundingShapes() {
 		// restituisco una versione protetta di bounding shape per mantenere
 		// l'incapsulamento
-		return Collections.unmodifiableSet(this.boundingShapes);
+		return Collections.unmodifiableList(this.boundingShapes);
 	}
 	
 	public void move(int x, int y) {

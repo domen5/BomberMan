@@ -10,11 +10,11 @@ import it.bomberman.collisions.Shape;
 import it.bomberman.collisions.Vector2;
 import it.bomberman.gfx.Assets;
 
-public class Explosion extends Entity implements ICollidable {
+public class Explosion implements Entity{
 
 	/**
-	 * Un esplosione si occupa di gestire due Shape Rettangolari e dell collisioni
-	 * con Player, Wall e Bomb
+	 * Un esplosione si occupa di gestire due Shape Rettangolari e di innescare
+	 * collisioni con Player, Wall e Bomb
 	 * 
 	 * @param x
 	 * @param y
@@ -24,31 +24,31 @@ public class Explosion extends Entity implements ICollidable {
 
 	public static final long DEFAULT_TIMER_LENGTH = (long) 1e9; // 1s espressi in nano secondi
 	public final static int DEFAULT_EXPLOSION_EXTENSION = 1;
-	public final static int UNIT = Wall.DEFAULT_WALL_WIDTH;
-
+	public final static int UNIT = WallFactoryImpl.DEFAULT_WALL_WIDTH;
+	public final static int THICKNESS = 35;
+	private int explExtension;
+	private long startTime;
+	private final long timerLength = DEFAULT_TIMER_LENGTH;
+	
+	private int x;
+	private int y;
+	private EntityController controller;
 	private Body body;
-	private final int explExtension;
-	private final long startTime;
-	private final long timerLength;
-	private final EntityController controller;
 
-	public Explosion(int x, int y, int width, int height) {
-		this(x, y, width, height, DEFAULT_EXPLOSION_EXTENSION, null);
+	public Explosion(int x, int y, int explExtension, EntityController controller) {
+		this.x = x;
+		this.y = y;
+		this.explExtension = explExtension;
+		this.controller = controller;
+		initBody();
+		this.startTime = System.nanoTime();
 	}
 
-	public Explosion(int x, int y, int width, int height, int explExtension, EntityController controller) {
-		super(x, y, width, height);
-
-		this.explExtension = explExtension;
-		this.timerLength = DEFAULT_TIMER_LENGTH;
-
-		this.controller = controller;
-
+	private void initBody() {
 		this.body = new Body();
-		this.body.add(new Rectangle(x - UNIT * explExtension, y, (1 + 2 * explExtension) * UNIT, UNIT));
-		this.body.add(new Rectangle(x, y - UNIT * explExtension, UNIT, (1 + 2 * explExtension) * UNIT));
-
-		this.startTime = System.nanoTime();
+		int w = (1 + 2 * this.explExtension) * UNIT;
+		this.body.add(new Rectangle(this.x - (w - THICKNESS) / 2, this.y, w, THICKNESS));
+		this.body.add(new Rectangle(this.x, this.y - (w - THICKNESS) / 2, THICKNESS, w));
 	}
 
 	@Override
@@ -61,15 +61,33 @@ public class Explosion extends Entity implements ICollidable {
 
 	@Override
 	public void render(Graphics g) {
-		//this.body.render(g, Color.YELLOW);
-		g.drawImage(Assets.explosion[0], this.x, this.y, this.width, this.height, null);
-		//UP|DOWN
-		g.drawImage(Assets.explosion[1], this.x-45, this.y+16, this.width, this.height, null);
-		g.drawImage(Assets.explosion[1], this.x+58, this.y+16, this.width, this.height, null);
-		//LEFT|RIGHT
-		g.drawImage(Assets.explosion[2], this.x+12, this.y+60, this.width, this.height, null);
-		g.drawImage(Assets.explosion[2], this.x+12, this.y-45, this.width, this.height, null);
+		int centerX = this.x - 8;
+		int centerY = this.y -15;
+		this.body.render(g, Color.YELLOW);
 		
+		// scale è dovuto al crop non corretto
+		// viene lasciato un bordo trasparente in alpha layer intorno alla Image
+		// Deve essere corretto in Assetts
+		double scaleX = 2.135;
+		double scaleY = 2.5;
+		Rectangle rect = (Rectangle) this.body.getBoundingShapes().get(0);
+		int x = rect.getPosition().getX();
+		int y = rect.getPosition().getY();
+		int w = (int)(rect.getWidth() * scaleX);
+		int h = (int)(rect.getHeight() * scaleY);
+		// UP|DOWN
+		g.drawImage(Assets.explosion[1], x, y, w, h, null);
+		rect = (Rectangle) this.body.getBoundingShapes().get(1);
+		x = rect.getPosition().getX();
+		y = rect.getPosition().getY();
+		w = (int) (rect.getWidth() * scaleY);
+		h = (int) (rect.getHeight()* scaleX);
+		// LEFT|RIGHT
+		g.drawImage(Assets.explosion[2], x,y,w,h,null);
+		
+		// CENTER
+		g.drawImage(Assets.explosion[0], centerX, centerY, w-8, w, null);
+
 	}
 
 	@Override
@@ -100,6 +118,7 @@ public class Explosion extends Entity implements ICollidable {
 
 	}
 
+	// innesca la collisione e la lascia gestire all'oggetto specifico
 	public void collision(ICollidable collidable) {
 		collidable.collision(this);
 //		if (collidable instanceof Wall) {
@@ -111,11 +130,11 @@ public class Explosion extends Entity implements ICollidable {
 //		}
 	}
 
-	public void collision(Wall wall) {
-		// Explosion serve solo a innescare collisioni in altre Entity
-		// per questo le consguenze delle collisioni sono gestite in Wall
-		wall.collision(this);
-	}
+//	public void collision(Wall wall) {
+//		// Explosion serve solo a innescare collisioni in altre Entity
+//		// per questo le consguenze delle collisioni sono gestite in Wall
+//		wall.collision(this);
+//	}
 
 	@Override
 	public Body getBody() {

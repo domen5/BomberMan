@@ -8,10 +8,9 @@ import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Vector2;
 
-public class PowerUp extends Entity {
+public class PowerUp extends AbstractEntity {
 	private final static int DEFAULT_WIDTH = 50;
 	private Body body;
-	private EntityController controller;
 	private PowerUpType type;
 	private int value;
 
@@ -19,30 +18,20 @@ public class PowerUp extends Entity {
 		LIFE, SPEED, BOMB_NUM, BOMB_EXTENSION
 	}
 
-	public PowerUp(int x, int y, EntityController controller, PowerUpType type, int value) {
-		this(x, y, DEFAULT_WIDTH, DEFAULT_WIDTH, type, controller);
+	protected PowerUp(int x, int y, int width, int height, EntityController controller) {
+		super(x, y, width, height, controller);
 	}
 
-	private PowerUp(int x, int y, int width, int height, PowerUpType type,  EntityController controller) {
-		this(x, y, width, height);
-		this.controller = controller;
-		this.body = new Body();
-		this.body.add(new Rectangle(x, y, width, height));
+	
+	public PowerUp(int x, int y, int width, int height, PowerUpType type, int value,  EntityController controller) {
+		this(x, y, width, height, controller);
 		this.type = type;
+		this.value = value;
 	}
+	
+	public PowerUp(int x, int y,  PowerUpType type, int value,  EntityController controller) {
+		this(x, y, DEFAULT_WIDTH, DEFAULT_WIDTH, controller);
 
-	public PowerUp(int x, int y, int width, int height) {
-		super(x, y, width, height);
-	}
-
-	@Override
-	public Vector2 getPosition() {
-		return Vector2.unmodifiableVector2(new Vector2(this.x, this.y));
-	}
-
-	@Override
-	public Body getBody() {
-		return this.body;
 	}
 
 	@Override
@@ -68,7 +57,17 @@ public class PowerUp extends Entity {
 
 	@Override
 	public void render(Graphics g) {
-		this.body.render(g, Color.yellow);
+		Color color = Color.YELLOW;
+		if(this.type == PowerUpType.LIFE) {
+			color = Color.GREEN;
+		}if(this.type == PowerUpType.SPEED) {
+			color = Color.YELLOW;
+		}
+		if(this.type == PowerUpType.BOMB_EXTENSION) {
+			color = Color.CYAN;
+		}
+		
+		this.body.render(g, color);
 	}
 
 	public int getValue() {
@@ -85,6 +84,8 @@ public class PowerUp extends Entity {
 		private EntityController controller;
 		private PowerUpType type;
 		private int value;
+		private int width = DEFAULT_WIDTH;
+		private int height = DEFAULT_WIDTH;
 
 		private PowerUpBuilder() {
 
@@ -122,6 +123,16 @@ public class PowerUp extends Entity {
 			return this;
 		}
 		
+		public PowerUpBuilder setWidth(int width) {
+			this.width = width;
+			return this;
+		}
+		
+		public PowerUpBuilder setHeight(int height) {
+			this.height = height;
+			return this;
+		}
+		
 		private boolean checkValue(int value) {
 			return value > 0 && value < 6;
 		}
@@ -130,11 +141,17 @@ public class PowerUp extends Entity {
 			if(this.controller == null || this.type == null ||  !checkValue(this.value)){
 				throw new IllegalStateException("Un dato ha valore inaccettabile!");
 			}
-			return new PowerUp(this.x, this.y, this.controller, this.type, this.value);
+			return new PowerUp(this.x, this.y, this.width, this.height, this.type, this.value, this.controller);
 		}
 		
 		public static PowerUpBuilder newBuilder() {
 			return new PowerUpBuilder();
 		}
+	}
+
+	@Override
+	protected void initBody() {
+		this.body = new Body();
+		this.body.add(new Rectangle(x, y, width, height));
 	}
 }

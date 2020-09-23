@@ -29,18 +29,16 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 
 	public ArenaModelImpl(KeyManager keyManager) {
 		p1 = new Player(110, 200, 1, keyManager, this);
-		p2 = new Player(410, 200, 2, keyManager, this);
+		p2 = new Player(1000, 500, 2, keyManager, this);
 
 		this.entities = new ArrayList<Entity>();
-		this.registerLater =  new ArrayList<Entity>();
-		this.removeLater =  new ArrayList<Entity>();
+		this.registerLater = new ArrayList<Entity>();
+		this.removeLater = new ArrayList<Entity>();
 		this.collisionMan = new CollisionManager();
 		this.wallF = new WallFactoryImpl();
 		initMapLimitWalls();
 		register(p1);
 		register(p2);
-		register(wallF.simpleWall(500, 500, this));
-		
 	}
 
 	@Override
@@ -52,7 +50,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		this.registerLater = new ArrayList<Entity>();
 		this.removeLater.stream().forEach(this::removeListed);
 		this.registerLater = new ArrayList<Entity>();
-		this.entities.stream().forEach(Entity::tick);		
+		this.entities.stream().forEach(Entity::tick);
 	}
 
 	@Override
@@ -61,7 +59,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		this.registerLater.add(entity);
 		this.lock.unlock();
 	}
-	
+
 	private void registerListed(Entity entity) {
 		this.collisionMan.register(entity);
 		this.entities.add(entity);
@@ -69,7 +67,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 
 	@Override
 	public List<Entity> getDrawables() {
-		//non thread safe?
+		// non thread safe?
 		this.lock.lock();
 		List<Entity> l = Collections.unmodifiableList(this.entities);
 		this.lock.unlock();
@@ -80,11 +78,30 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		List<Wall> walls = new ArrayList<Wall>();
 		int xLimit = 18;
 		int yLimit = 8;
-		int unit = Wall.DEFAULT_WALL_WIDTH;
-		IntStream.range(0, xLimit).forEach(i -> walls.add(wallF.mapLimitWall(unit*i, 80, this)));
-		IntStream.range(0, xLimit).forEach(i -> walls.add(wallF.mapLimitWall(unit*i, 80+unit*(yLimit-1), this)));
-		IntStream.range(1, yLimit).forEach(i -> walls.add(wallF.mapLimitWall(0, 80+i*unit, this)));
-		IntStream.range(1, yLimit).forEach(i -> walls.add(wallF.mapLimitWall((xLimit-1)*unit, 80+i*unit, this)));
+		int unit = WallFactoryImpl.DEFAULT_WALL_WIDTH;
+		IntStream.range(0, xLimit).forEach(i -> walls.add(wallF.mapLimitWall(unit * i, 80, this)));
+		IntStream.range(0, xLimit)
+				.forEach(i -> walls.add(wallF.mapLimitWall(unit * i, 80 + unit * (yLimit - 1), this)));
+		IntStream.range(1, yLimit).forEach(i -> walls.add(wallF.mapLimitWall(0, 80 + i * unit, this)));
+		IntStream.range(1, yLimit)
+				.forEach(i -> walls.add(wallF.mapLimitWall((xLimit - 1) * unit, 80 + i * unit, this)));
+		
+//		for(int x=2; x < xLimit-2; x++) {
+//			for(int y = 2; y <  yLimit-2; y++){
+//				int xP = x*unit;
+//				int yP = 80 +unit*y;
+//				Wall w = x%2==0 ? wallF.simpleWall(xP, yP, this) : wallF.mapLimitWall(xP, yP, this) ;
+//				walls.add(w);
+//			}
+//		}
+//		IntStream.range(2, yLimit-1).filter(y->y%2==0).forEach(column ->{
+//			IntStream.range(2, xLimit - 1).filter(x -> x%2==0).forEach(row -> {
+//				int x = row*unit;
+//				int y = 80 + unit*column;
+//				walls.add(wallF.mapLimitWall(x, y, this) );
+//			});
+//		});
+		
 		walls.forEach(this::register);
 	}
 
@@ -94,7 +111,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		this.removeLater.add(entity);
 		this.lock.unlock();
 	}
-	
+
 	private void removeListed(Entity entity) {
 		this.entities.remove(entity);
 		this.collisionMan.remove(entity);

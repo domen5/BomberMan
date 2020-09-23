@@ -15,42 +15,36 @@ import it.bomberman.gfx.Assets;
 
 //import org.dyn4j.geometry.Vector2;
 
-public class Bomb extends Entity implements ICollidable {
+public class Bomb extends AbstractEntity implements ICollidable {
 
 	public static final long DEFAULT_TIMER_LENGTH = (long) 3e+9; // 3s espressi in nano secondi
 	public static final int DEFAULT_WIDTH = 100;
 	public static final int DEFAULT_EXPLOSION_EXTENTION = 1;
 
-	private final EntityController controller;
-	private final long startTime;
-	private final long timerLength;
+	private long startTime;
+	private final long timerLength = DEFAULT_TIMER_LENGTH;
 	private int exlposionExtention;
 	private boolean exploded = false;
 	private boolean animationOver = false;
 	private final int SCALE = 2;
-	private Body body;
-	private Optional<Explosion> ex;
 	private Animation animation;
 
-	public Bomb(int x, int y, EntityController controller) {
+protected Bomb(int x, int y, int width, int height, EntityController controller) {
+	super(x, y, width, height, controller);
+}
+
+	public Bomb(int x, int y, int explosionExtension, EntityController controller) {
 		this(x, y, DEFAULT_WIDTH, DEFAULT_WIDTH, controller);
+		this.exploded = false;
+		this.exlposionExtention = explosionExtension;
+		this.animation = new Animation(600, Assets.bomb);
+		this.startTime = System.nanoTime();
 	}
 
-	public Bomb(int x, int y, int width, int height, EntityController controller) {
-		this(x, y, width, height, DEFAULT_TIMER_LENGTH, controller);
-	}
-
-	public Bomb(int x, int y, int width, int height, long timerLength, EntityController controller) {
-		super(x, y, width, height);
-		this.controller = controller;
+	@Override
+	protected void initBody() {
 		this.body = new Body();
 		this.body.add(new Rectangle(x, y, width, height));
-		this.ex = Optional.empty();
-		this.exploded = false;
-		this.timerLength = timerLength;
-		this.exlposionExtention = DEFAULT_EXPLOSION_EXTENTION;
-		this.startTime = System.nanoTime();
-		this.animation = new Animation(600, Assets.bomb);
 	}
 
 	@Override
@@ -60,7 +54,6 @@ public class Bomb extends Entity implements ICollidable {
 			this.explode();
 		}
 		this.animation.tick();
-		// this.ex.ifPresent(Explosion::tick);
 	}
 
 	@Override
@@ -74,8 +67,7 @@ public class Bomb extends Entity implements ICollidable {
 		this.exploded = true;
 
 		this.controller.register(
-				new Explosion(this.x, this.y, this.width, this.height,
-						this.exlposionExtention, this.controller));
+				new Explosion(this.x+50, this.y+50,	this.exlposionExtention, this.controller));
 		this.dispose();
 	}
 
