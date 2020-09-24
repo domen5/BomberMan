@@ -7,10 +7,10 @@ import it.bomberman.collisions.Body;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Vector2;
+import it.bomberman.gfx.Assets;
 
 public class PowerUp extends AbstractEntity {
 	private final static int DEFAULT_WIDTH = 50;
-	private Body body;
 	private PowerUpType type;
 	private int value;
 
@@ -57,17 +57,23 @@ public class PowerUp extends AbstractEntity {
 
 	@Override
 	public void render(Graphics g) {
-		Color color = Color.YELLOW;
-		if(this.type == PowerUpType.LIFE) {
-			color = Color.GREEN;
-		}if(this.type == PowerUpType.SPEED) {
-			color = Color.YELLOW;
+		
+		if(this.type == PowerUpType.SPEED) {
+			g.drawImage(Assets.upgrade[0], x, y, null);
+			}
+		if(this.type == PowerUpType.BOMB_NUM) {
+			g.drawImage(Assets.upgrade[1], x, y, null);
 		}
 		if(this.type == PowerUpType.BOMB_EXTENSION) {
-			color = Color.CYAN;
+			g.drawImage(Assets.upgrade[2], x, y, null);
+		}
+		if(this.type == PowerUpType.LIFE) {
+			g.drawImage(Assets.upgrade[3], x, y, null);
 		}
 		
-		this.body.render(g, color);
+		
+	
+
 	}
 
 	public int getValue() {

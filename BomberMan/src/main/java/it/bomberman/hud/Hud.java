@@ -13,11 +13,11 @@ public class Hud {
 	private Font hudFont;
 	private Clock clock;
 
-	public Hud(Player p1, Player p2) {
+	public Hud(Player p1, Player p2, Clock clock) {
 		this.p1 = p1;
 		this.p2 = p2;
 		this.init();
-		clock= new Clock(100);
+		this.clock= clock;
 	}
 
 	public void init() {
@@ -27,12 +27,13 @@ public class Hud {
 			e.printStackTrace();
 		}
 	}
-
+	//(String GetTime
 	public void update() {
 		this.p1.getHealth();
 		this.p2.getHealth();
 		this.p1.getSpeed();
 		this.p2.getSpeed();
+		
 	}
 
 	public void render(Graphics g) {

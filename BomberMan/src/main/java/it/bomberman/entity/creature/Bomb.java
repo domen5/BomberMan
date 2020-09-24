@@ -24,9 +24,9 @@ public class Bomb extends AbstractEntity implements ICollidable {
 	private final int SCALE = 2;
 	private Animation animation;
 
-protected Bomb(int x, int y, int width, int height, EntityController controller) {
-	super(x, y, width, height, controller);
-}
+	protected Bomb(int x, int y, int width, int height, EntityController controller) {
+		super(x, y, width, height, controller);
+	}
 
 	public Bomb(int x, int y, int explosionExtension, EntityController controller) {
 		this(x, y, DEFAULT_WIDTH, DEFAULT_WIDTH, controller);
@@ -45,7 +45,7 @@ protected Bomb(int x, int y, int width, int height, EntityController controller)
 	@Override
 	public void tick() {
 		long now = System.nanoTime();
-		if (now - this.startTime> this.timerLength) {
+		if (now - this.startTime > this.timerLength) {
 			this.explode();
 		}
 		this.animation.tick();
@@ -53,16 +53,15 @@ protected Bomb(int x, int y, int width, int height, EntityController controller)
 
 	@Override
 	public void render(Graphics g) {
-		
-		//this.body.render(g, Color.BLUE);
-		g.drawImage(getCurrentAnimationFrame(), this.x-22, this.y, this.width*SCALE, this.height*SCALE, null);
+
+		// this.body.render(g, Color.BLUE);
+		g.drawImage(getCurrentAnimationFrame(), this.x-40, this.y-20, this.width * SCALE, this.height * SCALE, null);
 	}
 
 	public void explode() {
 		this.exploded = true;
 
-		this.controller.register(
-				new Explosion(this.x+50, this.y+50,	this.exlposionExtention, this.controller));
+		this.controller.register(new Explosion(this.x, this.y, this.exlposionExtention, this.controller));
 		this.dispose();
 	}
 
@@ -86,11 +85,11 @@ protected Bomb(int x, int y, int width, int height, EntityController controller)
 	public void dispose() {
 		this.controller.notifyDisposal(this);
 	}
-	
+
 	public boolean hasFinished() {
 		return this.exploded;
 	}
-	
+
 	private BufferedImage getCurrentAnimationFrame() {
 		return this.animation.getCurrentFrame();
 	}

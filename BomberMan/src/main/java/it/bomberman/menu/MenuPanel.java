@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import it.bomberman.gfx.DefaultValues;
 import it.bomberman.state.GameState;
 import it.bomberman.state.GameStateManager;
 
@@ -22,6 +21,7 @@ public class MenuPanel extends GameState implements KeyListener {
 	public static final int WIDTH = 600;
 	public static final int HEIGHT = 300;
 	public static final int SCALE = 3;
+	public final static String NAME = "BOMBERMAN";
 
 	// game thread
 	private Thread thread;
@@ -165,7 +165,7 @@ public class MenuPanel extends GameState implements KeyListener {
 //		if (menuX <= 0)
 //			cambios = false;
 		
-		g2.drawString(DefaultValues.NAME, 650 + menuX, 200);
+		g2.drawString(NAME, 650 + menuX, 200);
 		Toolkit.getDefaultToolkit().sync();
 
 		// draw menu options

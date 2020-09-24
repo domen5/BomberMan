@@ -13,7 +13,7 @@ import it.bomberman.entity.creature.PowerUp.PowerUpType;
 import it.bomberman.gfx.*;
 import it.bomberman.input.KeyManager;
 
-public class Player extends AbstractEntity{
+public class Player extends AbstractEntity {
 
 	public static final long DEFAULT_DROP_COOL_DOWN = (long) 5e8; // 1/2 s
 	public static final int DEFAULT_PLAYER_WIDTH = 128;
@@ -27,18 +27,18 @@ public class Player extends AbstractEntity{
 	private int xMove;
 	private int yMove;
 
-	private int health = 2;
+	private int health = 1;
 	private int speed = 12;
 	private int nBombs = 3;
 	private int bombExtension = 1;
 	private long lastBombDroppedTime = 0;
 	private long bombDroppedCoolDown = DEFAULT_DROP_COOL_DOWN;
 	public Set<Bomb> bombs;
-	
+
 	protected Player(int x, int y, int width, int height, EntityController controller) {
-		super(x, y, width,height, controller);
+		super(x, y, width, height, controller);
 	}
-	
+
 	public Player(int x, int y, int n, KeyManager keyManager, EntityController controller) {
 		this(x, y, DEFAULT_PLAYER_WIDTH, DEFAULT_PLAYER_HEIGHT, controller);
 		this.playerNumb = n;
@@ -63,7 +63,7 @@ public class Player extends AbstractEntity{
 			animBomb = new Animation(200, Assets.player_bomb2);
 		}
 	}
-	
+
 	@Override
 	protected void initBody() {
 		this.body = new Body();
@@ -116,7 +116,7 @@ public class Player extends AbstractEntity{
 		getInput();
 		int oldX = this.x;
 		int oldY = this.y;
-		this.x+= xMove;
+		this.x += xMove;
 		this.y += yMove;
 		this.body.move(this.x + cropOffsetX, this.y + cropOffsetY);
 		if (this.controller.verifyCollision(this)) {
@@ -133,11 +133,11 @@ public class Player extends AbstractEntity{
 		g.drawImage(getCurrentAnimationFrame(), x, y, width, height, null);
 
 		// debug only
-		 this.body.render(g, Color.RED);
+		this.body.render(g, Color.RED);
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
-		if (this.keyManager.drop && playerNumb == 1  && canDropBomb()) {
+		if (this.keyManager.drop && playerNumb == 1 && canDropBomb()) {
 			return animBomb.getCurrentFrame();
 		}
 		if (this.keyManager.drop2 && playerNumb == 2 && canDropBomb())
@@ -175,10 +175,10 @@ public class Player extends AbstractEntity{
 
 	@Override
 	public void collision(ICollidable collidable) {
-		if(collidable instanceof Explosion){
+		if (collidable instanceof Explosion) {
 			this.collision((Explosion) collidable);
 		}
-		if(collidable instanceof PowerUp) {
+		if (collidable instanceof PowerUp) {
 			collision((PowerUp) collidable);
 		}
 	}
@@ -192,18 +192,18 @@ public class Player extends AbstractEntity{
 	public void collision(Wall wall) {
 		// Do Nothing
 		// Die if deathWall
-		
-		// Qui andrebbe implementata la dinamica di rollback 
-		
+
+		// Qui andrebbe implementata la dinamica di rollback
+
 	}
-	
+
 	public void collision(PowerUp up) {
-		if(up.getType() == PowerUpType.BOMB_NUM) {
+		if (up.getType() == PowerUpType.BOMB_NUM) {
 			this.nBombs++;
 		}
-		
-		if(up.getType() == PowerUpType.LIFE) {
-			
+
+		if (up.getType() == PowerUpType.LIFE) {
+
 		}
 	}
 
@@ -236,12 +236,16 @@ public class Player extends AbstractEntity{
 		return (this.bombs.size() == 0) || ((this.bombs.size() < this.nBombs)
 				&& (System.nanoTime() - this.lastBombDroppedTime > this.bombDroppedCoolDown));
 	}
-	
+
 	public int getHealth() {
 		return this.health;
 	}
-	
+
 	public int getSpeed() {
 		return this.speed;
 	}
+	public int getPlayerNumb() {
+		return this.playerNumb;
+	}
+	
 }

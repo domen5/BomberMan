@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 public class Assets {
 	// Immagini dello sheet
 	private static final int width = 49, height = 49, widthHud = 21, heightHud = 22;
-	public static BufferedImage simpleWall, deathWall, wall, upgrade;
+	public static BufferedImage simpleWall, deathWall, wall;
 
 	// buffer p1
 	public static BufferedImage[] player_d, player_u, player_r, player_l, player_bomb;
@@ -19,7 +19,9 @@ public class Assets {
 
 	public static BufferedImage[] explosion;
 
-	public static void init() {
+	public static BufferedImage[] upgrade;
+
+	public static final void init() {
 		// 64x64
 
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/SpAll.png"));
@@ -90,11 +92,15 @@ public class Assets {
 		explosion[0] = sheet.crop(width * 5, height * 3, width, height);
 		explosion[1] = sheet.crop(width * 6, height * 3, width, height);
 		explosion[2] = sheet.crop(width * 7, height * 3, width, height);
-		
-		
+
 		simpleWall = sheet.crop(width * 8, height * 3, width, height);
 		wall = sheet.crop(width * 9, height * 3, width, height);
 		deathWall = sheet.crop(width * 10, height * 3, width, height);
+
+		upgrade = new BufferedImage[4];
+		for (int i = 0; i < 4; i++) {
+			upgrade[i] = sheet.crop(width * (11 + i), height * 3, width - 2, height);
+		}
 	}
 
 	// classe innestata per player: d/u/l/r

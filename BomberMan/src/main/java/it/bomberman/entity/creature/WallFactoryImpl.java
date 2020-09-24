@@ -14,16 +14,16 @@ public class WallFactoryImpl implements WallFactory {
 
 	@Override
 	public Wall mapLimitWall(int x, int y, EntityController controller) {
-		class MapLimitWall extends HardWall{
+		class MapLimitWall extends HardWall {
 
 			public MapLimitWall(int x, int y, EntityController controller) {
 				super(x, y, controller);
 			}
-			
+
 			@Override
 			public void render(Graphics g) {
-				//non va disegnato
-				//super.render(g);
+				// non va disegnato
+				// super.render(g);
 			}
 		}
 		return new MapLimitWall(x, y, controller);
@@ -75,7 +75,7 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void render(Graphics g) {
-				// le immagini sono da scalare in quanto il crop delle sprite non è perfetto
+				// le immagini sono da scalare in quanto il crop delle sprite non ï¿½ perfetto
 				// ma contiene un bordo trasparente in canale alfa.
 				// Deve essere corretto in t.bomberman.gfx. Assets
 				double scale = 1.18;
@@ -156,10 +156,10 @@ public class WallFactoryImpl implements WallFactory {
 
 	@Override
 	public Wall hardWall(int x, int y, EntityController controller) {
-		
+
 		return new HardWall(x, y, controller);
 	}
-	
+
 	class HardWall implements Wall {
 		Wall inner;
 		private EntityController controller;
@@ -196,7 +196,11 @@ public class WallFactoryImpl implements WallFactory {
 
 		@Override
 		public void render(Graphics g) {
-			this.inner.render(g);
+			double scale = 1.18;
+			int w = (int) (DEFAULT_WALL_WIDTH * scale);
+			int h = (int) (DEFAULT_WALL_WIDTH * scale);
+//			 this.body.render(g, Color.GRAY);
+			g.drawImage(Assets.wall, this.inner.getPosition().getX(), this.inner.getPosition().getY(), w, h, null);
 		}
 
 		@Override
