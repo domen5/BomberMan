@@ -3,14 +3,9 @@ package it.bomberman.entity.creature;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-
 import it.bomberman.collisions.Body;
-import it.bomberman.collisions.CollisionManager;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Vector2;
@@ -22,13 +17,13 @@ public class Player extends AbstractEntity{
 
 	public static final long DEFAULT_DROP_COOL_DOWN = (long) 5e8; // 1/2 s
 	public static final int DEFAULT_PLAYER_WIDTH = 128;
-	public static final int DEFAULT_PLAYER_HEIGHT = 128;
+	public static final int DEFAULT_PLAYER_HEIGHT = 100;
 	private Animation animDown, animUp, animLeft, animRight, animBomb;
 	private KeyManager keyManager;
 	private int playerNumb;
 	private Body body;
 	private final int cropOffsetX = 17;
-	private final int cropOffsetY = 28;
+	private final int cropOffsetY = 22;
 	private int xMove;
 	private int yMove;
 
@@ -72,7 +67,7 @@ public class Player extends AbstractEntity{
 	@Override
 	protected void initBody() {
 		this.body = new Body();
-		this.body.add(new Rectangle(this.x + cropOffsetX, this.y + cropOffsetY, 40, 91));
+		this.body.add(new Rectangle(this.x + cropOffsetX, this.y + cropOffsetY, 40, 70));
 	}
 
 	public void getInput() {
@@ -138,11 +133,10 @@ public class Player extends AbstractEntity{
 		g.drawImage(getCurrentAnimationFrame(), x, y, width, height, null);
 
 		// debug only
-		// this.body.render(g, Color.RED);
+		 this.body.render(g, Color.RED);
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
-//		super.move();
 		if (this.keyManager.drop && playerNumb == 1  && canDropBomb()) {
 			return animBomb.getCurrentFrame();
 		}
@@ -173,13 +167,10 @@ public class Player extends AbstractEntity{
 
 	@Override
 	public boolean shouldCollide(ICollidable collidable) {
-		boolean out = false;
-//		if (collidable instanceof Explosion) {
-//			out = true;
-//		}
-		if (collidable instanceof Wall)
-			out = true;
-		return out;
+		if (collidable instanceof Wall) {
+			return true;
+		}
+		return false;
 	}
 
 	@Override

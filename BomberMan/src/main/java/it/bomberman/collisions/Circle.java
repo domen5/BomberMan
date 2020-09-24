@@ -2,9 +2,6 @@ package it.bomberman.collisions;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.List;
-//import javax.naming.OperationNotSupportedException;
 
 public class Circle extends Shape {
 	private int r;

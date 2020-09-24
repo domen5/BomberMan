@@ -1,15 +1,10 @@
 package it.bomberman.entity.creature;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
-
-import com.google.errorprone.annotations.DoNotCall;
-
 import it.bomberman.collisions.Body;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
-import it.bomberman.collisions.Shape;
 import it.bomberman.collisions.Vector2;
 import it.bomberman.entity.creature.PowerUp.PowerUpType;
 import it.bomberman.gfx.Assets;
@@ -201,8 +196,7 @@ public class WallFactoryImpl implements WallFactory {
 
 		@Override
 		public void render(Graphics g) {
-			this.inner.getBody().render(g, Color.DARK_GRAY);
-
+			this.inner.render(g);
 		}
 
 		@Override

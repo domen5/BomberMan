@@ -13,10 +13,8 @@ public class ArenaState extends GameState {
 	/**
 	 * 
 	 */
-	private int i = 0;
 	private static final long serialVersionUID = 1L;
 	private KeyManager keyManager;
-
 	private final Hud hud;
 	private ArenaModel arenaModel;
 
@@ -48,8 +46,7 @@ public class ArenaState extends GameState {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, 1800, 900);
 		Toolkit.getDefaultToolkit().sync();
-
-//		wallie.render(g);	
+	
 //		p1.render(g);
 //		p2.render(g);
 		this.hud.render(g);
@@ -68,5 +65,4 @@ public class ArenaState extends GameState {
 		super.addNotify();
 		addKeyListener(this.keyManager);
 	}
-
 }

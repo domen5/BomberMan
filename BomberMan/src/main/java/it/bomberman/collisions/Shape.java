@@ -2,9 +2,6 @@ package it.bomberman.collisions;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 public abstract class Shape {
@@ -30,7 +27,6 @@ public abstract class Shape {
 		this.position.setY(y);
 	}
 
-	// T extends Shape ?
 	public abstract boolean intersects(Shape shape);
 
 	public boolean intersectsAny(Set<Shape> otherBoundingShapes) {

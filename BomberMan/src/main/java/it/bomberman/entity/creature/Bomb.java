@@ -1,12 +1,8 @@
 package it.bomberman.entity.creature;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.util.Optional;
-
 import it.bomberman.collisions.Body;
-import it.bomberman.collisions.CollisionManager;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Vector2;
@@ -25,7 +21,6 @@ public class Bomb extends AbstractEntity implements ICollidable {
 	private final long timerLength = DEFAULT_TIMER_LENGTH;
 	private int exlposionExtention;
 	private boolean exploded = false;
-	private boolean animationOver = false;
 	private final int SCALE = 2;
 	private Animation animation;
 
@@ -69,16 +64,6 @@ protected Bomb(int x, int y, int width, int height, EntityController controller)
 		this.controller.register(
 				new Explosion(this.x+50, this.y+50,	this.exlposionExtention, this.controller));
 		this.dispose();
-	}
-
-	@Override
-	public Vector2 getPosition() {
-		return Vector2.unmodifiableVector2(new Vector2(this.x, this.y));
-	}
-
-	@Override
-	public Body getBody() {
-		return this.body;	
 	}
 
 	@Override

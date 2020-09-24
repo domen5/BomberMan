@@ -29,7 +29,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 
 	public ArenaModelImpl(KeyManager keyManager) {
 		p1 = new Player(110, 200, 1, keyManager, this);
-		p2 = new Player(1000, 500, 2, keyManager, this);
+		p2 = new Player(1600, 700, 2, keyManager, this);
 
 		this.entities = new ArrayList<Entity>();
 		this.registerLater = new ArrayList<Entity>();
@@ -47,9 +47,9 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 //		this.p2.tick();
 
 		this.registerLater.stream().forEach(this::registerListed);
-		this.registerLater = new ArrayList<Entity>();
+		this.registerLater.clear();
 		this.removeLater.stream().forEach(this::removeListed);
-		this.registerLater = new ArrayList<Entity>();
+		this.registerLater.clear();
 		this.entities.stream().forEach(Entity::tick);
 	}
 
@@ -86,6 +86,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		IntStream.range(1, yLimit)
 				.forEach(i -> walls.add(wallF.mapLimitWall((xLimit - 1) * unit, 80 + i * unit, this)));
 		
+		walls.add(wallF.hardWall(500, 500, this));
 //		for(int x=2; x < xLimit-2; x++) {
 //			for(int y = 2; y <  yLimit-2; y++){
 //				int xP = x*unit;
