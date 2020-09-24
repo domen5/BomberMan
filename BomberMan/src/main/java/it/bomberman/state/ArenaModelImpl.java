@@ -42,7 +42,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		p1 = new Player(70, 135, 1, keyManager, this);
 		p2 = new Player(1660, 735, 2, keyManager, this);
 
-		this.clock = new Clock(200);
+		this.clock = new Clock(10);
 
 		this.entities = new ArrayList<Entity>();
 		this.registerLater = new ArrayList<Entity>();
@@ -144,9 +144,12 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 						walls.add(w);
 					} else if (r == 5) {
 						{
-							PowerUp p = PowerUp.PowerUpBuilder.newBuilder().setController(this).setX(unit * i - 25)
+							PowerUp p = PowerUp.PowerUpBuilder.newBuilder()
+									.setController(this)
+									.setX(unit * i - 25)
 									.setY(unit * j + 75)
-									.setType(PowerUpType.values()[rd.nextInt(PowerUpType.values().length)]).setValue(1)
+									.setType(PowerUpType.values()[rd.nextInt(PowerUpType.values().length)])
+									.setValue(1)
 									.build();
 							register(p);
 						}

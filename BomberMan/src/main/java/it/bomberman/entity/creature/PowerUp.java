@@ -22,14 +22,13 @@ public class PowerUp extends AbstractEntity {
 		super(x, y, width, height, controller);
 	}
 
-	
-	public PowerUp(int x, int y, int width, int height, PowerUpType type, int value,  EntityController controller) {
+	public PowerUp(int x, int y, int width, int height, PowerUpType type, int value, EntityController controller) {
 		this(x, y, width, height, controller);
 		this.type = type;
 		this.value = value;
 	}
-	
-	public PowerUp(int x, int y,  PowerUpType type, int value,  EntityController controller) {
+
+	public PowerUp(int x, int y, PowerUpType type, int value, EntityController controller) {
 		this(x, y, DEFAULT_WIDTH, DEFAULT_WIDTH, controller);
 
 	}
@@ -57,23 +56,19 @@ public class PowerUp extends AbstractEntity {
 
 	@Override
 	public void render(Graphics g) {
-		
-		if(this.type == PowerUpType.SPEED) {
+
+		if (this.type == PowerUpType.SPEED) {
 			g.drawImage(Assets.upgrade[0], x, y, null);
-			}
-		if(this.type == PowerUpType.BOMB_NUM) {
+		}
+		if (this.type == PowerUpType.BOMB_NUM) {
 			g.drawImage(Assets.upgrade[1], x, y, null);
 		}
-		if(this.type == PowerUpType.BOMB_EXTENSION) {
+		if (this.type == PowerUpType.LIFE) {
 			g.drawImage(Assets.upgrade[2], x, y, null);
 		}
-		if(this.type == PowerUpType.LIFE) {
+		if (this.type == PowerUpType.BOMB_EXTENSION) {
 			g.drawImage(Assets.upgrade[3], x, y, null);
 		}
-		
-		
-	
-
 	}
 
 	public int getValue() {
@@ -116,40 +111,41 @@ public class PowerUp extends AbstractEntity {
 			this.type = type;
 			return this;
 		}
+
 		/**
 		 * 
 		 * @param value deve essere < di 6 e > 0
 		 * @return
 		 */
 		public PowerUpBuilder setValue(int value) {
-			if(!checkValue(value)) {
+			if (!checkValue(value)) {
 				throw new IllegalArgumentException("Value di PowerUp deve essere 0 < v < 6");
 			}
 			this.value = value;
 			return this;
 		}
-		
+
 		public PowerUpBuilder setWidth(int width) {
 			this.width = width;
 			return this;
 		}
-		
+
 		public PowerUpBuilder setHeight(int height) {
 			this.height = height;
 			return this;
 		}
-		
+
 		private boolean checkValue(int value) {
 			return value > 0 && value < 6;
 		}
 
 		public PowerUp build() {
-			if(this.controller == null || this.type == null ||  !checkValue(this.value)){
+			if (this.controller == null || this.type == null || !checkValue(this.value)) {
 				throw new IllegalStateException("Un dato ha valore inaccettabile!");
 			}
 			return new PowerUp(this.x, this.y, this.width, this.height, this.type, this.value, this.controller);
 		}
-		
+
 		public static PowerUpBuilder newBuilder() {
 			return new PowerUpBuilder();
 		}

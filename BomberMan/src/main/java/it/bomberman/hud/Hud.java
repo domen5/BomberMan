@@ -51,12 +51,12 @@ public class Hud {
 		g.drawImage(Assets.hud[0], 320, 0, 72, 70, null);
 		g.drawString("P1 Stats: ", 400, 30);
 		g.drawString("Life: " + p1.getHealth(), 550, 30);
-		g.drawString("Speed: " + p1.getHealth(), 550, 60);
+		g.drawString("Speed: " + p1.getSpeed(), 550, 60);
 		// P2
 		g.drawImage(Assets.hud[1], 980, 0, 72, 70, null);
 		g.drawString("P2 Stats: ", 1100, 30);
-		g.drawString("Life: " + p1.getHealth(), 1250, 30);
-		g.drawString("Speed: " + p1.getHealth(), 1250, 60);
+		g.drawString("Life: " + p2.getHealth(), 1250, 30);
+		g.drawString("Speed: " + p2.getSpeed(), 1250, 60);
 		//Clock
 		g.setFont(new Font("Century Gothic", Font.PLAIN, 40));
 		g.drawString(clock.getTime()+"", 830, 45);

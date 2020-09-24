@@ -15,28 +15,38 @@ import it.bomberman.input.KeyManager;
 
 public class Player extends AbstractEntity {
 
-	public static final long DEFAULT_DROP_COOL_DOWN = (long) 5e8; // 1/2 s
+	public static final long DEFAULT_DROP_COOL_DOWN = (long) 5e8; // 0.5 s
 	public static final int DEFAULT_PLAYER_WIDTH = 128;
 	public static final int DEFAULT_PLAYER_HEIGHT = 100;
+	public static final int SPEED_MULTIPLIER = 2;
 	private Animation animDown, animUp, animLeft, animRight, animBomb;
 	private KeyManager keyManager;
 	private int playerNumb;
 	private Body body;
 	private final int cropOffsetX = 17;
 	private final int cropOffsetY = 22;
-	private int xMove;
-	private int yMove;
 
-	private int health = 1;
-	private int speed = 12;
-	private int nBombs = 3;
-	private int bombExtension = 1;
+	private final int initialPosX;
+	private final int initialPosY;
+	private int health;
+	private int speed;
+	private int nBombs;
+	private int bombExtension;
+	
+	private long spawnTime;
+	private boolean invulnerable;
+
 	private long lastBombDroppedTime = 0;
 	private long bombDroppedCoolDown = DEFAULT_DROP_COOL_DOWN;
-	public Set<Bomb> bombs;
+	private int xMove;
+	private int yMove;
+	private Set<Bomb> bombs;
 
 	protected Player(int x, int y, int width, int height, EntityController controller) {
 		super(x, y, width, height, controller);
+		this.initialPosX = x;
+		this.initialPosY = y;
+		init();
 	}
 
 	public Player(int x, int y, int n, KeyManager keyManager, EntityController controller) {
@@ -64,6 +74,17 @@ public class Player extends AbstractEntity {
 		}
 	}
 
+	private void init() {
+		this.x = initialPosX;
+		this.y = initialPosY;
+		this.health = 1;
+		this.nBombs = 1;
+		this.speed = 1;
+		this.bombExtension = 1;
+		this.invulnerable = true;
+		this.spawnTime = System.nanoTime();
+	}
+
 	@Override
 	protected void initBody() {
 		this.body = new Body();
@@ -73,26 +94,30 @@ public class Player extends AbstractEntity {
 	public void getInput() {
 		xMove = 0;
 		yMove = 0;
+		
+		// v(x) = 2x + 2
+		int s = SPEED_MULTIPLIER * this.speed +2;
+		
 		if (this.playerNumb == 1) {
 			if (this.keyManager.up)
-				yMove -= speed;
+				yMove -= s;
 			if (this.keyManager.down)
-				yMove = speed;
+				yMove = s;
 			if (this.keyManager.left)
-				xMove -= speed;
+				xMove -= s;
 			if (this.keyManager.right)
-				xMove = speed;
+				xMove = s;
 		}
 
 		if (this.playerNumb == 2) {
 			if (this.keyManager.up2)
-				yMove -= speed;
+				yMove -= s;
 			if (this.keyManager.down2)
-				yMove = speed;
+				yMove = s;
 			if (this.keyManager.left2)
-				xMove -= speed;
+				xMove -= s;
 			if (this.keyManager.right2)
-				xMove = speed;
+				xMove = s;
 		}
 		if (this.keyManager.drop && playerNumb == 1) {
 			dropBomb();
@@ -105,7 +130,12 @@ public class Player extends AbstractEntity {
 
 	@Override
 	public void tick() {
-		// rimuove il riferimento ad ogni bomba giï¿½ esplosa
+		// se è spawnato da piu' di 1s allora puo' deve essere vulenrabile
+		if(System.nanoTime() - this.spawnTime > 1e9) {
+			this.invulnerable = false;
+		}
+		
+		// rimuove il riferimento ad ogni bomba gia' esplosa
 		this.bombs.removeIf(Bomb::hasFinished);
 		animDown.tick();
 		animLeft.tick();
@@ -133,7 +163,7 @@ public class Player extends AbstractEntity {
 		g.drawImage(getCurrentAnimationFrame(), x, y, width, height, null);
 
 		// debug only
-		this.body.render(g, Color.RED);
+		// this.body.render(g, Color.RED);
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
@@ -184,9 +214,9 @@ public class Player extends AbstractEntity {
 	}
 
 	public void collision(Explosion exp) {
-		// Muori
-		// Notifica eventuali listener del fatto che sei morto
-		die();
+		if (!this.invulnerable) {
+			hit();
+		}
 	}
 
 	public void collision(Wall wall) {
@@ -199,19 +229,23 @@ public class Player extends AbstractEntity {
 
 	public void collision(PowerUp up) {
 		if (up.getType() == PowerUpType.BOMB_NUM) {
-			this.nBombs++;
+			this.nBombs += up.getValue();
 		}
 
 		if (up.getType() == PowerUpType.LIFE) {
+			this.health += up.getValue();
+		}
 
+		if (up.getType() == PowerUpType.BOMB_EXTENSION) {
+			this.bombExtension += up.getValue();
+		}
+
+		if (up.getType() == PowerUpType.SPEED) {
+			this.speed += up.getValue();
 		}
 	}
 
 	public void dropBomb() {
-		if (this.lastBombDroppedTime == 0) {
-			this.lastBombDroppedTime = System.nanoTime();
-		}
-
 		if (canDropBomb()) {
 			Bomb b = new Bomb(this.x + cropOffsetX, this.y + cropOffsetY, this.bombExtension, this.controller);
 			this.bombs.add(b);
@@ -225,16 +259,29 @@ public class Player extends AbstractEntity {
 		this.controller.notifyDisposal(this);
 	}
 
-	public void die() {
-		this.dispose();
+	private void die() {
+		if (this.health >= 1) {
+			respawn();
+		} else {
+			this.dispose();
+		}
 	}
 
 	private boolean canDropBomb() {
 		// se non ci sono bombe sul campo
 		// oppure
-		// ci sono meno bombe del massi & ï¿½ passato abbastanza tempo dall'ultima bomba
+		// ci sono meno bombe del massi ed e' passato abbastanza tempo dall'ultima bomba
 		return (this.bombs.size() == 0) || ((this.bombs.size() < this.nBombs)
 				&& (System.nanoTime() - this.lastBombDroppedTime > this.bombDroppedCoolDown));
+	}
+
+	private void hit() {
+		this.health--;
+		die();
+	}
+
+	private void respawn() {
+		init();
 	}
 
 	public int getHealth() {
@@ -244,8 +291,17 @@ public class Player extends AbstractEntity {
 	public int getSpeed() {
 		return this.speed;
 	}
+
+	public int getBombsNumber() {
+		return nBombs;
+	}
+
+	public int getBombExtension() {
+		return this.bombExtension;
+	}
+
 	public int getPlayerNumb() {
 		return this.playerNumb;
 	}
-	
+
 }

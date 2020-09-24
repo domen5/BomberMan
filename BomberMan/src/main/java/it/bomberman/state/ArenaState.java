@@ -59,10 +59,8 @@ public class ArenaState extends GameState {
 			if(arenaModel.getWinner().isEmpty()) {
 			
 			}
-			else
-			{
-				Player p= arenaModel.getWinner().get();
-				
+			else{
+				Player p= arenaModel.getWinner().get();				
 			}
 		}
 		
