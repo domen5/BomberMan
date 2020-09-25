@@ -1,8 +1,5 @@
 package it.bomberman.state;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 import javax.swing.JPanel;
 
 public abstract class GameState extends JPanel  {

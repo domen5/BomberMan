@@ -6,7 +6,6 @@ import java.awt.Graphics;
 import it.bomberman.collisions.Body;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
-import it.bomberman.collisions.Shape;
 import it.bomberman.collisions.Vector2;
 import it.bomberman.gfx.Assets;
 
@@ -65,7 +64,7 @@ public class Explosion implements Entity{
 		int centerY = this.y -15;
 		this.body.render(g, Color.YELLOW);
 		
-		// scale è dovuto al crop non corretto
+		// scale ï¿½ dovuto al crop non corretto
 		// viene lasciato un bordo trasparente in alpha layer intorno alla Image
 		// Deve essere corretto in Assetts
 		double scaleX = 2.135;

@@ -1,12 +1,10 @@
 package it.bomberman.entity.creature;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 import it.bomberman.collisions.Body;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
-import it.bomberman.collisions.Vector2;
 import it.bomberman.gfx.Assets;
 
 public class PowerUp extends AbstractEntity {

@@ -2,7 +2,6 @@ package it.bomberman.menu;
 
 public class MenuController {
 
-	private MenuModel menuModel;
 	private MenuView menuView;
 	private boolean running = false;
 
@@ -18,8 +17,7 @@ public class MenuController {
 	 */
 	private long elapsed = 0;
 
-	public MenuController(MenuModel menuModel, MenuView menuView) {
-		this.menuModel = menuModel;
+	public MenuController(MenuView menuView) {
 		this.menuView = menuView;
 	}
 
@@ -32,7 +30,6 @@ public class MenuController {
 	private void run() {
 		while (this.running == true) {
 			final long start = System.nanoTime();
-			this.menuModel.update();
 			this.menuView.update();
 			//this.menuView.draw();
 			this.elapsed = System.nanoTime() - start;

@@ -1,6 +1,5 @@
 package it.bomberman.entity.creature;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.HashSet;
@@ -130,7 +129,7 @@ public class Player extends AbstractEntity {
 
 	@Override
 	public void tick() {
-		// se è spawnato da piu' di 1s allora puo' deve essere vulenrabile
+		// se ï¿½ spawnato da piu' di 1s allora puo' deve essere vulenrabile
 		if(System.nanoTime() - this.spawnTime > 1e9) {
 			this.invulnerable = false;
 		}
@@ -281,7 +280,9 @@ public class Player extends AbstractEntity {
 	}
 
 	private void respawn() {
+		int tmp= this.getHealth();
 		init();
+		this.health=tmp;
 	}
 
 	public int getHealth() {

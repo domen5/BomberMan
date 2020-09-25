@@ -1,9 +1,6 @@
 package it.bomberman.menu;
 
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import javax.swing.JFrame;
 
 import it.bomberman.state.GameStateManager;
@@ -15,9 +12,6 @@ public class MenuView extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Color titleColor;
-	private Font titleFont;
-	private Font font;
 	private GameStateManager gsm;
 
 	public MenuView() {

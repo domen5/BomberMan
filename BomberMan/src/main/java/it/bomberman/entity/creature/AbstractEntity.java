@@ -1,7 +1,6 @@
 package it.bomberman.entity.creature;
 
 import it.bomberman.collisions.Body;
-import it.bomberman.collisions.Shape;
 import it.bomberman.collisions.Vector2;
 
 /**

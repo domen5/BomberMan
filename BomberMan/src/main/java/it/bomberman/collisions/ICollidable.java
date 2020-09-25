@@ -1,10 +1,5 @@
 package it.bomberman.collisions;
 
-import java.util.Optional;
-import java.util.Set;
-
-import it.bomberman.entity.creature.*;
-
 public interface ICollidable {
 	public Vector2 getPosition();
 	public Body getBody();

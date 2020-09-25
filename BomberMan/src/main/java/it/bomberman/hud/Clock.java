@@ -14,7 +14,7 @@ public class Clock {
 		timer.schedule(remindTask, 0, // ritardo
 				1 * 1000); // Intervallo esecuzioni ogni sec
 	}
-	
+		
 	public String getTime() {
 		if (remindTask.getTime() == 0) {
 			return "000";

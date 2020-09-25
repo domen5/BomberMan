@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 import it.bomberman.collisions.Body;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
-import it.bomberman.collisions.Vector2;
 import it.bomberman.gfx.Animation;
 import it.bomberman.gfx.Assets;
 

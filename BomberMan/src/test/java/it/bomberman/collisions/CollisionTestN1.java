@@ -1,7 +1,6 @@
 package it.bomberman.collisions;
 
 import static org.junit.Assert.*;
-import java.util.List;
 
 public class CollisionTestN1 {
 
@@ -19,7 +18,7 @@ public class CollisionTestN1 {
 		Rectangle r2 = new Rectangle(origin.getX() + offset, origin.getY() + offset, width, height);
 		Rectangle r3 = new Rectangle(origin.getX() + width + offset, origin.getY() + height + offset, width, height);
 
-		assertTrue(r1.intersects(r2)); // r1 e r2 sono uguali ma r2 è traslato di (1,1)
+		assertTrue(r1.intersects(r2)); // r1 e r2 sono uguali ma r2 ï¿½ traslato di (1,1)
 		assertTrue(r2.intersects(r1)); // prova inversa
 		assertFalse(r1.intersects(r3)); // r1 e r3 non hanno punti in comune
 		assertFalse(r3.intersects(r1));
@@ -30,13 +29,13 @@ public class CollisionTestN1 {
 	@org.junit.Test
 	public void circleOnCirlcleIntersectionTest() {
 		Vector2 origin = new Vector2(10, 10);
-		final int r1 = 5, r2 = 1, r3 = 6, r4 = 5;
-		final int offset3 = 7, offset4 = 5;
+		final int r1 = 5, r2 = 1, r3 = 6;// r4 = 5;
+		final int offset3 = 7;// offset4 = 5;
 
 		Circle c1 = new Circle(origin.getX(), origin.getY(), r1);
 		Circle c2 = new Circle(origin.getX(), origin.getY(), r2);
 		Circle c3 = new Circle(origin.getX() + offset3, origin.getY() + offset3, r3);
-		Circle c4 = new Circle(origin.getX() + offset4, origin.getY() + offset4, r4);
+		//Circle c4 = new Circle(origin.getX() + offset4, origin.getY() + offset4, r4);
 
 		assertTrue(c1.intersects(c2));
 		assertTrue(c2.intersects(c1));

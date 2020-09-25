@@ -1,7 +1,6 @@
 package it.bomberman.state;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +10,6 @@ import java.util.stream.IntStream;
 
 import it.bomberman.collisions.CollisionManager;
 import it.bomberman.collisions.ICollidable;
-import it.bomberman.collisions.Vector2;
 import it.bomberman.entity.creature.Entity;
 import it.bomberman.entity.creature.EntityController;
 import it.bomberman.entity.creature.Player;
@@ -42,7 +40,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		p1 = new Player(70, 135, 1, keyManager, this);
 		p2 = new Player(1660, 735, 2, keyManager, this);
 
-		this.clock = new Clock(10);
+		this.clock = new Clock(200);
 
 		this.entities = new ArrayList<Entity>();
 		this.registerLater = new ArrayList<Entity>();
@@ -64,24 +62,19 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		this.removeLater.stream().forEach(this::removeListed);
 		this.registerLater.clear();
 		this.entities.stream().forEach(Entity::tick);
-
+		this.checkClock();
 	}
 
 	public void checkClock() {
 
-		if (this.clock.getTime() == "000") {
+		if (this.clock.getTime() == "000" || this.p1.getHealth()==0|| this.p2.getHealth()==0) {
 			gameOver = true;
 			if (p1.getHealth() > p2.getHealth()) {
 				this.winner = Optional.of(p1);
-				System.out.println("P1 vince");
 			} else if (p2.getHealth() > p1.getHealth()) {
 				this.winner = Optional.of(p2);
-				System.out.println("P2 vince");
-			} else {
-				System.out.println("PARI");
 			}
 		}
-
 	}
 
 	public Optional<Player> getWinner() {
@@ -144,12 +137,9 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 						walls.add(w);
 					} else if (r == 5) {
 						{
-							PowerUp p = PowerUp.PowerUpBuilder.newBuilder()
-									.setController(this)
-									.setX(unit * i - 25)
+							PowerUp p = PowerUp.PowerUpBuilder.newBuilder().setController(this).setX(unit * i - 25)
 									.setY(unit * j + 75)
-									.setType(PowerUpType.values()[rd.nextInt(PowerUpType.values().length)])
-									.setValue(1)
+									.setType(PowerUpType.values()[rd.nextInt(PowerUpType.values().length)]).setValue(1)
 									.build();
 							register(p);
 						}

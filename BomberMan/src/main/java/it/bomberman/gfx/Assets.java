@@ -4,26 +4,24 @@ import java.awt.image.BufferedImage;
 
 public class Assets {
 	// Immagini dello sheet
-	private static final int width = 49, height = 49, widthHud = 21, heightHud = 22;
+	private static final int width = 49, height = 49, heightHud = 22;
 	public static BufferedImage simpleWall, deathWall, wall;
 
 	// buffer p1
-	public static BufferedImage[] player_d, player_u, player_r, player_l, player_bomb;
+	public static final BufferedImage[] player_d, player_u, player_r, player_l, player_bomb;
 	// buffer p2
-	public static BufferedImage[] player_d2, player_u2, player_r2, player_l2, player_bomb2;
+	public static final BufferedImage[] player_d2, player_u2, player_r2, player_l2, player_bomb2;
 
 	// buffer bomb
-	public static BufferedImage[] bomb;
+	public static final BufferedImage[] bomb;
 
-	public static BufferedImage[] hud;
+	public static final BufferedImage[] hud;
 
-	public static BufferedImage[] explosion;
+	public static final BufferedImage[] explosion;
 
-	public static BufferedImage[] upgrade;
+	public static final BufferedImage[] upgrade;
 
-	public static final void init() {
-		// 64x64
-
+	static {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/SpAll.png"));
 		player_u = new BufferedImage[2];
 		player_d = new BufferedImage[2];
@@ -101,11 +99,5 @@ public class Assets {
 		for (int i = 0; i < 4; i++) {
 			upgrade[i] = sheet.crop(width * (11 + i), height * 3, width - 2, height);
 		}
-	}
-
-	// classe innestata per player: d/u/l/r
-
-	private void initPlayer() {
-
 	}
 }

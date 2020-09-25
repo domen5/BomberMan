@@ -44,13 +44,11 @@ public class Body {
 //				.count() > 0;
 
 		boolean out = false;
-		long count = 0;
 		// filtrare ogni shape per sapere se almeno una collide con almeno una delle shape dell'otherBody 
 		for(var s : this.boundingShapes) {
 			for(var otherS : otherBoundingShapes) {
 				if(s.intersects(otherS)) {
 					out = true;
-					count++;
 				}
 			}
 		}

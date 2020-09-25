@@ -9,7 +9,7 @@ import java.util.List;
 public class Rectangle extends Shape {
 	// quale struttura dati utilizzare?
 	// sono sicuro che saranno sempre 4 punti.
-	// è imortante l'ordine dei punti
+	// ï¿½ imortante l'ordine dei punti
 	protected final List<Vector2> vertices;
 	protected int width; // final ?
 	protected int height; // final ?
@@ -34,12 +34,12 @@ public class Rectangle extends Shape {
 		this.height = height;
 	}
 
-	private void init(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4) {
-		initPoints(p1, p2, p3, p4);
-		// giusto?
-		this.width = this.getBottomRight().getY() - this.getBottomRight().getY();
-		this.height = this.getBottomRight().getX() - this.getBottomRight().getX();
-	}
+//	private void init(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4) {
+//		initPoints(p1, p2, p3, p4);
+//		// giusto?
+//		this.width = this.getBottomRight().getY() - this.getBottomRight().getY();
+//		this.height = this.getBottomRight().getX() - this.getBottomRight().getX();
+//	}
 
 	private void initPoints(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4) {
 		this.vertices.add(p1);
@@ -98,7 +98,7 @@ public class Rectangle extends Shape {
 		return false;
 		
 		/*
-		 * 0 <= AP·AB <= AB·AB and 0 <= AP·AD <= AD·AD double ap =
+		 * 0 <= APï¿½AB <= ABï¿½AB and 0 <= APï¿½AD <= ADï¿½AD double ap =
 		 * this.vertices.get(0).distance(point); double ab =
 		 * this.vertices.get(0).distance(this.vertices.get(1)); double ad =
 		 * this.vertices.get(0).distance(this.vertices.get(3));
