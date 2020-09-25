@@ -30,6 +30,7 @@ public class WinnerPanel extends GameState implements KeyListener {
 		this.gsm = gsm;
 		this.player = this.gsm.getWinner();
 	}
+	
 	private void select() {
 		switch (currentChoice) {
 		case 0:

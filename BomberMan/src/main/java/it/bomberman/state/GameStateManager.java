@@ -1,6 +1,5 @@
 package it.bomberman.state;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 import javax.swing.JFrame;
@@ -10,22 +9,14 @@ import it.bomberman.menu.MenuPanel;
 
 public class GameStateManager {
 
-	private ArrayList<Optional<GameState>> gameStates;
-	private int currentState;
-
 	public static final int MENUSTATE = 0;
 	public static final int ARENA = 1;
 	public static final int WINNER = 2;
+	public static final int HELP= 3;
+	private GameState state;
 	private JFrame j;
 	private Optional<Player> player;
-
 	public GameStateManager(JFrame j) {
-		player= Optional.empty();
-		gameStates = new ArrayList<Optional<GameState>>();
-		currentState = MENUSTATE;
-		gameStates.add(Optional.empty());
-		gameStates.add(Optional.empty());
-		gameStates.add(Optional.empty());
 		this.j = j;
 	}
 
@@ -44,22 +35,21 @@ public class GameStateManager {
 //			initState(state);
 //			opt = this.gameStates.get(state);
 //		}
-
-		GameState tmpState= this.initState(state);
-		this.currentState = state;
-		j.setContentPane(tmpState);
+		
+		this.state= this.initState(state);
+		j.setContentPane(this.state);
 		// this.gameStates.get(state).addNotify();
 		this.j.validate();
-		tmpState.validate();
-		tmpState.init();
+		this.state.validate();
+		this.state.init();
 	}
 
 	public void update() {
-		gameStates.get(currentState).get().update();
+		this.state.update();
 	}
 
 	public void draw(java.awt.Graphics g) {
-		gameStates.get(currentState).get().draw(g);
+		this.state.draw(g);
 	}
 
 	private GameState initState(int state) {
@@ -70,11 +60,11 @@ public class GameStateManager {
 		} else if (state == ARENA) {
 			gs = new ArenaState(this);
 		} else if (state == WINNER) {
-			gs = new WinnerPanel(this
-					);
+			gs = new WinnerPanel(this);
+		}else if (state == HELP) {
+			gs = new HelpState(this);
 		}
 
-		this.gameStates.set(state, Optional.of(gs));
 		return gs;
 	}
 

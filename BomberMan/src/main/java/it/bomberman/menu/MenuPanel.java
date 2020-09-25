@@ -15,7 +15,7 @@ public class MenuPanel extends GameState implements KeyListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	// dimensions
-	public  final int WIDTH = 600;
+	public final int WIDTH = 600;
 	public final int HEIGHT = 300;
 	public final int SCALE = 3;
 	public static String NAME = "BOMBERMAN";
@@ -23,14 +23,14 @@ public class MenuPanel extends GameState implements KeyListener {
 	private ImageIcon ii;
 	// image
 	// private BufferedImage image;
-	//private Graphics2D g;
+	// private Graphics2D g;
 
 	JLabel imageLabel;
 	// game state manager
 	private GameStateManager gsm;
 
 	private int currentChoice = 0;
-	private String[] options = { "Start", "Quit" };
+	private String[] options = { "Start", "Help", "Quit" };
 
 	private Color titleColor;
 	private Font titleFont;
@@ -79,21 +79,24 @@ public class MenuPanel extends GameState implements KeyListener {
 		if (menuX == 0)
 			cambios = false;
 		// serve o non serve?
-		
+
 		repaint();
 	}
 
 	private void select() {
-		if (currentChoice == 0) {
-			// start
+		switch (currentChoice) {
+		case 0:
 			this.gsm.setState(GameStateManager.ARENA);
-		}
-		
-		if (currentChoice == 1) {
+			break;
+		case 1:
+			this.gsm.setState(GameStateManager.HELP);
+			break;
+		case 2:
 			System.exit(0);
+			break;
 		}
 	}
-	
+
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
@@ -106,7 +109,7 @@ public class MenuPanel extends GameState implements KeyListener {
 		g2.drawImage(ii.getImage(), WIDTH * SCALE, HEIGHT * SCALE, null);
 
 		g2.setColor(titleColor);
-		g2.setFont(titleFont);		
+		g2.setFont(titleFont);
 		g2.drawString(NAME, 650 + menuX, 200);
 		Toolkit.getDefaultToolkit().sync();
 
@@ -121,7 +124,7 @@ public class MenuPanel extends GameState implements KeyListener {
 			g2.drawString(options[i], 820, 300 + i * 55);
 		}
 		Toolkit.getDefaultToolkit().sync();
-		//g2.dispose();
+		// g2.dispose();
 	}
 
 	public void addNotify() {
@@ -150,11 +153,10 @@ public class MenuPanel extends GameState implements KeyListener {
 				currentChoice = 0;
 			}
 		}
-
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {		
+	public void keyTyped(KeyEvent e) {
 	}
 
 	@Override
