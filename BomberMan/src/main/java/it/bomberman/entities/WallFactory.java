@@ -1,4 +1,4 @@
-package it.bomberman.entity.creature;
+package it.bomberman.entities;
 
 public interface WallFactory {
 	public Wall mapLimitWall(int x, int y, EntityController controller);

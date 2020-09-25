@@ -1,32 +1,20 @@
-package it.bomberman.menu;
+package it.bomberman.states;
 
 import java.awt.*;
 import java.awt.event.*;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import it.bomberman.state.GameState;
-import it.bomberman.state.GameStateManager;
 
-public class MenuPanel extends GameState implements KeyListener {
-
-	/**
-	 * 
-	 */
+public class MenuState extends GameState implements KeyListener {
 	private static final long serialVersionUID = 1L;
 	// dimensions
 	public final int WIDTH = 600;
 	public final int HEIGHT = 300;
 	public final int SCALE = 3;
 	public static String NAME = "BOMBERMAN";
-
 	private ImageIcon ii;
-	// image
-	// private BufferedImage image;
-	// private Graphics2D g;
-
 	JLabel imageLabel;
-	// game state manager
 	private GameStateManager gsm;
 
 	private int currentChoice = 0;
@@ -36,9 +24,9 @@ public class MenuPanel extends GameState implements KeyListener {
 	private Font titleFont;
 	private Font font;
 	private volatile int menuX;
-	private volatile boolean cambios = false;
+	private volatile boolean directionFlag = false;
 
-	public MenuPanel(GameStateManager gsm) {
+	public MenuState(GameStateManager gsm) {
 		super();
 		this.gsm = gsm;
 	}
@@ -70,16 +58,14 @@ public class MenuPanel extends GameState implements KeyListener {
 	}
 
 	public void update() {
-		if (cambios)
+		if (directionFlag)
 			menuX--;
 		else
 			menuX++;
 		if (menuX == 70)
-			cambios = true;
+			directionFlag = true;
 		if (menuX == 0)
-			cambios = false;
-		// serve o non serve?
-
+			directionFlag = false;
 		repaint();
 	}
 
@@ -129,11 +115,7 @@ public class MenuPanel extends GameState implements KeyListener {
 
 	public void addNotify() {
 		super.addNotify();
-//		if (thread == null) {
-//			thread = new Thread(this);
 		addKeyListener(this);
-//			thread.start();
-//		}
 	}
 
 	@Override

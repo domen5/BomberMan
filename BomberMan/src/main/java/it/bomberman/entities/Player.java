@@ -1,4 +1,4 @@
-package it.bomberman.entity.creature;
+package it.bomberman.entities;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -8,7 +8,7 @@ import it.bomberman.collisions.Body;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Vector2;
-import it.bomberman.entity.creature.PowerUp.PowerUpType;
+import it.bomberman.entities.PowerUp.PowerUpType;
 import it.bomberman.gfx.*;
 import it.bomberman.input.KeyManager;
 
@@ -130,7 +130,7 @@ public class Player extends AbstractEntity {
 	@Override
 	public void tick() {
 		// se � spawnato da piu' di 1s allora puo' deve essere vulenrabile
-		if(System.nanoTime() - this.spawnTime > 1e9) {
+		if(System.nanoTime() - this.spawnTime > 2e9) { //2s
 			this.invulnerable = false;
 		}
 		

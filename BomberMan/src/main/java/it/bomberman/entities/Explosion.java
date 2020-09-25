@@ -1,4 +1,4 @@
-package it.bomberman.entity.creature;
+package it.bomberman.entities;
 
 import java.awt.Color;
 import java.awt.Graphics;

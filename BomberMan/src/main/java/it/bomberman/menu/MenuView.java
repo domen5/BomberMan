@@ -3,7 +3,7 @@ package it.bomberman.menu;
 import java.awt.Graphics;
 import javax.swing.JFrame;
 
-import it.bomberman.state.GameStateManager;
+import it.bomberman.states.GameStateManager;
 
 public class MenuView extends JFrame {
 
@@ -36,11 +36,10 @@ public class MenuView extends JFrame {
 	}
 	
 	public void draw() {
-		//this.gsm.draw(getGraphics());
+		
 	}
 
 	public void update() {
 		this.gsm.update();
-		//repaint();
 	}
 }

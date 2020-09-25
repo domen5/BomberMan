@@ -3,7 +3,8 @@ package it.bomberman.hud;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import it.bomberman.entity.creature.Player;
+
+import it.bomberman.entities.Player;
 import it.bomberman.gfx.Assets;
 
 public class Hud {

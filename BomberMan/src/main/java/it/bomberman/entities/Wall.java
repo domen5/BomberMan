@@ -1,4 +1,4 @@
-package it.bomberman.entity.creature;
+package it.bomberman.entities;
 
 public interface Wall extends Entity {
 	

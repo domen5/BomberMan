@@ -1,4 +1,4 @@
-package it.bomberman.state;
+package it.bomberman.states;
 
 import java.awt.Color;
 import java.awt.Font;

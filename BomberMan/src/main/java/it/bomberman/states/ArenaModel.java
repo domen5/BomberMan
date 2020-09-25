@@ -1,10 +1,10 @@
-package it.bomberman.state;
+package it.bomberman.states;
 
 import java.util.List;
 import java.util.Optional;
 
-import it.bomberman.entity.creature.Entity;
-import it.bomberman.entity.creature.Player;
+import it.bomberman.entities.Entity;
+import it.bomberman.entities.Player;
 import it.bomberman.hud.Clock;
 
 public interface ArenaModel {

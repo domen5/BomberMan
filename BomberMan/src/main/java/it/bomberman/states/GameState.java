@@ -1,4 +1,4 @@
-package it.bomberman.state;
+package it.bomberman.states;
 
 import javax.swing.JPanel;
 

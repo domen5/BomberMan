@@ -1,4 +1,4 @@
-package it.bomberman.entity.creature;
+package it.bomberman.entities;
 
 import it.bomberman.collisions.Body;
 import it.bomberman.collisions.Vector2;

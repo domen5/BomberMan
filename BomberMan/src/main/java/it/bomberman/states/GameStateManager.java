@@ -1,11 +1,10 @@
-package it.bomberman.state;
+package it.bomberman.states;
 
 import java.util.Optional;
 
 import javax.swing.JFrame;
-import it.bomberman.entity.creature.Player;
-import it.bomberman.hud.WinnerPanel;
-import it.bomberman.menu.MenuPanel;
+
+import it.bomberman.entities.Player;
 
 public class GameStateManager {
 
@@ -56,11 +55,11 @@ public class GameStateManager {
 		GameState gs = null;
 
 		if (state == MENUSTATE) {
-			gs = new MenuPanel(this);
+			gs = new MenuState(this);
 		} else if (state == ARENA) {
 			gs = new ArenaState(this);
 		} else if (state == WINNER) {
-			gs = new WinnerPanel(this);
+			gs = new WinnerState(this);
 		}else if (state == HELP) {
 			gs = new HelpState(this);
 		}
@@ -75,12 +74,4 @@ public class GameStateManager {
 	public void setWinner(Optional<Player>player) {
 		this.player=player;
 	}
-//	public void keyPressed(KeyEvent k) {
-//		gameStates.get(currentState).keyPressed(k);
-//	}
-//	
-//	public void keyReleased(KeyEvent k) {
-//		gameStates.get(currentState).keyReleased(k);
-//	}
-
 }

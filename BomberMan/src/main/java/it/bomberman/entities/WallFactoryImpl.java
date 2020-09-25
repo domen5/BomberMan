@@ -1,4 +1,4 @@
-package it.bomberman.entity.creature;
+package it.bomberman.entities;
 
 import java.awt.Graphics;
 import java.util.Random;
@@ -6,11 +6,12 @@ import it.bomberman.collisions.Body;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Vector2;
-import it.bomberman.entity.creature.PowerUp.PowerUpType;
+import it.bomberman.entities.PowerUp.PowerUpType;
 import it.bomberman.gfx.Assets;
 
 public class WallFactoryImpl implements WallFactory {
 	public static final int DEFAULT_WALL_WIDTH = 100;
+	public static final int POWER_UP_DROP_PROBABILITY = 50; // 75%
 
 	@Override
 	public Wall mapLimitWall(int x, int y, EntityController controller) {
@@ -96,62 +97,17 @@ public class WallFactoryImpl implements WallFactory {
 				// random
 				Random random = new Random();
 				final PowerUpType type = PowerUpType.values()[random.nextInt(PowerUpType.values().length)];
-				final int value = 1 + random.nextInt(1);
-
-				PowerUp up = PowerUp.PowerUpBuilder.newBuilder().setX(x).setY(y).setType(type).setValue(value)
-						.setController(this.contr).build();
-				this.contr.register(up);
+				if(random.nextInt(100) < POWER_UP_DROP_PROBABILITY){
+					PowerUp up = PowerUp.PowerUpBuilder.newBuilder()
+							.setX(x + this.width/4)
+							.setY(y + this.width/4)
+							.setType(type).setValue(1)
+							.setController(this.contr).build();
+					this.contr.register(up);
+				}
 				this.contr.notifyDisposal(this);
 			}
 		};
-	}
-
-	// non finito
-	@Override
-	public Wall deathWall(int x, int y, EntityController contr) {
-		return null;
-//		return new Wall(x, y) {
-//			Wall simpleWall = simpleWall(x, y);
-//
-//			@Override
-//			public Vector2 getPosition() {
-//				return simpleWall.getPosition();
-//			}
-//
-//			@Override
-//			public Body getBody() {
-//				return simpleWall.getBody();
-//			}
-//
-//			@Override
-//			public boolean shouldCollide(ICollidable collidable) {
-//				return simpleWall.shouldCollide(collidable);
-//			}
-//
-//			@Override
-//			public void collision(ICollidable collidable) {
-//				if(collidable instanceof Player) {
-//					this.collision((Player) collidable);
-//				}
-//			}
-//			
-//			public void collision(Player player) {
-//				//player.die();
-//			}
-//
-//			@Override
-//			public void tick() {
-//				// TODO Auto-generated method stub
-//
-//			}
-//
-//			@Override
-//			public void render(Graphics g) {
-//				// TODO Auto-generated method stub
-//
-//			}
-//
-//		};
 	}
 
 	@Override
@@ -196,6 +152,7 @@ public class WallFactoryImpl implements WallFactory {
 
 		@Override
 		public void render(Graphics g) {
+			// scala dovuta  a correzione del bordo del crop
 			double scale = 1.18;
 			int w = (int) (DEFAULT_WALL_WIDTH * scale);
 			int h = (int) (DEFAULT_WALL_WIDTH * scale);
@@ -207,6 +164,13 @@ public class WallFactoryImpl implements WallFactory {
 		public void dispose() {
 			controller.notifyDisposal(this);
 		}
+	}
+	
+	// Funzionalita' opzionale non implementata
+	@Override
+	public Wall deathWall(int x, int y, EntityController contr) {
+		return null;
+
 	}
 
 }

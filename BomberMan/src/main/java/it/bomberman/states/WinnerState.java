@@ -1,4 +1,4 @@
-package it.bomberman.hud;
+package it.bomberman.states;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -8,12 +8,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Optional;
 
-import it.bomberman.entity.creature.Player;
+import it.bomberman.entities.Player;
 import it.bomberman.gfx.Assets;
-import it.bomberman.state.GameState;
-import it.bomberman.state.GameStateManager;
 
-public class WinnerPanel extends GameState implements KeyListener {
+public class WinnerState extends GameState implements KeyListener {
 
 	/**
 	 * 
@@ -25,7 +23,7 @@ public class WinnerPanel extends GameState implements KeyListener {
 	private int currentChoice = 0;
 	private String[] options = { "Retry", "Quit" };
 
-	public WinnerPanel(GameStateManager gsm) {
+	public WinnerState(GameStateManager gsm) {
 		super();
 		this.gsm = gsm;
 		this.player = this.gsm.getWinner();
