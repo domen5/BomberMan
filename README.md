@@ -6,4 +6,4 @@ This README would normally document whatever steps are necessary to get your app
 
 * BomberMan Java Application
 * Version 1.0
-* Author: Dall'Ara - Domeniconi - Stratu
+* Author: Dall'Ara - Domeniconi
