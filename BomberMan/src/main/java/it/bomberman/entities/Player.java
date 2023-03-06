@@ -15,8 +15,8 @@ import it.bomberman.input.KeyManager;
 public class Player extends AbstractEntity {
 
 	public static final long DEFAULT_DROP_COOL_DOWN = (long) 5e8; // 0.5 s
-	public static final int DEFAULT_PLAYER_WIDTH = 128;
-	public static final int DEFAULT_PLAYER_HEIGHT = 100;
+	public static final int DEFAULT_PLAYER_WIDTH = 108;
+	public static final int DEFAULT_PLAYER_HEIGHT = 90;
 	public static final int SPEED_MULTIPLIER = 2;
 	private Animation animDown, animUp, animLeft, animRight, animBomb;
 	private KeyManager keyManager;
