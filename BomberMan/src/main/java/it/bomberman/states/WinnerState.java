@@ -13,9 +13,6 @@ import it.bomberman.gfx.Assets;
 
 public class WinnerState extends GameState implements KeyListener {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private GameStateManager gsm;
 	private Optional<Player> player;
@@ -28,16 +25,16 @@ public class WinnerState extends GameState implements KeyListener {
 		this.gsm = gsm;
 		this.player = this.gsm.getWinner();
 	}
-	
+
 	private void select() {
 		switch (currentChoice) {
-		case 0:
-			this.gsm.setState(GameStateManager.ARENA);
-			this.gsm.update();
-			break;
-		case 1:
-			System.exit(0);
-			break;
+			case 0:
+				this.gsm.setState(GameStateManager.ARENA);
+				this.gsm.update();
+				break;
+			case 1:
+				System.exit(0);
+				break;
 		}
 	}
 
@@ -72,22 +69,21 @@ public class WinnerState extends GameState implements KeyListener {
 	@Override
 	public void draw(Graphics g) {
 		g.setColor(Color.blue);
-		g.fillRect(0, 0, 1800, 900);
+		g.fillRect(0, 0, 1200, 800);
 		g.setFont(fontTitle);
 		g.setColor(Color.black);
-		g.drawRect(500, 200, 800, 500);
-		g.fillRect(500, 200, 800, 500);
+		g.drawRect(400, 200, 400, 500);
+		g.fillRect(400, 200, 400, 500);
 		if (player.isEmpty()) {
 			g.setColor(Color.white);
-			g.drawString("Draw", 750, 300);
+			g.drawString("Draw", 450, 200);
 		} else {
 			Player p = player.get();
 			g.setColor(Color.WHITE);
-			g.drawString("Player " + p.getPlayerNumb() + " Win", 600, 300);
+			g.drawString("Player " + p.getPlayerNumb() + " Win", 300, 200);
 		}
-		g.drawImage(Assets.player_d[1], 400, 300, 500, 500, null);
-		g.drawImage(Assets.player_d2[0], 1150, 300, 500, 500, null);
-	
+		g.drawImage(Assets.player_d[1], 200, 200, 500, 500, null);
+		g.drawImage(Assets.player_d2[0], 720, 200, 500, 500, null);
 		g.setFont(fontPar);
 		for (int i = 0; i < options.length; i++) {
 			if (i == currentChoice) {
@@ -95,7 +91,7 @@ public class WinnerState extends GameState implements KeyListener {
 			} else {
 				g.setColor(Color.WHITE);
 			}
-			g.drawString(options[i], 820, 400 + i * 75);
+			g.drawString(options[i], 530, 400 + i * 75);
 		}
 		Toolkit.getDefaultToolkit().sync();
 	}

@@ -20,24 +20,8 @@ public class GameStateManager {
 	}
 
 	public void setState(int state) {
-//		Optional<GameState> opt = this.gameStates.get(currentState);
-//		if (opt.isPresent()) {
-//			opt.get().removeAll();
-//		}
-////		this.j.getContentPane().removeAll();
-//
-////		if (j.getContentPane().equals(oldPanel)) {
-////			j.getContentPane().remove(oldPanel);
-////		}
-//		opt = this.gameStates.get(state);
-//		if (opt.isEmpty()) {
-//			initState(state);
-//			opt = this.gameStates.get(state);
-//		}
-		
 		this.state= this.initState(state);
 		j.setContentPane(this.state);
-		// this.gameStates.get(state).addNotify();
 		this.j.validate();
 		this.state.validate();
 		this.state.init();

@@ -11,7 +11,7 @@ import it.bomberman.gfx.Assets;
 
 public class WallFactoryImpl implements WallFactory {
 	public static final int DEFAULT_WALL_WIDTH = 100;
-	public static final int POWER_UP_DROP_PROBABILITY = 50; // 75%
+	public static final int POWER_UP_DROP_PROBABILITY = 20; // 75%
 
 	@Override
 	public Wall mapLimitWall(int x, int y, EntityController controller) {
@@ -23,8 +23,6 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void render(Graphics g) {
-				// non va disegnato
-				// super.render(g);
 			}
 		}
 		return new MapLimitWall(x, y, controller);
@@ -63,15 +61,11 @@ public class WallFactoryImpl implements WallFactory {
 			}
 
 			public void collision(Explosion explosion) {
-				// this.dispose();
-				// ovvero: Rimozione da vari Observer, Listerner
 				this.dispose();
 			}
 
 			@Override
 			public void tick() {
-				// DO NOTHING
-				// E' un muro, non fa niente
 			}
 
 			@Override
@@ -82,13 +76,11 @@ public class WallFactoryImpl implements WallFactory {
 				double scale = 1.18;
 				int w = (int) (this.width * scale);
 				int h = (int) (this.width * scale);
-//				 this.body.render(g, Color.GRAY);
 				g.drawImage(Assets.simpleWall, x, y, w, h, null);
 			}
 
 			@Override
 			public Body getBody() {
-				// restituire versione non modificabile?
 				return this.body;
 			}
 
@@ -97,10 +89,10 @@ public class WallFactoryImpl implements WallFactory {
 				// random
 				Random random = new Random();
 				final PowerUpType type = PowerUpType.values()[random.nextInt(PowerUpType.values().length)];
-				if(random.nextInt(100) < POWER_UP_DROP_PROBABILITY){
+				if (random.nextInt(100) < POWER_UP_DROP_PROBABILITY) {
 					PowerUp up = PowerUp.PowerUpBuilder.newBuilder()
-							.setX(x + this.width/4)
-							.setY(y + this.width/4)
+							.setX(x + this.width / 4)
+							.setY(y + this.width / 4)
 							.setType(type).setValue(1)
 							.setController(this.contr).build();
 					this.contr.register(up);
@@ -152,11 +144,9 @@ public class WallFactoryImpl implements WallFactory {
 
 		@Override
 		public void render(Graphics g) {
-			// scala dovuta  a correzione del bordo del crop
 			double scale = 1.18;
 			int w = (int) (DEFAULT_WALL_WIDTH * scale);
 			int h = (int) (DEFAULT_WALL_WIDTH * scale);
-//			 this.body.render(g, Color.GRAY);
 			g.drawImage(Assets.wall, this.inner.getPosition().getX(), this.inner.getPosition().getY(), w, h, null);
 		}
 
@@ -165,12 +155,9 @@ public class WallFactoryImpl implements WallFactory {
 			controller.notifyDisposal(this);
 		}
 	}
-	
-	// Funzionalita' opzionale non implementata
+
 	@Override
 	public Wall deathWall(int x, int y, EntityController contr) {
 		return null;
-
 	}
-
 }

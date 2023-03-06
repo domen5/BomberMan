@@ -31,7 +31,7 @@ public class Player extends AbstractEntity {
 	private int speed;
 	private int nBombs;
 	private int bombExtension;
-	
+
 	private long spawnTime;
 	private boolean invulnerable;
 
@@ -93,10 +93,10 @@ public class Player extends AbstractEntity {
 	public void getInput() {
 		xMove = 0;
 		yMove = 0;
-		
+
 		// v(x) = 2x + 2
-		int s = SPEED_MULTIPLIER * this.speed +2;
-		
+		int s = SPEED_MULTIPLIER * this.speed + 2;
+
 		if (this.playerNumb == 1) {
 			if (this.keyManager.up)
 				yMove -= s;
@@ -129,12 +129,9 @@ public class Player extends AbstractEntity {
 
 	@Override
 	public void tick() {
-		// se � spawnato da piu' di 1s allora puo' deve essere vulenrabile
-		if(System.nanoTime() - this.spawnTime > 2e9) { //2s
+		if (System.nanoTime() - this.spawnTime > 2e9) {
 			this.invulnerable = false;
 		}
-		
-		// rimuove il riferimento ad ogni bomba gia' esplosa
 		this.bombs.removeIf(Bomb::hasFinished);
 		animDown.tick();
 		animLeft.tick();
@@ -160,9 +157,6 @@ public class Player extends AbstractEntity {
 	@Override
 	public void render(Graphics g) {
 		g.drawImage(getCurrentAnimationFrame(), x, y, width, height, null);
-
-		// debug only
-		// this.body.render(g, Color.RED);
 	}
 
 	private BufferedImage getCurrentAnimationFrame() {
@@ -190,7 +184,6 @@ public class Player extends AbstractEntity {
 
 	@Override
 	public Body getBody() {
-		// versione non modificabile per preservare l'incapsulamento
 		return this.body;
 	}
 
@@ -223,7 +216,6 @@ public class Player extends AbstractEntity {
 		// Die if deathWall
 
 		// Qui andrebbe implementata la dinamica di rollback
-
 	}
 
 	public void collision(PowerUp up) {
@@ -280,9 +272,9 @@ public class Player extends AbstractEntity {
 	}
 
 	private void respawn() {
-		int tmp= this.getHealth();
+		int tmp = this.getHealth();
 		init();
-		this.health=tmp;
+		this.health = tmp;
 	}
 
 	public int getHealth() {

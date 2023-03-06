@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 public class MenuState extends GameState implements KeyListener {
 	private static final long serialVersionUID = 1L;
 	// dimensions
-	public final int WIDTH = 600;
+	public final int WIDTH = 400;
 	public final int HEIGHT = 300;
 	public final int SCALE = 3;
 	public static String NAME = "BOMBERMAN";
@@ -96,7 +96,7 @@ public class MenuState extends GameState implements KeyListener {
 
 		g2.setColor(titleColor);
 		g2.setFont(titleFont);
-		g2.drawString(NAME, 650 + menuX, 200);
+		g2.drawString(NAME, 400 + menuX, 200);
 		Toolkit.getDefaultToolkit().sync();
 
 		// draw menu options
@@ -107,10 +107,9 @@ public class MenuState extends GameState implements KeyListener {
 			} else {
 				g2.setColor(Color.WHITE);
 			}
-			g2.drawString(options[i], 820, 300 + i * 55);
+			g2.drawString(options[i], 570, 520 + i * 55);
 		}
 		Toolkit.getDefaultToolkit().sync();
-		// g2.dispose();
 	}
 
 	public void addNotify() {

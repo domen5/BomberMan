@@ -14,19 +14,16 @@ public class KeyManager implements KeyListener {
 	}
 
 	public void tick() {
-		// TASTI PL1
 		up = keys[KeyEvent.VK_W];
 		down = keys[KeyEvent.VK_S];
 		right = keys[KeyEvent.VK_D];
 		left = keys[KeyEvent.VK_A];
 		drop = keys[KeyEvent.VK_SPACE];
-		// TASTI PL2
 		up2 = keys[KeyEvent.VK_UP];
 		down2 = keys[KeyEvent.VK_DOWN];
 		right2 = keys[KeyEvent.VK_RIGHT];
 		left2 = keys[KeyEvent.VK_LEFT];
 		drop2 = keys[KeyEvent.VK_ENTER];
-
 	}
 
 	// PRESSSIONE TASTO

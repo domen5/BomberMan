@@ -21,12 +21,12 @@ import it.bomberman.input.KeyManager;
 
 public class ArenaModelImpl implements ArenaModel, EntityController {
 	private CollisionManager collisionMan;
-	private WallFactory wallF;
-	private Player p1;
-	private Player p2;
+	private WallFactory wallFactory;
+	private Player player1;
+	private Player player2;
 	private List<Entity> registerLater;
 	private List<Entity> removeLater;
-	private Random rd;
+	private Random random;
 	private Clock clock;
 	private boolean gameOver = false;
 	private Optional<Player> winner;
@@ -35,8 +35,8 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	private final static int POWER_UP_SPAWN_PROBABILITY = 20;
 
 	public ArenaModelImpl(KeyManager keyManager) {
-		p1 = new Player(70, 135, 1, keyManager, this);
-		p2 = new Player(1660, 735, 2, keyManager, this);
+		player1 = new Player(70, 135, 1, keyManager, this);
+		player2 = new Player(1060, 635, 2, keyManager, this);
 
 		this.winner = Optional.empty();
 		this.clock = new Clock(200);
@@ -44,10 +44,10 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 		this.registerLater = new ArrayList<Entity>();
 		this.removeLater = new ArrayList<Entity>();
 		this.collisionMan = new CollisionManager();
-		this.wallF = new WallFactoryImpl();
+		this.wallFactory = new WallFactoryImpl();
 		initMapLimitWalls();
-		register(p1);
-		register(p2);
+		register(player1);
+		register(player2);
 	}
 
 	@Override
@@ -61,12 +61,12 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	}
 
 	public void checkClock() {
-		if (this.clock.getTime() == "000" || this.p1.getHealth()==0|| this.p2.getHealth()==0) {
+		if (this.clock.getTime() == "000" || this.player1.getHealth() == 0 || this.player2.getHealth() == 0) {
 			gameOver = true;
-			if (p1.getHealth() > p2.getHealth()) {
-				this.winner = Optional.of(p1);
-			} else if (p2.getHealth() > p1.getHealth()) {
-				this.winner = Optional.of(p2);
+			if (player1.getHealth() > player2.getHealth()) {
+				this.winner = Optional.of(player1);
+			} else if (player2.getHealth() > player1.getHealth()) {
+				this.winner = Optional.of(player2);
 			}
 		}
 	}
@@ -101,38 +101,37 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 
 	private void initMapLimitWalls() {
 		List<Wall> walls = new ArrayList<Wall>();
-		int xLimit = 19;
-		int yLimit = 9;
+		int xLimit = 13;
+		int yLimit = 8;
 		int unit = WallFactoryImpl.DEFAULT_WALL_WIDTH;
-		rd = new Random();
-		
+		random = new Random();
+
 		// muri limite mappa
-		IntStream.range(0, xLimit).forEach(i ->{
-			walls.add(wallF.hardWall(unit * i - 50, 50, this));
-			walls.add(wallF.hardWall(unit * i - 50, 50 + unit * (yLimit - 1), this));
-			});		
+		IntStream.range(0, xLimit).forEach(i -> {
+			walls.add(wallFactory.hardWall(unit * i - 50, 50, this));
+			walls.add(wallFactory.hardWall(unit * i - 50, 50 + unit * (yLimit - 1), this));
+		});
 		IntStream.range(1, yLimit).forEach(i -> {
-			walls.add(wallF.hardWall(-50, 50 + i * unit, this));
-			walls.add(wallF.hardWall((xLimit - 1) * unit - 50, 50 + i * unit, this));
+			walls.add(wallFactory.hardWall(-50, 50 + i * unit, this));
+			walls.add(wallFactory.hardWall((xLimit - 1) * unit - 50, 50 + i * unit, this));
 		});
 
-		// muri interni
 		for (int i = 1; i < xLimit - 1; i++) {
 			for (int j = 1; j < yLimit - 1; j++) {
 				if (j % 2 == 0 && i % 2 == 0) {
-					Wall w = wallF.hardWall(unit * i - 50, unit * j + 50, this);
+					Wall w = wallFactory.hardWall(unit * i - 50, unit * j + 50, this);
 					walls.add(w);
-				}
-				else if (correctBuild(i, j)) {
-					int r = rd.nextInt(100);
+				} else if (correctBuild(i, j)) {
+					int r = random.nextInt(100);
 					if (r <= WALL_SPAWN_PROBABILITY) {
-						Wall w = wallF.simpleWall(unit * i - 50, unit * j + 50, this);
+						Wall w = wallFactory.simpleWall(unit * i - 50, unit * j + 50, this);
 						walls.add(w);
 					} else if (r <= POWER_UP_SPAWN_PROBABILITY + WALL_SPAWN_PROBABILITY) {
 						{
 							PowerUp p = PowerUp.PowerUpBuilder.newBuilder().setController(this).setX(unit * i - 25)
 									.setY(unit * j + 75)
-									.setType(PowerUpType.values()[rd.nextInt(PowerUpType.values().length)]).setValue(1)
+									.setType(PowerUpType.values()[random.nextInt(PowerUpType.values().length)])
+									.setValue(1)
 									.build();
 							register(p);
 						}
@@ -144,9 +143,8 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	}
 
 	private boolean correctBuild(int i, int j) {
-		int xLimit = 19;
-		int yLimit = 9;
-		
+		int xLimit = 13;
+		int yLimit = 8;
 		// gli slot vicino a ciascun Player devono essere lasciati liberi da Wall
 		return !((i == 1 && (j == 1 || j == 2)) || (j == 1 && (i == 1 || i == 2)))
 				&& !((i == xLimit - 2 && (j == yLimit - 2 || j == yLimit - 3))
@@ -169,13 +167,13 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	}
 
 	@Override
-	public Player getP1() {
-		return this.p1;
+	public Player getPlayer1() {
+		return this.player1;
 	}
 
 	@Override
-	public Player getP2() {
-		return this.p2;
+	public Player getPlayer2() {
+		return this.player2;
 	}
 
 	@Override

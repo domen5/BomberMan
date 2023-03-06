@@ -12,7 +12,7 @@ public class Body {
 	public Body() {
 		this.boundingShapes = new ArrayList<Shape>();
 	}
-	
+
 	public Body(Shape s) {
 		this();
 		this.add(s);
@@ -27,7 +27,7 @@ public class Body {
 	}
 
 	public boolean checkCollision(Body other) {
-		if(this.equals(other))
+		if (this.equals(other))
 			return false;
 		return this.checkCollision(other.getBoundingShapes());
 	}
@@ -35,19 +35,12 @@ public class Body {
 	public boolean checkCollision(List<Shape> otherBoundingShapes) {
 		if (this.boundingShapes.isEmpty() || otherBoundingShapes.isEmpty()) {
 			return false;
-			// oppure throw new Exception?
 		}
 
-//		prova con lambda functions
-//		return this.boundingShapes.stream()
-//				.filter(s -> s.intersectsAny(otherBoundingShapes))
-//				.count() > 0;
-
 		boolean out = false;
-		// filtrare ogni shape per sapere se almeno una collide con almeno una delle shape dell'otherBody 
-		for(var s : this.boundingShapes) {
-			for(var otherS : otherBoundingShapes) {
-				if(s.intersects(otherS)) {
+		for (var s : this.boundingShapes) {
+			for (var otherS : otherBoundingShapes) {
+				if (s.intersects(otherS)) {
 					out = true;
 				}
 			}
@@ -56,20 +49,17 @@ public class Body {
 	}
 
 	public List<Shape> getBoundingShapes() {
-		// restituisco una versione protetta di bounding shape per mantenere
-		// l'incapsulamento
 		return Collections.unmodifiableList(this.boundingShapes);
 	}
-	
+
 	public void move(int x, int y) {
-		for(Shape s : this.boundingShapes) {
-			s.move(x, y);			
+		for (Shape s : this.boundingShapes) {
+			s.move(x, y);
 		}
 	}
-	
+
 	public void render(Graphics g, Color color) {
-		// debug only
-		for(Shape s : this.boundingShapes) {
+		for (Shape s : this.boundingShapes) {
 			s.render(g, color);
 		}
 	}

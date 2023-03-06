@@ -14,9 +14,9 @@ public interface ArenaModel {
 
 	public List<Entity> getDrawables();
 
-	public Player getP1();
+	public Player getPlayer1();
 
-	public Player getP2();
+	public Player getPlayer2();
 
 	public Clock getClock();
 

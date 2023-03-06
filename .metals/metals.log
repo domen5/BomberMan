@@ -1,0 +1,1535 @@
+2023.03.05 14:44:10 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/dallas/Desktop/Uni/BomberMan/.metals/lsp.trace.json or /Users/dallas/Library/Caches/org.scalameta.metals/lsp.trace.json
+2023.03.05 14:44:10 INFO  logging to file /Users/dallas/Desktop/Uni/BomberMan/.metals/metals.log
+2023.03.05 14:44:10 INFO  Started: Metals version 0.11.10 in workspace '/Users/dallas/Desktop/Uni/BomberMan' for client Visual Studio Code 1.75.1.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/Users/dallas/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.10.5/scribe-slf4j_2.13-3.10.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.03.05 14:44:12 INFO  time: initialize in 1.51s
+2023.03.05 14:44:17 WARN  Build server is not auto-connectable.
+2023.03.05 14:44:17 WARN  no build tool detected in workspace '/Users/dallas/Desktop/Uni/BomberMan'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.03.05 14:44:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/launcher/BomberManLauncher.java
+2023.03.05 14:44:18 INFO  time: code lens generation in 1.47s
+2023.03.05 14:48:45 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuController.java
+mar 05, 2023 2:48:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 15
+2023.03.05 14:48:47 INFO  time: code lens generation in 1.48s
+2023.03.05 14:49:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuController.java
+2023.03.05 14:49:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuController.java
+2023.03.05 14:49:14 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuController.java
+2023.03.05 14:49:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuController.java
+2023.03.05 14:49:19 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuController.java
+2023.03.05 14:49:30 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuController.java
+2023.03.05 14:49:41 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 14:49:43 INFO  time: code lens generation in 1.34s
+2023.03.05 14:49:55 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 14:50:02 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 14:50:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Animation.java
+2023.03.05 14:50:08 INFO  time: code lens generation in 1.06s
+2023.03.05 14:50:16 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Animation.java
+2023.03.05 14:50:19 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 14:50:20 INFO  time: code lens generation in 1.15s
+2023.03.05 14:50:45 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 14:50:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/ImageLoader.java
+2023.03.05 14:50:48 INFO  time: code lens generation in 1.14s
+2023.03.05 14:50:51 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/ImageLoader.java
+2023.03.05 14:50:53 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/SpriteSheet.java
+2023.03.05 14:50:54 INFO  time: code lens generation in 1s
+2023.03.05 14:50:57 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/collisions/Body.java
+2023.03.05 14:50:59 INFO  time: code lens generation in 1.25s
+2023.03.05 14:51:28 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/collisions/Body.java
+2023.03.05 14:51:30 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/collisions/Circle.java
+2023.03.05 14:51:31 INFO  time: code lens generation in 1.25s
+2023.03.05 14:51:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/launcher/BomberManLauncher.java
+2023.03.05 14:51:50 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+mar 05, 2023 2:51:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 368
+mar 05, 2023 2:51:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 369
+mar 05, 2023 2:51:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 370
+mar 05, 2023 2:51:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 374
+2023.03.05 14:51:52 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.05 14:52:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.05 14:52:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.05 14:52:10 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameState.java
+2023.03.05 14:52:11 INFO  time: code lens generation in 1.15s
+2023.03.05 14:52:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameState.java
+2023.03.05 14:52:14 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.05 14:52:16 INFO  time: code lens generation in 1.2s
+2023.03.05 14:52:32 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.05 14:52:33 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 14:52:35 INFO  time: code lens generation in 1.5s
+2023.03.05 14:52:51 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.05 14:52:53 INFO  time: code lens generation in 1.44s
+2023.03.05 14:52:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.05 14:52:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.05 14:52:56 INFO  time: code lens generation in 1.5s
+2023.03.05 14:52:56 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.05 14:53:00 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModel.java
+2023.03.05 14:53:02 INFO  time: code lens generation in 1.11s
+2023.03.05 14:53:02 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.05 14:53:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:53:06 INFO  time: code lens generation in 2.64s
+2023.03.05 14:53:45 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.05 14:53:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.05 14:53:55 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.05 14:53:55 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.05 14:54:21 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactory.java
+2023.03.05 14:54:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Wall.java
+2023.03.05 14:54:29 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.05 14:54:30 INFO  time: code lens generation in 1.29s
+2023.03.05 14:54:37 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/input/KeyManager.java
+2023.03.05 14:56:46 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModel.java
+2023.03.05 14:57:11 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.05 14:57:11 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 05, 2023 2:57:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 648
+2023.03.05 14:57:15 INFO  time: code lens generation in 3.01s
+2023.03.05 14:57:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:57:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.05 14:57:19 INFO  time: code lens generation in 1.4s
+2023.03.05 14:57:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:57:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:57:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:57:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:57:30 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:57:30 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/collisions/CollisionManager.java
+2023.03.05 14:57:31 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:57:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModel.java
+2023.03.05 14:57:55 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:57:57 INFO  time: code lens generation in 1.03s
+2023.03.05 14:58:00 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 14:58:36 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:58:52 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 14:59:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 14:59:18 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 2:59:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 805
+mar 05, 2023 2:59:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 806
+2023.03.05 14:59:26 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.05 14:59:26 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/input/KeyManager.java
+2023.03.05 14:59:55 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.05 14:59:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:01:02 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/launcher/BomberManLauncher.java
+2023.03.05 15:01:33 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 15:01:33 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 15:01:34 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 15:01:46 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 15:02:00 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 15:02:19 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:226)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:188)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:136)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChange(MetalsLanguageServer.scala:1275)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+mar 05, 2023 3:02:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+GRAVE: Internal error: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+java.util.concurrent.CompletionException: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.next$1(JavaFoldingRangeExtractor.scala:100)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.gather$1(JavaFoldingRangeExtractor.scala:145)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.extract(JavaFoldingRangeExtractor.scala:155)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:54)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:49)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$3(MetalsLanguageServer.scala:1809)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2023.03.05 15:02:19 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.RunTestCodeLens.codeLenses(RunTestCodeLens.scala:60)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:02:19 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.SuperMethodCodeLens.codeLenses(SuperMethodCodeLens.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:02:19 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:226)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:188)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:136)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChange(MetalsLanguageServer.scala:1275)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+mar 05, 2023 3:02:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+GRAVE: Internal error: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+java.util.concurrent.CompletionException: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.next$1(JavaFoldingRangeExtractor.scala:100)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.gather$1(JavaFoldingRangeExtractor.scala:145)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.extract(JavaFoldingRangeExtractor.scala:155)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:54)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:49)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$3(MetalsLanguageServer.scala:1809)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2023.03.05 15:02:20 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.RunTestCodeLens.codeLenses(RunTestCodeLens.scala:60)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:02:20 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.SuperMethodCodeLens.codeLenses(SuperMethodCodeLens.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:02:19 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:226)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:188)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:136)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChange(MetalsLanguageServer.scala:1275)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+mar 05, 2023 3:02:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+GRAVE: Internal error: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+java.util.concurrent.CompletionException: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.next$1(JavaFoldingRangeExtractor.scala:100)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.gather$1(JavaFoldingRangeExtractor.scala:145)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.extract(JavaFoldingRangeExtractor.scala:155)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:54)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:49)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$3(MetalsLanguageServer.scala:1809)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2023.03.05 15:02:20 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:226)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:188)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:136)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChange(MetalsLanguageServer.scala:1275)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+mar 05, 2023 3:02:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+GRAVE: Internal error: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+java.util.concurrent.CompletionException: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.next$1(JavaFoldingRangeExtractor.scala:100)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.gather$1(JavaFoldingRangeExtractor.scala:145)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.extract(JavaFoldingRangeExtractor.scala:155)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:54)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:49)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$3(MetalsLanguageServer.scala:1809)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2023.03.05 15:02:22 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:226)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:188)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:136)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChange(MetalsLanguageServer.scala:1275)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+mar 05, 2023 3:02:22 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+GRAVE: Internal error: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+java.util.concurrent.CompletionException: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.next$1(JavaFoldingRangeExtractor.scala:100)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.gather$1(JavaFoldingRangeExtractor.scala:145)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.extract(JavaFoldingRangeExtractor.scala:155)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:54)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:49)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$3(MetalsLanguageServer.scala:1809)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2023.03.05 15:02:22 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.RunTestCodeLens.codeLenses(RunTestCodeLens.scala:60)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:02:22 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.SuperMethodCodeLens.codeLenses(SuperMethodCodeLens.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:02:22 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:226)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:188)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:136)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChange(MetalsLanguageServer.scala:1275)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+mar 05, 2023 3:02:22 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+GRAVE: Internal error: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+java.util.concurrent.CompletionException: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.next$1(JavaFoldingRangeExtractor.scala:100)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.gather$1(JavaFoldingRangeExtractor.scala:145)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.extract(JavaFoldingRangeExtractor.scala:155)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:54)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:49)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$3(MetalsLanguageServer.scala:1809)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2023.03.05 15:02:22 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.RunTestCodeLens.codeLenses(RunTestCodeLens.scala:60)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:02:22 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Unterminated_Comment
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1782)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.SuperMethodCodeLens.codeLenses(SuperMethodCodeLens.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:02:26 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.05 15:02:27 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 15:03:18 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 15:03:34 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 15:03:45 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.05 15:05:59 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:08:21 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:09:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1263
+2023.03.05 15:09:37 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:09:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1280
+mar 05, 2023 3:09:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1279
+mar 05, 2023 3:09:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1281
+mar 05, 2023 3:09:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1283
+2023.03.05 15:09:42 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:12:14 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:12:33 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:12:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1371
+mar 05, 2023 3:12:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1401
+mar 05, 2023 3:12:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1402
+2023.03.05 15:12:50 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:12:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1404
+2023.03.05 15:14:01 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:14:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:15:10 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:15:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:15:59 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:16:00 INFO  time: code lens generation in 1.68s
+2023.03.05 15:16:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:16:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:16:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:16:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:16:37 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:16:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:16:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:17:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:17:19 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:17:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1694
+mar 05, 2023 3:17:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1708
+2023.03.05 15:17:26 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:17:46 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:18:27 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:18:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1749
+2023.03.05 15:18:55 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:19:52 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:20:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:20:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1980
+2023.03.05 15:20:45 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:21:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:21:31 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:21:42 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:22:22 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:22:53 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:23:11 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:23:23 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:24:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2263
+2023.03.05 15:24:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:24:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2264
+2023.03.05 15:24:32 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:24:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:25:20 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:26:00 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:27:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:27:15 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:27:24 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:27:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2446
+2023.03.05 15:27:36 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:27:48 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:27:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2479
+2023.03.05 15:27:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:27:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2497
+2023.03.05 15:28:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:28:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2520
+2023.03.05 15:28:31 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:28:48 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:28:50 INFO  time: code lens generation in 1.61s
+2023.03.05 15:28:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:29:23 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:29:25 INFO  time: code lens generation in 1.76s
+mar 05, 2023 3:29:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2629
+2023.03.05 15:29:46 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:30:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:30:11 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:30:13 INFO  time: code lens generation in 1.79s
+2023.03.05 15:30:37 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:30:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2707
+mar 05, 2023 3:31:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2764
+2023.03.05 15:31:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:31:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:31:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:32:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:33:18 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:33:57 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:34:44 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:35:22 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:35:42 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:36:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3116
+2023.03.05 15:36:20 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:36:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:38:28 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:38:50 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:39:15 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:39:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3412
+mar 05, 2023 3:39:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3415
+2023.03.05 15:39:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:40:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:40:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:40:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3503
+2023.03.05 15:40:46 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:41:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:41:38 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:42:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:42:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3637
+2023.03.05 15:42:16 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:42:44 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:43:12 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:43:31 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:43:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:43:57 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:43:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:44:15 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:44:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3921
+2023.03.05 15:44:29 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:44:42 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:44:52 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:44:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3986
+2023.03.05 15:44:55 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:44:56 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:44:58 INFO  time: code lens generation in 1.64s
+2023.03.05 15:45:23 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:45:32 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:45:46 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:45:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4066
+2023.03.05 15:45:48 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:46:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 15:46:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:46:19 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:46:33 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:46:34 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4136
+2023.03.05 15:46:56 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:47:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:47:10 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:47:38 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:47:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:47:56 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:48:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4275
+2023.03.05 15:48:31 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:48:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4276
+2023.03.05 15:48:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:49:34 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Character_Constant
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1490)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:226)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:188)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:136)
+	at scala.meta.internal.metals.MetalsLanguageServer.didChange(MetalsLanguageServer.scala:1275)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+mar 05, 2023 3:49:34 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+GRAVE: Internal error: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Character_Constant
+java.util.concurrent.CompletionException: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Character_Constant
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Character_Constant
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1490)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.next$1(JavaFoldingRangeExtractor.scala:100)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.gather$1(JavaFoldingRangeExtractor.scala:147)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.extract(JavaFoldingRangeExtractor.scala:155)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:54)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:49)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$foldingRange$3(MetalsLanguageServer.scala:1809)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2023.03.05 15:49:34 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Character_Constant
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1490)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.RunTestCodeLens.codeLenses(RunTestCodeLens.scala:60)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:49:34 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.javaorg.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Character_Constant
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1490)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.SuperMethodCodeLens.codeLenses(SuperMethodCodeLens.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$2(MetalsLanguageServer.scala:1793)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeLens$1(MetalsLanguageServer.scala:1791)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.05 15:49:34 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:49:37 INFO  time: code lens generation in 1.74s
+mar 05, 2023 3:49:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4394
+2023.03.05 15:50:12 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:50:27 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:50:41 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 3:50:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4463
+2023.03.05 15:50:50 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:51:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:51:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:52:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:54:57 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:58:27 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 15:59:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+mar 05, 2023 3:59:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 5619
+mar 05, 2023 4:00:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 5794
+2023.03.05 16:00:59 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 16:01:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 16:01:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 16:02:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 4:02:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 6085
+2023.03.05 16:02:21 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 16:02:30 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 16:02:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 16:03:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 16:03:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 16:03:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 16:04:49 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+mar 05, 2023 4:04:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 6550
+mar 05, 2023 4:04:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 6551
+2023.03.05 16:05:31 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.05 16:05:59 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModel.java
+2023.03.05 16:06:00 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.05 16:06:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.05 16:06:24 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.05 16:06:30 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:06:31 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:06:42 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:06:42 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:06:53 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.05 16:06:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+mar 05, 2023 4:06:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 6694
+mar 05, 2023 4:06:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 6695
+mar 05, 2023 4:06:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 6700
+2023.03.05 16:07:02 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:07:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+mar 05, 2023 4:07:34 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 6772
+2023.03.05 16:07:34 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:08:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+mar 05, 2023 4:08:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 6826
+2023.03.05 16:08:46 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:09:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:09:21 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:09:37 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:09:49 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:09:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:10:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.05 16:10:10 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:10:48 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:10:49 INFO  time: code lens generation in 1.42s
+2023.03.05 16:11:14 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.05 16:11:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:11:42 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+mar 05, 2023 4:12:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 7204
+2023.03.05 16:12:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.05 16:12:35 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+mar 05, 2023 4:12:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+AVVERTENZA: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "metals/didFocusTextDocument",
+  "params": [
+    "jdt://contents/java.desktop/java.awt.image/ImageObserver.class?%3DBomberMan%2F%5C%2FUsers%5C%2Fdallas%5C%2FLibrary%5C%2FJava%5C%2FJavaVirtualMachines%5C%2Fcorretto-11.0.14.1%5C%2FContents%5C%2FHome%5C%2Flib%5C%2Fjrt-fs.jar%60java.desktop%3D%2Fjavadoc_location%3D%2Fhttps%3A%5C%2F%5C%2Fdocs.oracle.com%5C%2Fen%5C%2Fjava%5C%2Fjavase%5C%2F11%5C%2Fdocs%5C%2Fapi%5C%2F%3D%2F%3Cjava.awt.image%28ImageObserver.class"
+  ]
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:119)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.FileSystemNotFoundException: Provider "jdt" not installed
+	at java.base/java.nio.file.Path.of(Path.java:212)
+	at java.base/java.nio.file.Paths.get(Paths.java:98)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionURIMtags.toAbsolutePath(MtagsEnrichments.scala:119)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:158)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:609)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:606)
+	at scala.meta.internal.metals.MetalsLanguageServer.didFocus(MetalsLanguageServer.scala:1200)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	... 13 more
+
+mar 05, 2023 4:13:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+AVVERTENZA: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "metals/didFocusTextDocument",
+  "params": [
+    "jdt://contents/java.desktop/java.awt.image/ImageObserver.class?%3DBomberMan%2F%5C%2FUsers%5C%2Fdallas%5C%2FLibrary%5C%2FJava%5C%2FJavaVirtualMachines%5C%2Fcorretto-11.0.14.1%5C%2FContents%5C%2FHome%5C%2Flib%5C%2Fjrt-fs.jar%60java.desktop%3D%2Fjavadoc_location%3D%2Fhttps%3A%5C%2F%5C%2Fdocs.oracle.com%5C%2Fen%5C%2Fjava%5C%2Fjavase%5C%2F11%5C%2Fdocs%5C%2Fapi%5C%2F%3D%2F%3Cjava.awt.image%28ImageObserver.class"
+  ]
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:119)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.FileSystemNotFoundException: Provider "jdt" not installed
+	at java.base/java.nio.file.Path.of(Path.java:212)
+	at java.base/java.nio.file.Paths.get(Paths.java:98)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionURIMtags.toAbsolutePath(MtagsEnrichments.scala:119)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:158)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:609)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:606)
+	at scala.meta.internal.metals.MetalsLanguageServer.didFocus(MetalsLanguageServer.scala:1200)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	... 13 more
+
+2023.03.05 16:13:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.05 16:13:39 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:13:39 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:14:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:14:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:14:48 INFO  time: code lens generation in 1.71s
+mar 05, 2023 4:15:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 7371
+2023.03.05 16:15:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:15:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:15:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:15:26 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:15:28 INFO  time: code lens generation in 1.35s
+2023.03.05 16:15:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:15:55 INFO  time: code lens generation in 1.47s
+2023.03.05 16:16:01 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:16:03 INFO  time: code lens generation in 1.11s
+2023.03.05 16:16:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/collisions/CollisionManager.java
+2023.03.05 16:16:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.05 16:16:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:16:10 INFO  time: code lens generation in 1.18s
+2023.03.05 16:16:24 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:16:56 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.05 16:16:58 INFO  time: code lens generation in 1.26s
+2023.03.05 16:20:15 INFO  shutting down Metals
+2023.03.06 09:22:59 INFO  Started: Metals version 0.11.11 in workspace '/Users/dallas/Desktop/Uni/BomberMan' for client Visual Studio Code 1.75.1.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/Users/dallas/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.03.06 09:23:00 INFO  time: initialize in 0.65s
+2023.03.06 09:23:04 WARN  Build server is not auto-connectable.
+2023.03.06 09:23:04 WARN  no build tool detected in workspace '/Users/dallas/Desktop/Uni/BomberMan'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.03.06 09:23:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 09:23:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:23:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:23:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.06 09:23:08 INFO  time: code lens generation in 3.43s
+2023.03.06 09:23:10 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/launcher/BomberManLauncher.java
+mar 06, 2023 9:23:10 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 14
+2023.03.06 09:23:12 INFO  time: code lens generation in 1.97s
+2023.03.06 09:23:52 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/launcher/BomberManLauncher.java
+mar 06, 2023 9:23:52 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 35
+2023.03.06 09:23:52 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.06 09:23:53 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.06 09:23:56 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.06 09:23:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.06 09:24:00 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.06 09:24:00 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+mar 06, 2023 9:24:02 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 111
+2023.03.06 09:24:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:24:05 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+mar 06, 2023 9:24:06 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 127
+2023.03.06 09:24:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:24:45 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:24:57 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:25:05 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:25:14 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:25:15 INFO  time: code lens generation in 1.62s
+2023.03.06 09:25:29 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:25:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:25:56 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:26:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:26:20 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:30:00 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:30:00 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 09:32:48 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:32:53 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuController.java
+2023.03.06 09:32:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/launcher/BomberManLauncher.java
+mar 06, 2023 9:32:54 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 484
+mar 06, 2023 9:32:57 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 511
+2023.03.06 09:32:57 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.06 09:33:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/menu/MenuView.java
+2023.03.06 09:33:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:34:01 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:34:31 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:36:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:37:15 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:37:44 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:37:56 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:38:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:38:22 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:38:24 INFO  time: code lens generation in 1.49s
+2023.03.06 09:38:41 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:38:57 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:39:21 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:39:41 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:40:02 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:40:28 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:40:47 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/WinnerState.java
+2023.03.06 09:41:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.06 09:41:08 INFO  time: code lens generation in 1.24s
+2023.03.06 09:41:22 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.06 09:41:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+mar 06, 2023 9:41:29 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1049
+mar 06, 2023 9:41:29 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1055
+2023.03.06 09:41:29 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.06 09:42:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Hud.java
+2023.03.06 09:42:23 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Clock.java
+2023.03.06 09:42:25 INFO  time: code lens generation in 1.08s
+2023.03.06 09:42:37 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/hud/Clock.java
+mar 06, 2023 9:42:39 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1136
+2023.03.06 09:43:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.06 09:43:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+mar 06, 2023 9:43:09 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1165
+2023.03.06 09:43:10 INFO  time: code lens generation in 1.43s
+2023.03.06 09:44:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 09:44:16 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModel.java
+2023.03.06 09:44:17 INFO  time: code lens generation in 1.14s
+2023.03.06 09:44:19 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:45:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:45:34 WARN  Using indexes to guess the definition of WallFactoryImpl
+2023.03.06 09:45:35 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 06, 2023 9:46:04 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1388
+2023.03.06 09:46:42 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:46:45 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:226)
+	at scala.meta.internal.metals.Diagnostics.publishDiagnostics(Diagnostics.scala:188)
+	at scala.meta.internal.metals.Diagnostics.didChange(Diagnostics.scala:136)
+	at scala.meta.internal.metals.MetalsLspService.didChange(MetalsLspService.scala:1248)
+	at scala.meta.metals.lsp.DelegatingScalaService.didChange(DelegatingScalaService.scala:50)
+	at jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+mar 06, 2023 9:46:45 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+GRAVE: Internal error: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+java.util.concurrent.CompletionException: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2162)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.next$1(JavaFoldingRangeExtractor.scala:100)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.gather$1(JavaFoldingRangeExtractor.scala:147)
+	at scala.meta.internal.parsing.JavaFoldingRangeExtractor.extract(JavaFoldingRangeExtractor.scala:155)
+	at scala.meta.internal.parsing.FoldingRangeProvider.$anonfun$getRangedForJava$2(FoldingRangeProvider.scala:48)
+	at scala.Option$WithFilter.map(Option.scala:242)
+	at scala.meta.internal.parsing.FoldingRangeProvider.getRangedForJava(FoldingRangeProvider.scala:43)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$foldingRange$3(MetalsLspService.scala:1776)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2023.03.06 09:46:45 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.RunTestCodeLens.codeLenses(RunTestCodeLens.scala:62)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$codeLens$2(MetalsLspService.scala:1761)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$codeLens$1(MetalsLspService.scala:1759)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.06 09:46:45 WARN  Cannot tokenize Java file file:///Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+org.eclipse.jdt.core.compiler.InvalidInputException: Invalid_Char_In_String
+	at org.eclipse.jdt.internal.core.util.PublicScanner.getNextToken(PublicScanner.java:1564)
+	at scala.meta.internal.parsing.JavaTokens$.loop$1(JavaTokens.scala:71)
+	at scala.meta.internal.parsing.JavaTokens$.$anonfun$tokenize$1(JavaTokens.scala:75)
+	at scala.util.Try$.apply(Try.scala:210)
+	at scala.meta.internal.parsing.JavaTokens$.tokenize(JavaTokens.scala:35)
+	at scala.meta.internal.parsing.TokenEditDistance$.apply(TokenEditDistance.scala:370)
+	at scala.meta.internal.metals.Buffers.tokenEditDistance(Buffers.scala:30)
+	at scala.meta.internal.metals.codelenses.SuperMethodCodeLens.codeLenses(SuperMethodCodeLens.scala:36)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$3(CodeLensProvider.scala:26)
+	at scala.collection.immutable.List.flatMap(List.scala:293)
+	at scala.meta.internal.metals.CodeLensProvider.$anonfun$findLenses$2(CodeLensProvider.scala:26)
+	at scala.Option.map(Option.scala:242)
+	at scala.meta.internal.metals.CodeLensProvider.findLenses(CodeLensProvider.scala:24)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$codeLens$2(MetalsLspService.scala:1761)
+	at scala.meta.internal.metals.TimerProvider.timedThunk(TimerProvider.scala:25)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$codeLens$1(MetalsLspService.scala:1759)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$apply$2(CancelTokens.scala:26)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:833)
+
+2023.03.06 09:46:48 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:47:15 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 06, 2023 9:47:17 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1599
+2023.03.06 09:47:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 06, 2023 9:47:17 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1603
+2023.03.06 09:47:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:47:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:47:35 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:02 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:02 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:40 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 06, 2023 9:52:40 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1755
+2023.03.06 09:52:40 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:40 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:40 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:49 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:49 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:49 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:49 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:49 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:52:53 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 06, 2023 9:53:06 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1853
+2023.03.06 09:53:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 06, 2023 9:53:08 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 1855
+2023.03.06 09:53:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Entity.java
+2023.03.06 09:53:17 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:53:38 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:54:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:56:59 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:57:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:57:33 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:57:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Entity.java
+2023.03.06 09:57:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Entity.java
+2023.03.06 09:57:44 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Entity.java
+2023.03.06 09:58:28 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:58:28 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/collisions/ICollidable.java
+2023.03.06 09:58:28 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:58:38 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:58:45 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:58:46 INFO  time: code lens generation in 1.8s
+2023.03.06 09:58:52 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:58:52 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 09:58:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 06, 2023 9:58:54 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2338
+2023.03.06 10:00:20 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:00:20 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:00:51 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 06, 2023 10:00:51 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2651
+2023.03.06 10:01:21 WARN  Using indexes to guess the definition of hardWall
+2023.03.06 10:01:21 WARN  Using indexes to guess the definition of hardWall
+2023.03.06 10:01:33 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactory.java
+2023.03.06 10:01:36 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Wall.java
+2023.03.06 10:01:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:02:01 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:02:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:02:15 INFO  time: code lens generation in 1.65s
+2023.03.06 10:02:27 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+mar 06, 2023 10:02:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2769
+mar 06, 2023 10:02:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 2771
+2023.03.06 10:02:27 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/EntityController.java
+2023.03.06 10:02:52 WARN  Using indexes to guess the definition of hardWall
+2023.03.06 10:02:52 WARN  Using indexes to guess the definition of hardWall
+2023.03.06 10:03:11 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModel.java
+2023.03.06 10:03:12 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaState.java
+2023.03.06 10:03:19 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameState.java
+2023.03.06 10:03:20 INFO  time: code lens generation in 1.05s
+2023.03.06 10:03:20 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.06 10:03:22 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/HelpState.java
+2023.03.06 10:03:23 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/MenuState.java
+2023.03.06 10:03:24 INFO  time: code lens generation in 1.47s
+2023.03.06 10:06:16 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:06:28 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:06:30 INFO  time: code lens generation in 1.79s
+2023.03.06 10:06:44 WARN  Using indexes to guess the definition of hardWall
+2023.03.06 10:06:44 WARN  Using indexes to guess the definition of hardWall
+2023.03.06 10:06:45 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:06:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:07:23 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:07:24 INFO  time: code lens generation in 1.83s
+2023.03.06 10:15:32 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:15:40 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:16:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:16:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:16:23 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/EntityController.java
+2023.03.06 10:16:29 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:16:31 INFO  time: code lens generation in 1.15s
+mar 06, 2023 10:16:34 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3178
+2023.03.06 10:17:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.06 10:17:08 INFO  time: code lens generation in 1.03s
+2023.03.06 10:17:12 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:17:40 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:17:41 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:17:40 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:17:51 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:18:23 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:18:24 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:18:26 INFO  time: code lens generation in 1.29s
+2023.03.06 10:18:27 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+mar 06, 2023 10:18:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3352
+2023.03.06 10:18:28 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:18:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:18:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:18:56 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:19:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:19:27 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:19:31 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:19:44 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+mar 06, 2023 10:19:45 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3572
+2023.03.06 10:19:45 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/EntityController.java
+2023.03.06 10:19:51 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:20:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:20:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:20:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:20:18 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:20:25 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:20:32 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:20:42 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:21:05 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:21:22 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:21:22 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:21:38 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:21:38 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:21:39 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:07 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:12 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:12 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:22:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+mar 06, 2023 10:22:58 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 3936
+2023.03.06 10:23:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:23:06 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:23:32 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:23:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+mar 06, 2023 10:24:03 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4033
+2023.03.06 10:24:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:24:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:24:15 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:24:57 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:24:59 INFO  time: code lens generation in 1.95s
+2023.03.06 10:25:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:25:10 INFO  time: code lens generation in 1.75s
+2023.03.06 10:25:33 WARN  Using indexes to guess the definition of PowerUpBuilder
+2023.03.06 10:25:33 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:25:35 INFO  time: code lens generation in 1.8s
+2023.03.06 10:25:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:25:45 INFO  time: code lens generation in 1.57s
+2023.03.06 10:25:49 WARN  Using indexes to guess the definition of PowerUpBuilder
+2023.03.06 10:25:51 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:25:53 INFO  time: code lens generation in 1.68s
+2023.03.06 10:26:03 WARN  Using indexes to guess the definition of PowerUpBuilder
+2023.03.06 10:26:04 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:26:06 INFO  time: code lens generation in 1.47s
+2023.03.06 10:26:13 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:26:15 INFO  time: code lens generation in 1.09s
+2023.03.06 10:26:24 WARN  Using indexes to guess the definition of PowerUpBuilder
+2023.03.06 10:26:24 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:26:26 INFO  time: code lens generation in 1.33s
+2023.03.06 10:26:30 WARN  Using indexes to guess the definition of setType
+2023.03.06 10:26:30 WARN  Using indexes to guess the definition of setType
+2023.03.06 10:26:33 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:26:40 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:26:42 INFO  time: code lens generation in 1.51s
+2023.03.06 10:27:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:27:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:28:27 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:28:29 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:28:34 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:29:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:29:28 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:29:32 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:29:32 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:29:32 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:30:19 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:30:29 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:30:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:30:57 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:31:29 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:31:30 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+mar 06, 2023 10:31:30 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4727
+mar 06, 2023 10:31:30 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4729
+mar 06, 2023 10:31:30 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 4730
+2023.03.06 10:31:34 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:31:36 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:31:38 INFO  time: code lens generation in 1.94s
+2023.03.06 10:31:46 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:31:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:32:09 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:32:18 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:33:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModelImpl.java
+2023.03.06 10:33:08 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+2023.03.06 10:33:15 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:33:17 INFO  time: code lens generation in 1.01s
+2023.03.06 10:33:20 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:33:23 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/PowerUp.java
+2023.03.06 10:33:37 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:33:51 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Player.java
+2023.03.06 10:34:03 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/WallFactoryImpl.java
+mar 06, 2023 10:34:05 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 5282
+mar 06, 2023 10:34:05 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+AVVERTENZA: Unmatched cancel notification for request id 5285
+2023.03.06 10:34:40 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:34:43 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/entities/Bomb.java
+2023.03.06 10:34:46 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Animation.java
+2023.03.06 10:34:49 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/gfx/Assets.java
+2023.03.06 10:34:54 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/ArenaModel.java
+2023.03.06 10:34:58 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
+2023.03.06 10:34:59 WARN  no build target for: /Users/dallas/Desktop/Uni/BomberMan/BomberMan/src/main/java/it/bomberman/states/GameStateManager.java
