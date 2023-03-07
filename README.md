@@ -41,8 +41,13 @@ The app allows two players to play against each other locally.
 <!-- GETTING STARTED -->
 <h2 id="getting-started"> :book: Getting Started</h2>
 
-<p>You are able to start the game using a Java compiler(like Eclipse, Intellij, VsCode...) or typing the following commands in the command line:</p>
-<pre><code>$ java BomberManLauncher.java</code></pre>
+<p>In order to build the application, use the following command on Linux</p>
+<pre><code>$ ./gradlew build</code></pre>
+<p>Or the following command on Windows</p>
+<pre><code>$ .\gradlew.bat build</code></pre>
+<p>The application will be built into a <code>JAR</code> file, which you will be able to run it with the following command:</p>
+<pre><code>$ java -jar build/libs/BomberMan.jar</code></pre>
+
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
