@@ -17,7 +17,7 @@ public class ArenaState extends GameState {
 	private Color backgroundColor;
 
 	public ArenaState(GameStateManager gsm) {
-		this.gsm = gsm;
+		this.gameStateManager = gsm;
 		this.keyManager = new KeyManager();
 		this.arenaModel = new ArenaModelImpl(this.keyManager);
 		this.hud = new Hud(this.arenaModel.getPlayer1(), this.arenaModel.getPlayer2(), this.arenaModel.getClock());
@@ -46,8 +46,8 @@ public class ArenaState extends GameState {
 		g.fillRect(0, 0, 1200, 800);
 		Toolkit.getDefaultToolkit().sync();
 		if (arenaModel.gameOver()) {
-			this.gsm.setWinner(this.arenaModel.getWinner());
-			this.gsm.setState(GameStateManager.WINNER);
+			this.gameStateManager.setWinner(this.arenaModel.getWinner());
+			this.gameStateManager.setState(GameStateManager.WINNER);
 		} else {
 			this.arenaModel.getDrawables().stream().forEach(e -> e.render(g));
 			Toolkit.getDefaultToolkit().sync();

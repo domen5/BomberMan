@@ -13,7 +13,10 @@ public class HelpState extends GameState implements KeyListener {
 	private static final long serialVersionUID = 1L;
 	private GameStateManager gsm;
 	private int currentChoice = 0;
-	private Font fontTitle, subTitle, paragraph, fontCh;
+	private Font fontTitle;
+	private Font subTitle;
+	private Font paragraph;
+	private Font fontCh;
 	private int upgradeSpace = 150;
 
 	private String[] options = { "Start Game", "Quit" };
@@ -38,13 +41,10 @@ public class HelpState extends GameState implements KeyListener {
 	}
 
 	private void select() {
-		switch (currentChoice) {
-			case 0:
-				this.gsm.setState(GameStateManager.ARENA);
-				break;
-			case 1:
-				System.exit(0);
-				break;
+		if (currentChoice == 0) {
+			this.gsm.setState(GameStateManager.ARENA);
+		} else {
+			System.exit(0);
 		}
 	}
 
@@ -59,6 +59,7 @@ public class HelpState extends GameState implements KeyListener {
 		draw(g);
 	}
 
+	@Override
 	public void addNotify() {
 		super.addNotify();
 		addKeyListener(this);
@@ -66,7 +67,7 @@ public class HelpState extends GameState implements KeyListener {
 
 	private int getUpgradeDistance(int times, int distance) {
 		int upgradePadding = 20;
-		return upgradeSpace + 120* times + distance * upgradePadding;
+		return upgradeSpace + 120 * times + distance * upgradePadding;
 	}
 
 	@Override
@@ -109,53 +110,33 @@ public class HelpState extends GameState implements KeyListener {
 		g.drawString("It delimits the playing area", 250, 500);
 
 		// UPGRADE
-		g.drawImage(Assets.upgrade[0], 750, getUpgradeDistance(0,0), 100, 100, null);
-		g.drawString("The BOMBERMAN SHOES: ", 860, getUpgradeDistance(0,1));
-		g.drawString("Put your fantastic new sneakers in your feet", 860, getUpgradeDistance(0,2));
-		g.drawString("and run fast then the explosion!", 860, getUpgradeDistance(0,3));
-		g.drawString("INCREASE YOUR SPEED BY 1", 860, getUpgradeDistance(0,4));
+		g.drawImage(Assets.upgrade[0], 750, getUpgradeDistance(0, 0), 100, 100, null);
+		g.drawString("The BOMBERMAN SHOES: ", 860, getUpgradeDistance(0, 1));
+		g.drawString("Put your fantastic new sneakers in your feet", 860, getUpgradeDistance(0, 2));
+		g.drawString("and run fast then the explosion!", 860, getUpgradeDistance(0, 3));
+		g.drawString("INCREASE YOUR SPEED BY 1", 860, getUpgradeDistance(0, 4));
 
-		g.drawImage(Assets.upgrade[1], 750, getUpgradeDistance(1,0), 100, 100, null);
-		g.drawString("The BOMBERMAN BOMB: ", 860, getUpgradeDistance(1,1));
-		g.drawString("Drop only one bomb is boring...", 860, getUpgradeDistance(1,2));
-		g.drawString("Now your pocket is bigger!", 860, getUpgradeDistance(1,3));
-		g.drawString("INCREASE YOUR BOMB NUMBER BY 1", 860, getUpgradeDistance(1,4));
+		g.drawImage(Assets.upgrade[1], 750, getUpgradeDistance(1, 0), 100, 100, null);
+		g.drawString("The BOMBERMAN BOMB: ", 860, getUpgradeDistance(1, 1));
+		g.drawString("Drop only one bomb is boring...", 860, getUpgradeDistance(1, 2));
+		g.drawString("Now your pocket is bigger!", 860, getUpgradeDistance(1, 3));
+		g.drawString("INCREASE YOUR BOMB NUMBER BY 1", 860, getUpgradeDistance(1, 4));
 
-		g.drawImage(Assets.upgrade[2], 750, getUpgradeDistance(2,0), 100, 100, null);
-		g.drawString("The BOMBERMAN HEART: ", 860, getUpgradeDistance(2,1));
-		g.drawString("playing with bombs is not safe...", 860, getUpgradeDistance(2,2));
-		g.drawString("But now you can play more safety!", 860, getUpgradeDistance(2,3));
-		g.drawString("INCREASE YOUR LIFE BY 1", 860, getUpgradeDistance(2,4));
+		g.drawImage(Assets.upgrade[2], 750, getUpgradeDistance(2, 0), 100, 100, null);
+		g.drawString("The BOMBERMAN HEART: ", 860, getUpgradeDistance(2, 1));
+		g.drawString("playing with bombs is not safe...", 860, getUpgradeDistance(2, 2));
+		g.drawString("But now you can play more safety!", 860, getUpgradeDistance(2, 3));
+		g.drawString("INCREASE YOUR LIFE BY 1", 860, getUpgradeDistance(2, 4));
 
-		g.drawImage(Assets.upgrade[3], 750, getUpgradeDistance(3,0), 100, 100, null);
-		g.drawString("The BOMBERMAN CANDLE STICK: ", 860, getUpgradeDistance(3,1));
-		g.drawString("Does your enemy run faster than you?", 860, getUpgradeDistance(3,2));
-		g.drawString("Now you will have no more problems!", 860, getUpgradeDistance(3,3));
-		g.drawString("INCREASE YOUR EXPLOSION RANGE BY 1", 860, getUpgradeDistance(3,4));
-
-		// g.drawString("Bomberman is an arcade game in which two or more players
-		// compete", 470, 200);
-		// g.drawString("against each other trying to make the opponent lose by blowing
-		// him", 470, 220);
-		// g.drawString("up with bombs.", 470, 240);
-		// g.drawString("The game ends when only one player is left with lives or when
-		// ", 470, 260);
-		// g.drawString("the game timer expires.", 470, 280);
-		// g.drawString("There are breakable and unbreakable wall.", 470, 300);
-		// g.drawString("Breakable walls can be destroyed using bombs.", 470, 320);
-		// g.drawString("A destoyed wall can drop upgrades.", 470, 340);
-		// g.drawString("Each bomb explodes a few seconds after it was dropped ", 470,
-		// 360);
-		// g.setFont(new Font("Century Gothic", Font.PLAIN, 29));
-		// // g.drawString("CHOOSE STARTGAME AND HAVE FUN!!!", 470, 540);
+		g.drawImage(Assets.upgrade[3], 750, getUpgradeDistance(3, 0), 100, 100, null);
+		g.drawString("The BOMBERMAN CANDLE STICK: ", 860, getUpgradeDistance(3, 1));
+		g.drawString("Does your enemy run faster than you?", 860, getUpgradeDistance(3, 2));
+		g.drawString("Now you will have no more problems!", 860, getUpgradeDistance(3, 3));
+		g.drawString("INCREASE YOUR EXPLOSION RANGE BY 1", 860, getUpgradeDistance(3, 4));
 
 		g.setFont(fontCh);
 		for (int i = 0; i < options.length; i++) {
-			if (i == currentChoice) {
-				g.setColor(Color.CYAN);
-			} else {
-				g.setColor(Color.WHITE);
-			}
+			g.setColor(i == currentChoice ? Color.CYAN : Color.WHITE);
 			g.drawString(options[i], 600, 690 + i * 35);
 		}
 		Toolkit.getDefaultToolkit().sync();
@@ -163,6 +144,7 @@ public class HelpState extends GameState implements KeyListener {
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		// default behaviour
 	}
 
 	@Override
@@ -186,5 +168,6 @@ public class HelpState extends GameState implements KeyListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		// default behaviour
 	}
 }

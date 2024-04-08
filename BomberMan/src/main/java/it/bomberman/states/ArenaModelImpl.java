@@ -26,13 +26,12 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	private Player player2;
 	private List<Entity> registerLater;
 	private List<Entity> removeLater;
-	private Random random;
 	private Clock clock;
 	private boolean gameOver = false;
 	private Optional<Player> winner;
 	private List<Entity> entities;
-	private final static int WALL_SPAWN_PROBABILITY = 60;
-	private final static int POWER_UP_SPAWN_PROBABILITY = 20;
+	private static final int WALL_SPAWN_PROBABILITY = 60;
+	private static final int POWER_UP_SPAWN_PROBABILITY = 20;
 
 	public ArenaModelImpl(KeyManager keyManager) {
 		player1 = new Player(70, 135, 1, keyManager, this);
@@ -40,9 +39,9 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 
 		this.winner = Optional.empty();
 		this.clock = new Clock(200);
-		this.entities = new ArrayList<Entity>();
-		this.registerLater = new ArrayList<Entity>();
-		this.removeLater = new ArrayList<Entity>();
+		this.entities = new ArrayList<>();
+		this.registerLater = new ArrayList<>();
+		this.removeLater = new ArrayList<>();
 		this.collisionMan = new CollisionManager();
 		this.wallFactory = new WallFactoryImpl();
 		initMapLimitWalls();
@@ -61,7 +60,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	}
 
 	public void checkClock() {
-		if (this.clock.getTime() == "000" || this.player1.getHealth() == 0 || this.player2.getHealth() == 0) {
+		if ("000".equals(this.clock.getTime()) || this.player1.getHealth() == 0 || this.player2.getHealth() == 0) {
 			gameOver = true;
 			if (player1.getHealth() > player2.getHealth()) {
 				this.winner = Optional.of(player1);
@@ -95,18 +94,17 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 
 	@Override
 	public List<Entity> getDrawables() {
-		List<Entity> l = Collections.unmodifiableList(this.entities);
-		return l;
+		return Collections.unmodifiableList(this.entities);
 	}
 
 	private void initMapLimitWalls() {
-		List<Wall> walls = new ArrayList<Wall>();
+		Random random = new Random();
+		List<Wall> walls = new ArrayList<>();
 		int xLimit = 13;
 		int yLimit = 8;
 		int unit = WallFactoryImpl.DEFAULT_WALL_WIDTH;
-		random = new Random();
 
-		// muri limite mappa
+		// Add walls on the map boundaries
 		IntStream.range(0, xLimit).forEach(i -> {
 			walls.add(wallFactory.hardWall(unit * i - 50, 50, this));
 			walls.add(wallFactory.hardWall(unit * i - 50, 50 + unit * (yLimit - 1), this));
@@ -116,8 +114,9 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 			walls.add(wallFactory.hardWall((xLimit - 1) * unit - 50, 50 + i * unit, this));
 		});
 
-		for (int i = 1; i < xLimit - 1; i++) {
-			for (int j = 1; j < yLimit - 1; j++) {
+		// Add walls and power-ups inside the map
+		IntStream.range(1, xLimit - 1).forEach(i -> {
+			IntStream.range(1, yLimit - 1).forEach(j -> {
 				if (j % 2 == 0 && i % 2 == 0) {
 					Wall w = wallFactory.hardWall(unit * i - 50, unit * j + 50, this);
 					walls.add(w);
@@ -127,28 +126,31 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 						Wall w = wallFactory.simpleWall(unit * i - 50, unit * j + 50, this);
 						walls.add(w);
 					} else if (r <= POWER_UP_SPAWN_PROBABILITY + WALL_SPAWN_PROBABILITY) {
-						{
-							PowerUp p = PowerUp.PowerUpBuilder.newBuilder().setController(this).setX(unit * i - 25)
-									.setY(unit * j + 75)
-									.setType(PowerUpType.values()[random.nextInt(PowerUpType.values().length)])
-									.setValue(1)
-									.build();
-							register(p);
-						}
+						PowerUp p = PowerUp.PowerUpBuilder.newBuilder()
+								.setController(this)
+								.setX(unit * i - 25)
+								.setY(unit * j + 75)
+								.setType(PowerUpType.values()[random.nextInt(PowerUpType.values().length)])
+								.setValue(1)
+								.build();
+						register(p);
 					}
 				}
-			}
-		}
+			});
+		});
+
 		walls.forEach(this::register);
 	}
 
 	private boolean correctBuild(int i, int j) {
 		int xLimit = 13;
 		int yLimit = 8;
-		// gli slot vicino a ciascun Player devono essere lasciati liberi da Wall
-		return !((i == 1 && (j == 1 || j == 2)) || (j == 1 && (i == 1 || i == 2)))
-				&& !((i == xLimit - 2 && (j == yLimit - 2 || j == yLimit - 3))
-						|| (j == yLimit - 2 && (i == xLimit - 2 || i == xLimit - 3)));
+		// Check if the slot is near any player
+		boolean nearPlayer1 = (i == 1 && (j == 1 || j == 2)) || (j == 1 && (i == 1 || i == 2));
+		boolean nearPlayer2 = (i == xLimit - 2 && (j == yLimit - 2 || j == yLimit - 3))
+				|| (j == yLimit - 2 && (i == xLimit - 2 || i == xLimit - 3));
+		// Return true if the slot is not near any player
+		return !(nearPlayer1 || nearPlayer2);
 	}
 
 	@Override
