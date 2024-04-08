@@ -26,13 +26,11 @@ public class KeyManager implements KeyListener {
 		drop2 = keys[KeyEvent.VK_ENTER];
 	}
 
-	// PRESSSIONE TASTO
 	@Override
 	public void keyPressed(KeyEvent e) {
 		keys[e.getKeyCode()] = true;
 	}
 
-	// RILASCIO TASTO
 	@Override
 	public void keyReleased(KeyEvent e) {
 		keys[e.getKeyCode()] = false;
@@ -42,4 +40,3 @@ public class KeyManager implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 	}
 }
-

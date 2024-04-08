@@ -1,22 +1,23 @@
 package it.bomberman.menu;
 
-import java.awt.Graphics;
-import javax.swing.JFrame;
 import java.awt.Dimension;
+import java.awt.Graphics;
 
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 import it.bomberman.states.GameStateManager;
 
 public class MenuView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private GameStateManager gsm;
+	private transient GameStateManager gameStateManager;
 
 	public MenuView() {
-		gsm = new GameStateManager(this);
+		gameStateManager = new GameStateManager(this);
 		this.setName("BomberMan Menu");
-		this.gsm.setState(GameStateManager.MENUSTATE);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.gameStateManager.setState(GameStateManager.MENUSTATE);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setPreferredSize(new Dimension(1200, 800));
 		this.pack();
@@ -31,10 +32,10 @@ public class MenuView extends JFrame {
 	}
 
 	public void draw() {
-
+		// default behavior
 	}
 
 	public void update() {
-		this.gsm.update();
+		this.gameStateManager.update();
 	}
 }

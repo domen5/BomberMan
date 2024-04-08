@@ -6,11 +6,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
+
 public class Body {
+
 	public List<Shape> boundingShapes;
 
 	public Body() {
-		this.boundingShapes = new ArrayList<Shape>();
+		this.boundingShapes = new ArrayList<>();
 	}
 
 	public Body(Shape s) {
@@ -37,15 +40,14 @@ public class Body {
 			return false;
 		}
 
-		boolean out = false;
-		for (var s : this.boundingShapes) {
-			for (var otherS : otherBoundingShapes) {
+		for (Shape s : this.boundingShapes) {
+			for (Shape otherS : otherBoundingShapes) {
 				if (s.intersects(otherS)) {
-					out = true;
+					return true; // Collision detected, return true immediately
 				}
 			}
 		}
-		return out;
+		return false; // No collision detected
 	}
 
 	public List<Shape> getBoundingShapes() {
@@ -53,14 +55,10 @@ public class Body {
 	}
 
 	public void move(int x, int y) {
-		for (Shape s : this.boundingShapes) {
-			s.move(x, y);
-		}
+		boundingShapes.forEach(s -> s.move(x, y));
 	}
 
 	public void render(Graphics g, Color color) {
-		for (Shape s : this.boundingShapes) {
-			s.render(g, color);
-		}
+		boundingShapes.forEach(s -> s.render(g, color));
 	}
 }

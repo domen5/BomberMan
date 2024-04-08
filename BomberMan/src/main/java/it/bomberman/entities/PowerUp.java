@@ -8,7 +8,7 @@ import it.bomberman.collisions.Rectangle;
 import it.bomberman.gfx.Assets;
 
 public class PowerUp extends AbstractEntity {
-	private final static int DEFAULT_WIDTH = 50;
+	private static final int DEFAULT_WIDTH = 50;
 	private PowerUpType type;
 	private int value;
 
@@ -117,7 +117,7 @@ public class PowerUp extends AbstractEntity {
 		 */
 		public PowerUpBuilder setValue(int value) {
 			if (!checkValue(value)) {
-				throw new IllegalArgumentException("Value di PowerUp deve essere 0 < v < 6");
+				throw new IllegalArgumentException("Powerup value must be between 1 and 5!");
 			}
 			this.value = value;
 			return this;
@@ -139,7 +139,7 @@ public class PowerUp extends AbstractEntity {
 
 		public PowerUp build() {
 			if (this.controller == null || this.type == null || !checkValue(this.value)) {
-				throw new IllegalStateException("Un dato ha valore inaccettabile!");
+				throw new IllegalStateException("PowerUpBuilder not correctly initialized!");
 			}
 			return new PowerUp(this.x, this.y, this.width, this.height, this.type, this.value, this.controller);
 		}

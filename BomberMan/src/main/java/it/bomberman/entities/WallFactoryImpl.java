@@ -23,6 +23,7 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void render(Graphics g) {
+				// Default behavior
 			}
 		}
 		return new MapLimitWall(x, y, controller);
@@ -31,7 +32,7 @@ public class WallFactoryImpl implements WallFactory {
 	@Override
 	public Wall simpleWall(int x, int y, EntityController controller) {
 		return new Wall() {
-
+			private static final Random random = new Random();
 			private int width = DEFAULT_WALL_WIDTH;
 			private Body body = new Body(new Rectangle(x, y, width, width));
 			private EntityController contr = controller;
@@ -43,13 +44,7 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public boolean shouldCollide(ICollidable collidable) {
-				if (collidable instanceof Player) {
-					return true;
-				}
-				if (collidable instanceof Explosion) {
-					return true;
-				}
-				return false;
+				return (collidable instanceof Player || collidable instanceof Explosion);
 			}
 
 			@Override
@@ -66,6 +61,7 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void tick() {
+				// default behavior
 			}
 
 			@Override
@@ -86,8 +82,6 @@ public class WallFactoryImpl implements WallFactory {
 
 			@Override
 			public void dispose() {
-				// random
-				Random random = new Random();
 				final PowerUpType type = PowerUpType.values()[random.nextInt(PowerUpType.values().length)];
 				if (random.nextInt(100) < POWER_UP_DROP_PROBABILITY) {
 					PowerUp up = PowerUp.PowerUpBuilder.newBuilder()

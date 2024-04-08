@@ -4,12 +4,14 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.HashSet;
 import java.util.Set;
+
 import it.bomberman.collisions.Body;
 import it.bomberman.collisions.ICollidable;
 import it.bomberman.collisions.Rectangle;
 import it.bomberman.collisions.Vector2;
 import it.bomberman.entities.PowerUp.PowerUpType;
-import it.bomberman.gfx.*;
+import it.bomberman.gfx.Animation;
+import it.bomberman.gfx.Assets;
 import it.bomberman.input.KeyManager;
 
 public class Player extends AbstractEntity {
@@ -18,12 +20,16 @@ public class Player extends AbstractEntity {
 	public static final int DEFAULT_PLAYER_WIDTH = 108;
 	public static final int DEFAULT_PLAYER_HEIGHT = 90;
 	public static final int SPEED_MULTIPLIER = 2;
-	private Animation animDown, animUp, animLeft, animRight, animBomb;
+	private static final int CROP_OFFSET_X = 17;
+	private static final int CROP_OFFSET_Y = 22;
+	private Animation animDown;
+	private Animation animUp;
+	private Animation animLeft;
+	private Animation animRight;
+	private Animation animBomb;
 	private KeyManager keyManager;
 	private int playerNumb;
 	private Body body;
-	private final int cropOffsetX = 17;
-	private final int cropOffsetY = 22;
 
 	private final int initialPosX;
 	private final int initialPosY;
@@ -53,9 +59,7 @@ public class Player extends AbstractEntity {
 		this.playerNumb = n;
 		this.keyManager = keyManager;
 
-		this.bombs = new HashSet<Bomb>();
-		// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		// Creare una classe esterna che gestisce i player per animazioni!!
+		this.bombs = new HashSet<>();
 
 		if (playerNumb == 1) {
 			animDown = new Animation(150, Assets.player_d);
@@ -87,7 +91,7 @@ public class Player extends AbstractEntity {
 	@Override
 	protected void initBody() {
 		this.body = new Body();
-		this.body.add(new Rectangle(this.x + cropOffsetX, this.y + cropOffsetY, 40, 70));
+		this.body.add(new Rectangle(this.x + CROP_OFFSET_X, this.y + CROP_OFFSET_Y, 40, 70));
 	}
 
 	public void getInput() {
@@ -98,30 +102,45 @@ public class Player extends AbstractEntity {
 		int s = SPEED_MULTIPLIER * this.speed + 2;
 
 		if (this.playerNumb == 1) {
-			if (this.keyManager.up)
-				yMove -= s;
-			if (this.keyManager.down)
-				yMove = s;
-			if (this.keyManager.left)
-				xMove -= s;
-			if (this.keyManager.right)
-				xMove = s;
+			handlePlayer1Movement(s);
+			handlePlayer1BombDrop();
 		}
 
 		if (this.playerNumb == 2) {
-			if (this.keyManager.up2)
-				yMove -= s;
-			if (this.keyManager.down2)
-				yMove = s;
-			if (this.keyManager.left2)
-				xMove -= s;
-			if (this.keyManager.right2)
-				xMove = s;
+			handlePlayer2Movement(s);
+			handlePlayer2BombDrop();
 		}
+	}
+
+	private void handlePlayer1Movement(int s) {
+		if (this.keyManager.up)
+			yMove -= s;
+		if (this.keyManager.down)
+			yMove = s;
+		if (this.keyManager.left)
+			xMove -= s;
+		if (this.keyManager.right)
+			xMove = s;
+	}
+
+	private void handlePlayer2Movement(int s) {
+		if (this.keyManager.up2)
+			yMove -= s;
+		if (this.keyManager.down2)
+			yMove = s;
+		if (this.keyManager.left2)
+			xMove -= s;
+		if (this.keyManager.right2)
+			xMove = s;
+	}
+
+	private void handlePlayer1BombDrop() {
 		if (this.keyManager.drop && playerNumb == 1) {
 			dropBomb();
 		}
+	}
 
+	private void handlePlayer2BombDrop() {
 		if (this.keyManager.drop2 && playerNumb == 2) {
 			dropBomb();
 		}
@@ -144,13 +163,13 @@ public class Player extends AbstractEntity {
 		int oldY = this.y;
 		this.x += xMove;
 		this.y += yMove;
-		this.body.move(this.x + cropOffsetX, this.y + cropOffsetY);
+		this.body.move(this.x + CROP_OFFSET_X, this.y + CROP_OFFSET_Y);
 		if (this.controller.verifyCollision(this)) {
 			this.x = oldX;
 			this.y = oldY;
 			this.xMove = 0;
 			this.yMove = 0;
-			this.body.move(this.x + cropOffsetX, this.y + cropOffsetY);
+			this.body.move(this.x + CROP_OFFSET_X, this.y + CROP_OFFSET_Y);
 		}
 	}
 
@@ -189,10 +208,7 @@ public class Player extends AbstractEntity {
 
 	@Override
 	public boolean shouldCollide(ICollidable collidable) {
-		if (collidable instanceof Wall) {
-			return true;
-		}
-		return false;
+		return collidable instanceof Wall;
 	}
 
 	@Override
@@ -214,8 +230,6 @@ public class Player extends AbstractEntity {
 	public void collision(Wall wall) {
 		// Do Nothing
 		// Die if deathWall
-
-		// Qui andrebbe implementata la dinamica di rollback
 	}
 
 	public void collision(PowerUp up) {
@@ -238,7 +252,7 @@ public class Player extends AbstractEntity {
 
 	public void dropBomb() {
 		if (canDropBomb()) {
-			Bomb b = new Bomb(this.x + cropOffsetX, this.y + cropOffsetY, this.bombExtension, this.controller);
+			Bomb b = new Bomb(this.x + CROP_OFFSET_X, this.y + CROP_OFFSET_Y, this.bombExtension, this.controller);
 			this.bombs.add(b);
 			this.controller.register(b);
 			this.lastBombDroppedTime = System.nanoTime();
@@ -259,10 +273,7 @@ public class Player extends AbstractEntity {
 	}
 
 	private boolean canDropBomb() {
-		// se non ci sono bombe sul campo
-		// oppure
-		// ci sono meno bombe del massi ed e' passato abbastanza tempo dall'ultima bomba
-		return (this.bombs.size() == 0) || ((this.bombs.size() < this.nBombs)
+		return (this.bombs.isEmpty()) || ((this.bombs.size() < this.nBombs)
 				&& (System.nanoTime() - this.lastBombDroppedTime > this.bombDroppedCoolDown));
 	}
 
