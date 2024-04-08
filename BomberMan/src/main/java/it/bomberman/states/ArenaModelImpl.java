@@ -26,13 +26,12 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	private Player player2;
 	private List<Entity> registerLater;
 	private List<Entity> removeLater;
-	private Random random;
 	private Clock clock;
 	private boolean gameOver = false;
 	private Optional<Player> winner;
 	private List<Entity> entities;
-	private final static int WALL_SPAWN_PROBABILITY = 60;
-	private final static int POWER_UP_SPAWN_PROBABILITY = 20;
+	private static final int WALL_SPAWN_PROBABILITY = 60;
+	private static final int POWER_UP_SPAWN_PROBABILITY = 20;
 
 	public ArenaModelImpl(KeyManager keyManager) {
 		player1 = new Player(70, 135, 1, keyManager, this);
@@ -40,9 +39,9 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 
 		this.winner = Optional.empty();
 		this.clock = new Clock(200);
-		this.entities = new ArrayList<Entity>();
-		this.registerLater = new ArrayList<Entity>();
-		this.removeLater = new ArrayList<Entity>();
+		this.entities = new ArrayList<>();
+		this.registerLater = new ArrayList<>();
+		this.removeLater = new ArrayList<>();
 		this.collisionMan = new CollisionManager();
 		this.wallFactory = new WallFactoryImpl();
 		initMapLimitWalls();
@@ -61,7 +60,7 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 	}
 
 	public void checkClock() {
-		if (this.clock.getTime() == "000" || this.player1.getHealth() == 0 || this.player2.getHealth() == 0) {
+		if ("000".equals(this.clock.getTime()) || this.player1.getHealth() == 0 || this.player2.getHealth() == 0) {
 			gameOver = true;
 			if (player1.getHealth() > player2.getHealth()) {
 				this.winner = Optional.of(player1);
@@ -95,12 +94,12 @@ public class ArenaModelImpl implements ArenaModel, EntityController {
 
 	@Override
 	public List<Entity> getDrawables() {
-		List<Entity> l = Collections.unmodifiableList(this.entities);
-		return l;
+		return Collections.unmodifiableList(this.entities);
 	}
 
 	private void initMapLimitWalls() {
-		List<Wall> walls = new ArrayList<Wall>();
+		Random random;
+		List<Wall> walls = new ArrayList<>();
 		int xLimit = 13;
 		int yLimit = 8;
 		int unit = WallFactoryImpl.DEFAULT_WALL_WIDTH;

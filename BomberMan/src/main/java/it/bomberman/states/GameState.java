@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 public abstract class GameState extends JPanel  {
 
 	private static final long serialVersionUID = 1L;
-	protected GameStateManager gsm;
+	protected GameStateManager gameStateManager;
 	
 	public abstract void init();
 

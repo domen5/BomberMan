@@ -14,30 +14,28 @@ import it.bomberman.gfx.Assets;
 public class WinnerState extends GameState implements KeyListener {
 
 	private static final long serialVersionUID = 1L;
-	private GameStateManager gsm;
-	private Optional<Player> player;
-	private Font fontTitle, fontPar;
+	private transient Optional<Player> player;
+	private Font fontTitle;
+	private Font fontPar;
 	private int currentChoice = 0;
 	private String[] options = { "Retry", "Quit" };
 
-	public WinnerState(GameStateManager gsm) {
+	public WinnerState(GameStateManager gameStateManager) {
 		super();
-		this.gsm = gsm;
-		this.player = this.gsm.getWinner();
+		this.gameStateManager = gameStateManager;
+		this.player = this.gameStateManager.getWinner();
 	}
 
 	private void select() {
-		switch (currentChoice) {
-			case 0:
-				this.gsm.setState(GameStateManager.ARENA);
-				this.gsm.update();
-				break;
-			case 1:
-				System.exit(0);
-				break;
+		if (currentChoice == 0) {
+			this.gameStateManager.setState(GameStateManager.ARENA);
+			this.gameStateManager.update();
+		} else {
+			System.exit(0);
 		}
 	}
 
+	@Override
 	public void addNotify() {
 		super.addNotify();
 		addKeyListener(this);
@@ -117,10 +115,12 @@ public class WinnerState extends GameState implements KeyListener {
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		// Not used
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		// Not used
 	}
 
 }
